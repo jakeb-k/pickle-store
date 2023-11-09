@@ -39,6 +39,7 @@
                 <a href="">Clothing</a>
             </div>
         </div>
+        <h2> Oz Pickle </h2> 
             <!-- USER LINK SECTION - ARE BUTTONS NOT <a> --> 
         <div class="uSec">
             <div class="uLink">

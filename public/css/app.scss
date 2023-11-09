@@ -1,11 +1,22 @@
+/*
+
+
+
+
+
+NAV BAR STYLING
+
+
+
+
+*/
+
 #nav {
     display:flex;
     flex-direction: row;
     width:100%;
-    border:4px solid #FFD100; 
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    background:grey; 
+
+    background:rgb(218, 218, 218); 
     justify-content: space-between;
 }
 .sSec, .uSec {
@@ -30,4 +41,50 @@
     display:flex;
     flex-direction:column;
     justify-content: flex-end;
+}
+.uLink {
+    margin: 0 1.5%;  
+}
+/*
+
+
+
+
+
+SPLASH SECTION STYLING
+
+
+
+
+*/
+.welcome {
+    background: rgb(218, 218, 218); 
+    margin-left:10%;
+    display:inline;  
+}
+#splashCont {
+    width:100%; 
+    padding:10% 0 15% 0; 
+    background: linear-gradient(rgb(218, 218, 218),#FFD100); 
+}
+.cta {
+    background:gray; 
+    border:2px solid #FFD100;
+    border-radius:15px; 
+    padding:20px;
+    box-shadow:0 0 10px black; 
+    margin:0 10%; 
+}
+.cta h1 {
+    color:white;
+
+}
+.sBtn {
+    padding:30px; 
+    border-radius:50px;
+    border:none; 
+    background:black; 
+    color:white; 
+    font-size:32px; 
+
 }
