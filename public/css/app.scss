@@ -35,7 +35,7 @@ NAV BAR STYLING
     padding-right:5%;
 }
 .sSec img {
-    width:50px;
+    width:70px;
     height:auto;
     border-radius:15px; 
 }
@@ -138,4 +138,49 @@ CARD SECTION STYLING
     color:white; 
     font-style: italic; 
     font-size:x-large;
+}
+/*
+
+
+
+
+
+PRODUCTS PAGE STYLING
+
+
+
+
+
+*/ 
+#prodCont {
+    width:100%; 
+    display:flex;
+    flex-direction:column; 
+}
+.row {
+    display:flex;
+    flex-direction:row;
+    justify-content: center; 
+}
+.prodBox {
+    margin:1.5%; 
+    text-align:center;
+    border-radius:15px; 
+    background:rgb(218, 218, 218);
+    box-shadow:0 0 10px #FFD100; 
+    width:25%; 
+    display:flex;
+    flex-direction:column; 
+}
+.prodBox img{
+    width:100%;
+    height:auto; 
+    border-radius:15px; 
+}
+.price {
+    font-weight: bold;
+    color:#ffb300; 
+    font-size:22px;
+    align-self:center;
+    margin-top:auto;
 }

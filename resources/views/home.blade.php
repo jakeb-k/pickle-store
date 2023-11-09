@@ -46,6 +46,5 @@
                 balls for optimal performance, and a high-performance shirt designed for 
                 top-tier play.</p>
         </div>
-
     </div>
 @endsection
