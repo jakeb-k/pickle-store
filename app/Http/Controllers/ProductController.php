@@ -36,7 +36,7 @@ class ProductController extends Controller
      */
     public function show(string $type)
     {
-        $products = Product::where('type', 'like', '%'.$type.'%')->get(); 
+        $products = Product::where('type', 'like', '%'.$type.'%')->paginate(6); 
        
         return view('products.index')->with('products',$products)->with('type',$type);
     }

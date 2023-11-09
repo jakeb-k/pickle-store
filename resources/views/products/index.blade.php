@@ -10,10 +10,16 @@
             <div class="prodBox">
                 <img src="{{url('images/pickleLogo.png')}}" /> 
                 <p>{{$product->name}} </p> 
-                <p class="price">${{$product->price}}<p>
+                <div class="pInfo">
+                    <p class="price">${{$product->price}}<p>
+                    <p>{{$product->rating}} ★</p>
+                </div>
             </div>
             @endforeach
             </div>
         @endforeach
+        <div class="links">
+            {{$products->links()}}
+        </div>
     </div>
 @endsection

@@ -177,10 +177,24 @@ PRODUCTS PAGE STYLING
     height:auto; 
     border-radius:15px; 
 }
+.pInfo {
+    width:100%; 
+    align-self: center;
+    margin-top: auto;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+
+    font-weight: bold;
+    font-size:22px;
+    
+}
 .price {
     font-weight: bold;
     color:#ffb300; 
     font-size:22px;
-    align-self:center;
-    margin-top:auto;
+    
+}
+.links {
+    margin: 20px auto; 
 }
