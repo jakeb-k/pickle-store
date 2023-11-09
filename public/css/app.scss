@@ -15,9 +15,12 @@ NAV BAR STYLING
     display:flex;
     flex-direction: row;
     width:100%;
-
     background:rgb(218, 218, 218); 
     justify-content: space-between;
+}
+#nav h2 {
+    align-self: flex-end;
+    text-decoration:underline; 
 }
 .sSec, .uSec {
     display:flex;
@@ -87,4 +90,52 @@ SPLASH SECTION STYLING
     color:white; 
     font-size:32px; 
 
+}
+/*
+
+
+
+
+
+CARD SECTION STYLING 
+
+
+
+
+*/
+.prodSec {
+    margin-top: -55px;
+    background-image: url('../images/bg.jpg');
+    padding:10%; 
+    display:flex;
+    flex-direction:row; 
+    justify-content: space-evenly;
+    overflow-x: scroll;
+
+}
+.prodSec img {
+    width:100px; 
+    border-radius:15px; 
+}
+.psBox {
+    margin:0 2.5%;
+    width:100%; 
+    background:rgb(218, 218, 218); 
+    border-radius:15px; 
+    box-shadow:0 0 20px #FFD100; 
+    text-align: center;
+    padding:30px 10px; 
+}
+.prodTitle {
+   margin:0 0 0 10%; 
+    color:#FFD100; 
+    z-index: 1;
+}
+.prodTitle a {
+    border-radius:50px; 
+    border:2.5px solid #FFD100; 
+    padding:5px 10px; 
+    color:white; 
+    font-style: italic; 
+    font-size:x-large;
 }

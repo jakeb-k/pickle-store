@@ -19,55 +19,55 @@
     <body>
         <div id="nav">
             <!-- SHOP LINK SECTION --> 
-        <div class="sSec">
-            <div class="sLink">
-                <img src="{{url('images/pickleLogo.png')}}" alt="oz pickle logo"/>
+            <div class="sSec">
+                <div class="sLink">
+                    <img src="{{url('images/pickleLogo.png')}}" alt="oz pickle logo"/>
+                </div>
+                <div class="sLink">
+                    <a href="">Accessories</a>
+                </div>
+                <div class="sLink">
+                    <a href="">Paddles</a>
+                </div>
+                <div class="sLink">
+                    <a href="">Court</a>
+                </div>
+                <div class="sLink">
+                    <a href="">Kits</a>
+                </div>
+                <div class="sLink">
+                    <a href="">Clothing</a>
+                </div>
             </div>
-            <div class="sLink">
-                <a href="">Accessories</a>
+            <h2> Oz Pickle </h2> 
+                <!-- USER LINK SECTION - ARE BUTTONS NOT <a> --> 
+            <div class="uSec">
+                <div class="uLink">
+                    <a href="">
+                        <button class="pBtn">Register</button>
+                    </a>
+                </div>
+                <div class="uLink">
+                    <a href="">
+                        <button class="pBtn">Login/Out</button>
+                    </a>
+                </div>
+                <div class="uLink">
+                    <a href="">
+                        <button class="pBtn">Wishlist</button>
+                    </a>
+                </div>
+                <div class="uLink">
+                    <a href="">
+                        <button class="pBtn">User</button>
+                    </a>
+                </div>
+                <div class="uLink">
+                    <a href="">
+                        <button class="pBtn">Admin</button>
+                    </a>
+                </div>
             </div>
-            <div class="sLink">
-                <a href="">Paddles</a>
-            </div>
-            <div class="sLink">
-                <a href="">Court</a>
-            </div>
-            <div class="sLink">
-                <a href="">Kits</a>
-            </div>
-            <div class="sLink">
-                <a href="">Clothing</a>
-            </div>
-        </div>
-        <h2> Oz Pickle </h2> 
-            <!-- USER LINK SECTION - ARE BUTTONS NOT <a> --> 
-        <div class="uSec">
-            <div class="uLink">
-                <a href="">
-                    <button class="pBtn">Register</button>
-                </a>
-            </div>
-            <div class="uLink">
-                <a href="">
-                    <button class="pBtn">Login/Out</button>
-                </a>
-            </div>
-            <div class="uLink">
-                <a href="">
-                    <button class="pBtn">Wishlist</button>
-                </a>
-            </div>
-            <div class="uLink">
-                <a href="">
-                    <button class="pBtn">User</button>
-                </a>
-            </div>
-            <div class="uLink">
-                <a href="">
-                    <button class="pBtn">Admin</button>
-                </a>
-            </div>
-        </div>
         </div>
         @yield('content') 
     </body>
