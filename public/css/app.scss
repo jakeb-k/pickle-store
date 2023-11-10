@@ -270,7 +270,7 @@ PRODUCT DETAIL PAGE STYLING
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: auto;
+    padding:50px auto;
     font-family: 'League Gothic', Arial, Helvetica, sans-serif;
     font-size: 24px;
     background: linear-gradient(rgb(218, 218, 218),#FFD100); 
@@ -542,4 +542,105 @@ EXTERNAL RATING CSSS
 .rating label input:focus:not(:checked)~.icon:last-child {
     color: #000;
     text-shadow: 0 0 5px #FFD100;
+}
+/*
+
+
+
+
+AUTH FORM STYLING
+
+
+
+
+*/
+#authForm,
+#regForm {
+    width: 500px;
+    min-height: 40%;
+    background: white;
+    border-radius: 5px;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    font-family: 'Rubik', Arial, Helvetica, sans-serif;
+    margin: auto;
+    box-shadow: 0 0 10px rgb(43, 43, 43);
+}
+
+#authForm div,
+#regForm div {
+    margin: 20px;
+}
+
+.authInput {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: center;
+}
+
+.authInput input {
+    padding:10px 0;
+    align-self: center;
+    margin: 10px auto;
+    width: 90%;
+    font-size: 18px;
+    border-radius:15px; 
+    border: 1px solid gray;
+}
+
+.authInput input:focus {
+    outline: 1px solid #FFD100;
+    border: 1px solid #bc700c;
+    padding: 10px 0;
+}
+
+.forPass a {
+    text-decoration: none;
+    box-shadow: inset 0 0 0 0 #FFD100;
+    color: black;
+    margin: 0 -.25rem;
+    padding: 0 .25rem;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.forPass a:hover {
+    box-shadow: inset 175px 0 0 0 #FFD100;
+    color: white;
+}
+
+#authForm form,
+#regForm form {
+    align-items: center;
+    width: 100%;
+    text-align: center;
+
+}
+
+#authForm button,
+#regForm button {
+    width: 100%;
+    font-family: 'League Gothic', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 32px;
+    border: 2px solid #FFD100;
+    background: none;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.25s ease-in-out;
+}
+
+#authForm button:hover,
+#regForm button:hover {
+    color: white;
+    background: #FFD100;
+}
+
+#authForm img,
+#regForm img {
+    align-self: center;
+    width:30%;
+    height:auto; 
 }

@@ -64,6 +64,7 @@
                     @endguest
                 </div>
                 @auth
+                @if(Auth::user()->role != 0)
                 <div class="uLink">
                     <a href="{{url('favs/'.Auth::user()->id)}}">
                         <button class="pBtn">Wishlist</button>
@@ -71,7 +72,7 @@
                 </div>
                 <div class="uLink">
                     <a data-toggle="modal" data-target="#exampleModal2">
-                        <button class="pBtn">User</button>
+                        <button class="pBtn">{{Auth::user()->name}}</button>
                     </a>
                 </div>
                 <div class="uLink">
@@ -79,11 +80,18 @@
                         <button class="pBtn">Cart</button>
                     </a>
                 </div>
+                @else 
                 <div class="uLink">
                     <a  href="{{url('admin')}}">
                         <button class="pBtn">Admin</button>
                     </a>
                 </div>
+                <div class="uLink">
+                    <a  href="{{url('orders')}}">
+                        <button class="pBtn">Orders</button>
+                    </a>
+                </div>
+                @endif
                 @endauth
             </div>
         </div>
