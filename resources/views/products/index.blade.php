@@ -1,20 +1,22 @@
 @extends('layouts.master')
 @section('titleDetail')
-    - {{$type}}
+    - {{ucfirst($type)}}
 @endsection
 @section('content')
     <div id="prodCont">
         @foreach($products->chunk(3) as $chunk)
             <div class="row">
             @foreach($chunk as $product)
-            <div class="prodBox">
-                <img src="{{url('images/pickleLogo.png')}}" /> 
-                <p>{{$product->name}} </p> 
-                <div class="pInfo">
-                    <p class="price">${{$product->price}}<p>
-                    <p>{{$product->rating}} ★</p>
+    
+                <div class="prodBox">
+                    <img src="{{url('images/pickleLogo.png')}}" /> 
+                    <a href="{{url('/product/'.$product->id)}}">{{$product->name}} </a> 
+                    <div class="pInfo">
+                        <p class="price">${{$product->price}}<p>
+                        <p>{{$product->rating}} ★</p>
+                    </div>
                 </div>
-            </div>
+            
             @endforeach
             </div>
         @endforeach

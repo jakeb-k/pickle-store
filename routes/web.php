@@ -14,10 +14,11 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::resource('/product', ProductController::class); 
+Route::resource('product', ProductController::class); 
 Route::get('/', function () {
     return view('home');
 });
+Route::get('/{type}', [ProductController::class, 'type']); 
 
 Route::get('/dashboard', function () {
     return redirect('/');

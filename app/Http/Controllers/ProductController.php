@@ -10,7 +10,7 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(string $type)
+    public function index()
     {
 
     }
@@ -34,13 +34,19 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $type)
+    public function type($type)
     {
         $products = Product::where('type', 'like', '%'.$type.'%')->paginate(6); 
        
         return view('products.index')->with('products',$products)->with('type',$type);
     }
+    //bring up detail view for specific product
+    public function show(string $id) {
 
+        $product = Product::find($id);
+        return view('products.show')->with('product', $product); 
+
+    }
     /**
      * Show the form for editing the specified resource.
      */

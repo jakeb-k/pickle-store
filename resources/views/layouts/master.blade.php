@@ -24,19 +24,19 @@
                     <img src="{{url('images/pickleLogo.png')}}" alt="oz pickle logo"/>
                 </div>
                 <div class="sLink">
-                    <a href="">Accessories</a>
+                    <a href="{{url('/accessories')}}">Accessories</a>
                 </div>
                 <div class="sLink">
-                    <a href="">Paddles</a>
+                    <a href="{{url('/paddle')}}">Paddles</a>
                 </div>
                 <div class="sLink">
-                    <a href="">Court</a>
+                    <a href="{{url('/court')}}">Court</a>
                 </div>
                 <div class="sLink">
-                    <a href="">Kits</a>
+                    <a href="{{url('/kits')}}">Kits</a>
                 </div>
                 <div class="sLink">
-                    <a href="">Clothing</a>
+                    <a href="{{url('/clothing')}}">Clothing</a>
                 </div>
             </div>
             <h2> Oz Pickle </h2> 
