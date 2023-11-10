@@ -15,10 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::resource('product', ProductController::class); 
-Route::get('/', function () {
-    return view('home');
-});
-Route::get('/{type}', [ProductController::class, 'type']); 
+
+Route::get('/', [ProductController::class, 'index']); 
+Route::get('items/{type}', [ProductController::class, 'type']); 
 
 Route::get('/dashboard', function () {
     return redirect('/');

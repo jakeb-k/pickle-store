@@ -3,6 +3,7 @@
     - {{ucfirst($type)}}
 @endsection
 @section('content')
+
     <div id="prodCont">
         @foreach($products->chunk(3) as $chunk)
             <div class="row">

@@ -21,52 +21,70 @@
             <!-- SHOP LINK SECTION --> 
             <div class="sSec">
                 <div class="sLink">
+                    <a href="{{url('/')}}">
                     <img src="{{url('images/pickleLogo.png')}}" alt="oz pickle logo"/>
+                    </a>
                 </div>
                 <div class="sLink">
-                    <a href="{{url('/accessories')}}">Accessories</a>
+                    <a href="{{url('items/accessories')}}">Accessories</a>
                 </div>
                 <div class="sLink">
-                    <a href="{{url('/paddle')}}">Paddles</a>
+                    <a href="{{url('items/paddle')}}">Paddles</a>
                 </div>
                 <div class="sLink">
-                    <a href="{{url('/court')}}">Court</a>
+                    <a href="{{url('items/court')}}">Court</a>
                 </div>
                 <div class="sLink">
-                    <a href="{{url('/kits')}}">Kits</a>
+                    <a href="{{url('items/kits')}}">Kits</a>
                 </div>
                 <div class="sLink">
-                    <a href="{{url('/clothing')}}">Clothing</a>
+                    <a href="{{url('items/clothing')}}">Clothing</a>
                 </div>
             </div>
             <h2> Oz Pickle </h2> 
                 <!-- USER LINK SECTION - ARE BUTTONS NOT <a> --> 
             <div class="uSec">
+                @guest
                 <div class="uLink">
-                    <a href="">
+                    <a href="{{url('/register')}}">
                         <button class="pBtn">Register</button>
                     </a>
                 </div>
+                @endguest
                 <div class="uLink">
-                    <a href="">
-                        <button class="pBtn">Login/Out</button>
+                    @guest
+                    <a id="login" href="{{ route('login') }}">
+                        <button class="pBtn">Login</button>
                     </a>
+                    @else
+                    <form id="logout" method="POST"action ="{{url('/logout')}}">
+                        {{csrf_field()}}
+                        <button type="submit" class="pBtn">Logout</button>
+                    </form>
+                    @endguest
                 </div>
+                @auth
                 <div class="uLink">
-                    <a href="">
+                    <a href="{{url('favs/'.Auth::user()->id)}}">
                         <button class="pBtn">Wishlist</button>
                     </a>
                 </div>
                 <div class="uLink">
-                    <a href="">
+                    <a data-toggle="modal" data-target="#exampleModal2">
                         <button class="pBtn">User</button>
                     </a>
                 </div>
                 <div class="uLink">
-                    <a href="">
+                    <a data-toggle="modal" data-target="#exampleModal">
+                        <button class="pBtn">Cart</button>
+                    </a>
+                </div>
+                <div class="uLink">
+                    <a  href="{{url('admin')}}">
                         <button class="pBtn">Admin</button>
                     </a>
                 </div>
+                @endauth
             </div>
         </div>
         @yield('content') 

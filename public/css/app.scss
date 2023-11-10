@@ -52,6 +52,46 @@ NAV BAR STYLING
 
 
 
+PRIMARY BUTTON STYLING
+
+
+
+
+*/
+button.pBtn {
+    border-radius:15px; 
+    font-weight:bold; 
+    border:none; 
+    padding:10px 20px; 
+  --c:  #FFD100; /* the color*/
+  
+  box-shadow: 0 0 0 .1em inset var(--c); 
+  --_g: linear-gradient(var(--c) 0 0) no-repeat;
+  background: 
+    var(--_g) calc(var(--_p,0%) - 100%) 0%,
+    var(--_g) calc(200% - var(--_p,0%)) 0%,
+    var(--_g) calc(var(--_p,0%) - 100%) 100%,
+    var(--_g) calc(200% - var(--_p,0%)) 100%;
+  background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
+  outline-offset: .1em;
+  transition: background-size .4s, background-position 0s .4s;
+}
+button.pBtn:hover {
+    cursor: pointer;
+  --_p: 100%;
+  transition: background-position .4s, background-size 0s;
+}
+button.pBtn:active {
+  box-shadow: 0 0 9e9q inset #0009; 
+  background-color: var(--c);
+  color: #fff;
+}
+
+
+/*
+
+
+
 
 
 SPLASH SECTION STYLING
@@ -197,4 +237,309 @@ PRODUCTS PAGE STYLING
 }
 .links {
     margin: 20px auto; 
+}
+/*
+
+
+
+
+
+
+
+PRODUCT DETAIL PAGE STYLING
+
+
+
+
+
+*/
+#showContainer .emphasis a {
+    text-decoration: none;
+    margin-left: 20%;
+}
+
+#showContainer .emphasis a:hover {
+    color: #7cadc8;
+}
+
+.ratingsAvg {
+    font-size: 24px;
+}
+
+#showContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    font-family: 'League Gothic', Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    background: linear-gradient(rgb(218, 218, 218),#FFD100); 
+}
+
+#showContainer #desc {
+    font-family: 'Rubrik', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+#itemContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 70%;
+    align-self: center;
+    margin: 20px;
+    background: white;
+    box-shadow: 0px 0px 20px rgb(40, 40, 40);
+    padding: 20px;
+}
+
+#slideOps img {
+    height: 150px;
+}
+
+#showDetails {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left:30px; 
+
+}
+
+#showDetails * {
+    margin: 10px 0px;
+}
+
+#showContainer h1 {
+    font-family: 'League Gothic', Arial, Helvetica, sans-serif;
+    color: black;
+    font-size: 28px;
+}
+
+
+#subtitles {
+    display: flex;
+    flex-direction: row;
+}
+
+.line {
+    margin: auto;
+    width: 97%;
+    height: 1px;
+    background-color: #FFD100;
+}
+#quantity {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+#addCartButton button {
+    width: 100%;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    background-color: #FFD100;
+    box-shadow: 0 0 5px black;
+}
+
+.detailSlides .dSlides {
+    transition: 0.5s ease-in-out;
+}
+
+.detailSlides .dSlides:hover {
+    scale: 1.45;
+    transition: 0.5s ease-in-out;
+    z-index: 99;
+}
+
+#showImg img{
+    width:100%; 
+    margin-right: 30px;
+}
+
+#showImg .dSlides {
+    height: 350px;
+    width: 100%;
+}
+
+/* Review styling */
+#reviewContainer {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    align-self: center;
+    margin: 20px;
+    background: white;
+    box-shadow: 0px 0px 20px black;
+    padding: 20px;
+
+}
+
+.reviews {
+    box-shadow: 0 0 5px black;
+    padding: 10px;
+    margin: 20px 0px;
+    border-radius: 20px
+}
+
+.reviewBox {
+    padding: 25px 50px;
+    border-radius: 25px;
+    height: 250px;
+    overflow-y: scroll;
+    margin-bottom: 25px;
+    font-size: 14px;
+    font-family: 'Rubrik', Arial, Helvetica, sans-serif;
+}
+
+.reviewBox h3 {
+    font-family: 'League Gothic', Arial, Helvetica, sans-serif;
+    font-size: 28px;
+}
+
+#reviewContainer a {
+    color: #FFD100;
+    text-decoration: underline;
+}
+
+#reviewContainer a:hover {
+    color: #bc700c;
+}
+
+.discount {
+    text-decoration: line-through;
+    font-size: 22px;
+    padding-top: 15px;
+}
+
+#subtitles .emphasis {
+    margin-left: 20px;
+    color: #FFD100;
+    font-size: 36px;
+}
+
+#noMatch h1 {
+    margin-top: 50px;
+    margin-bottom: 150px;
+    font-family: 'League Gothic', Arial, Helvetica, sans-serif;
+    font-size: 46px;
+    text-align: center;
+}
+
+#reviewInput input {
+    border: 1px solid #FFD100;
+    width: 90%;
+    height: 50px;
+    padding: 5px;
+    margin: 10px 0px;
+    font-size: 14px;
+    font-family: 'Rubrik', Arial, Helvetica, sans-serif;
+
+}
+
+#reviewInput input:focus {
+    outline: 1px solid #bc700c;
+}
+
+.rating {
+    border: none;
+}
+
+.createSubmit3 button {
+    background-color: #7cadc8;
+    border: none;
+    box-shadow: 0 0 10px black;
+    font-family: 'League Gothic', Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    width: 90%;
+}
+
+.createSubmit3 {
+    margin: 20px 0px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.createSubmit3 button:hover {
+    background-color: #FFD100;
+    color: black;
+    transition: 0.15s ease-in-out;
+}
+
+/* 
+
+
+EXTERNAL RATING CSSS
+
+
+*/
+.rating {
+    display: inline-block;
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    font-size: 50px;
+    margin: 0;
+    padding: 0;
+}
+
+.rating label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    cursor: pointer;
+}
+
+.rating label:last-child {
+    position: static;
+}
+
+.rating label:nth-child(1) {
+    z-index: 5;
+}
+
+.rating label:nth-child(2) {
+    z-index: 4;
+}
+
+.rating label:nth-child(3) {
+    z-index: 3;
+}
+
+.rating label:nth-child(4) {
+    z-index: 2;
+}
+
+.rating label:nth-child(5) {
+    z-index: 1;
+}
+
+.rating label input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.rating label .icon {
+    float: left;
+    color: transparent;
+}
+
+.rating label:last-child .icon {
+    color: #000;
+}
+
+.rating:not(:hover) label input:checked~.icon,
+.rating:hover label:hover input~.icon {
+    color: #FFD100;
+}
+
+.rating label input:focus:not(:checked)~.icon:last-child {
+    color: #000;
+    text-shadow: 0 0 5px #FFD100;
 }
