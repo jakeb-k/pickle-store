@@ -8,14 +8,55 @@
         @foreach($products->chunk(3) as $chunk)
             <div class="row">
             @foreach($chunk as $product)
-    
+                
+            @auth
+                    @if(Auth::user()->role == 1)
+                    <?php $check = explode(",",Auth::user()->favs); ?>'
+                    
+                    @if(in_array(strval($product->id), $check, true)) 
+                    <form class="favForm2" method="POST" action="{{url('user/'.Auth::user()->id.'/new-fav')}}" enctype="multipart/form-data">
+                            {{csrf_field()}}
+                            {{method_field('POST')}}
+                            <input name="product_id" type="hidden" value="{{$product->id}}" /> 
+                            <button class="opsBtn" type="submit">
+                                <i class="fa-solid fa-heart"></i>
+                            </button>
+                            </form>
+                    @else 
+                        <form class="favForm" method="POST" action="{{url('user/'.Auth::user()->id.'/new-fav')}}" enctype="multipart/form-data">
+                            {{csrf_field()}}
+                            {{method_field('POST')}}
+                            <input name="product_id" type="hidden" value="{{$product->id}}" /> 
+                            <button class="opsBtn" type="submit">
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                            </form>
+                    @endif
+            
+                   
+                    @elseif(Auth::user()->role == 0)
+                    <form class="favForm" method="POST" action='{{url("product/$product->id")}}' enctype="multipart/form-data">
+                            {{csrf_field()}}
+                            {{method_field('DELETE')}}
+                            <input name="product_id" type="hidden" value="{{$product->id}}" /> 
+                            <button type="submit">
+                                <i class="fa-regular fa-x"></i>
+                            </button>
+                            </form>
+                    @endif
+                @endauth
+
+            
+            
+
                 <div class="prodBox">
                     <img src="{{url('images/pickleLogo.png')}}" /> 
                     <a href="{{url('/product/'.$product->id)}}">{{$product->name}} </a> 
                     <div class="pInfo">
-                        <p class="price">${{$product->price}}<p>
+                        <p class="price">${{number_format($product->price, 2)}}<p>
                         <p>{{$product->rating}} ★</p>
                     </div>
+
                 </div>
             
             @endforeach

@@ -27,6 +27,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin', [ProductController::class, 'admin']); 
     Route::get('product/{id}/available', [ProductController::class, 'available']);
 
+    Route::post('product/{id}/add-tag', [ProductController::class, 'addTag']);
+    Route::get('product/{id}/add-tag/{tag}', [ProductController::class, 'deleteTag']); 
+
+    Route::get('add-to-cart/{id}', [ProductController::class, 'addToCart']);
+    Route::delete('remove-from-cart', [ProductController::class, 'remove']);
+    Route::delete('clear-cart', [ProductController::class, 'clearCart']);
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

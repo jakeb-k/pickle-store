@@ -45,7 +45,7 @@
 
                 
                     <div class="discount"> ${{number_format($product->price * 1.25, 2)}} </div>
-                    <div class="emphasis"> ${{$product->price}} </div>
+                    <div class="emphasis"> ${{number_format($product->price, 2)}} </div>
                 
                 
             </div>

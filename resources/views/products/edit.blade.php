@@ -75,7 +75,7 @@
                 
                 <div class="createSubmit2">
                     <button type="submit">
-                        Update product!
+                        Update Product!
                     </button>
                 </div>
             </form>

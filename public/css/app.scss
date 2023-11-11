@@ -17,7 +17,7 @@ NAV BAR STYLING
     width:100%;
     background:rgb(218, 218, 218); 
     justify-content: space-between;
-    padding-bottom:50px; 
+    padding-bottom:10px; 
 }
 #nav h2 {
     align-self: flex-end;
@@ -258,6 +258,23 @@ PRODUCTS PAGE STYLING
 
 
 */ 
+button.opsBtn {
+    position:absolute; 
+    margin:10px 0 0 22.5%; 
+    padding:5px; 
+    border:none; 
+    background:none; 
+    font-size:38px; 
+}
+button.opsBtn i {
+    color:#FFD100;
+    &:hover {
+        cursor: pointer;
+        color:black; 
+        fill: #FFD100;
+    }
+}
+
 #prodCont {
     width:100%; 
     display:flex;
@@ -319,6 +336,8 @@ PRODUCT DETAIL PAGE STYLING
 
 
 */
+//PRODUCT OPTIONS (FAV n DELETE)
+
 #showContainer .emphasis a {
     text-decoration: none;
     margin-left: 20%;
@@ -1007,6 +1026,177 @@ select option {
 }
 #formContainer h1 {
     font-family: 'Rubrik', Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+/*
+
+
+
+
+CART MODAL STYLING
+
+
+
+*/
+
+#cartOptions {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    margin: 10px 0px 0px 0px;
+    padding: 10px;
+}
+
+.quantityInput {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    height: 100px;
+}
+
+.quantityInput button {
+    background: none;
+    border: none;
+    color: #F49110;
+}
+
+.quantityInput button:hover {
+    border-radius: 100%;
+
+    background: #F49110;
+    color: white;
+
+}
+
+#deleteCart button,
+#purchaseCart button {
+    width: 245px;
+    padding: 10px 20px;
+    border: none;
+    font-family: 'Rubrik', Arial, Helvetica, sans-serif;
+}
+
+#deleteCart button {
+    border-top-left-radius: 35px;
+    border-bottom-left-radius: 35px;
+    background-color: black;
+    color: #F49110
+}
+
+#deleteCart button:hover {
+    background-color: rgba(0, 0, 0, 0.815);
+    color: #ffc400d9
+}
+
+#purchaseCart button {
+    border-top-right-radius: 35px;
+    border-bottom-right-radius: 35px;
+    background-color: #F49110;
+    color: black;
+}
+
+#purchaseCart button:hover {
+    background-color: #ffc400d9;
+    color: rgba(0, 0, 0, 0.815);
+}
+
+#clearCart button {
+    font-size: 18px;
+    padding: 0 10px 0 10px;
+    color: #F49110;
+    background-color: white;
+    border: none;
+}
+
+#clearCart button:hover {
+    color: #ffc400da;
+}
+
+.cartItem {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.cartInfo {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 100%;
+    margin-left: auto;
+    padding: 0 10px;
+}
+
+#cartImg img {
+    width: 150px;
+    height: 100px;
+    border-radius: 5%;
+    margin: 20px;
+}
+
+.cartDetails {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'Rubrik', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    margin: 5px;
+    width: 100%;
+}
+
+.quantityInput input {
+    border: 1px solid #F49110;
+    border-radius: 5px;
+    display: inline;
+    width: 20%;
+}
+
+#totals {
+    padding: 0 10px;
+}
+
+#totals #line {
+    overflow-x: visible;
+    width: 110%;
+}
+
+#cartContainer {
+    width: 45%;
+    margin: 175px auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    border: 5px solid #F49110;
+    border-radius: 35px;
+    background-color: white;
+}
+
+#cartTitle {
+    font-family: 'Rubrik', Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    align-self: center;
+}
+
+#cartTitle em {
+    color: #F49110;
+    font-weight: bold;
+}
+
+.addy {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+    font-size: 14px;
+    margin: auto;
+    font-family: 'Rubrik', Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+#empty p {
     text-align: center;
 }
 
