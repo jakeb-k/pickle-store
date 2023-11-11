@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use App\Models\User;
+use App\Models\Product;
 
 class ProfileController extends Controller
 {
@@ -22,7 +24,7 @@ class ProfileController extends Controller
     }
 
     /**
-     * Update the user's profile information.
+     * Update the user's profile inforproduction.
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
@@ -56,5 +58,40 @@ class ProfileController extends Controller
         $request->session()->regenerateToken();
 
         return Redirect::to('/');
+    }
+    public function newFav(Request $request, $id)
+    {
+        $user = User::find($id);
+        
+        $message = "";
+       
+        $favs = explode(",",$user->favs); 
+        if(in_array($request->product_id, $favs)){
+            $index = array_search($request->product_id, $favs);
+            array_splice($favs, $index, 1); 
+            $user->favs = implode(",", $favs); 
+            $user->save();
+        } else {
+            $favs[] = $request->product_id;
+            $user->favs = implode(",",$favs); 
+            $user->save();
+        }
+
+        return redirect()->back()->with('message', $message);
+    }
+    public function show($id)
+    {
+       
+        $user = User::find($id); 
+        $uProducts = explode(",",$user->favs);
+        $favs = []; 
+        foreach($uProducts as $d){
+            $product = Product::find($d); 
+            if($product != null){
+                $favs[] = $product;
+            }
+        }
+        
+        return view('products.index')->with('products', collect($favs))->with('paginated', false)->with('type', 'Wishlist'); 
     }
 }

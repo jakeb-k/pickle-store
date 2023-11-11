@@ -11,7 +11,7 @@
                 
             @auth
                     @if(Auth::user()->role == 1)
-                    <?php $check = explode(",",Auth::user()->favs); ?>'
+                    <?php $check = explode(",",Auth::user()->favs); ?>
                     
                     @if(in_array(strval($product->id), $check, true)) 
                     <form class="favForm2" method="POST" action="{{url('user/'.Auth::user()->id.'/new-fav')}}" enctype="multipart/form-data">
@@ -62,8 +62,10 @@
             @endforeach
             </div>
         @endforeach
+        @if($paginated ?? true)
         <div class="links">
             {{$products->links()}}
         </div>
+        @endif
     </div>
 @endsection
