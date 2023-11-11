@@ -17,6 +17,7 @@ NAV BAR STYLING
     width:100%;
     background:rgb(218, 218, 218); 
     justify-content: space-between;
+    padding-bottom:50px; 
 }
 #nav h2 {
     align-self: flex-end;
@@ -48,6 +49,10 @@ NAV BAR STYLING
 .uLink {
     margin: 0 1.5%;  
 }
+#logout {
+    margin-bottom:0;  
+}
+
 /*
 
 
@@ -86,6 +91,7 @@ button.pBtn:active {
   background-color: var(--c);
   color: #fff;
 }
+
  /* Dropdown Button */
  .dropbtn2 {
      background: none;
@@ -111,7 +117,9 @@ button.pBtn:active {
      z-index: 1;
      margin-left: -50px;
  }
-
+.test {
+    color:#e20f0f;
+}
  /* Links inside the dropdown */
  .dropdown-content2 button,
  .dropdown-content2 h3 {
@@ -806,5 +814,199 @@ ADMIN PAGE STYLING
     box-shadow: 0 0 10px black;
     transition: .25s ease-in-out;
 }
+/*
 
+
+
+
+CREATE & EDIT FORM STYLING
+
+
+
+
+*/
+.createSubmit2 {
+    display: flex;
+    justify-content: center;
+}
+
+.createSubmit2 button {
+    margin: 50px 0px;
+    width: 95%;
+    background-color: #dadada;
+    border: none;
+    padding: 15px;
+    box-shadow: 0 0 10px black;
+    font-family: 'League Gothic', Arial, Helvetica, sans-serif;
+    font-size: 32px;
+}
+
+.createSubmit2 button:hover {
+    background-color: #FFD100;
+    color: black;
+    transition: 0.25s ease-in-out;
+}
+
+#formContainer {
+    align-self: center;
+    margin: 75px 0px;
+    color: rgb(218, 218, 218);
+    width: 50%;
+    background: rgb(40, 40, 40);
+    box-shadow: 0 0 20px black;
+
+}
+
+.createInput,
+.createInput2 {
+    padding: 5px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+.form-label {
+    align-self: flex-start;
+    font-size: 20px;
+
+    font-family: 'Rubrik', Arial, Helvetica, sans-serif;
+
+}
+
+.createInput input {
+    border: none;
+    width: 100%;
+    padding: 20px;
+    font-size: 18px;
+    font-family: 'League Gothic', Arial, Helvetica, sans-serif;
+}
+
+
+.createInput input:hover {
+    cursor: pointer;
+    background-color: #ffd000bb;
+}
+
+.createInput input:focus {
+    outline: 1px solid #FFD100;
+    background-color: white;
+}
+
+.createInput2 input {
+    border: 1px solid #FFD100;
+    width: 100%;
+    padding: 20px;
+    font-size: 18px;
+    margin-bottom: -20px;
+
+}
+
+.createInput2 label {
+    color: #FFD100;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.createInput2 label:hover {
+    color: #ffd000bb;
+    text-decoration-color: #ffd000bb;
+    transition: 0.15s ease-in-out;
+}
+
+.createInput2 input:hover {
+    cursor: pointer;
+    background-color: #ffd000bb;
+    ;
+}
+
+.createInput2 input:focus {
+    outline: 1px solid #FFD100;
+    background-color: white;
+}
+
+#tagCont button {
+    border: none;
+    padding: 7px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+}
+
+#tagCont input {
+    margin-bottom: -50px;
+}
+
+#addTag button {
+    background: none;
+    border: none;
+    position: relative;
+    left: 430px;
+    top: -60px;
+    font-size: 34px;
+    color: #FFD100;
+}
+
+#addTag button:hover {
+    cursor: pointer;
+
+    text-decoration: none;
+    color: black;
+    transition: 0.15s ease-in-out;
+}
+
+#addTag input {
+    width: 100%;
+    padding: 20px;
+    font-size: 18px;
+}
+
+#addTag input:hover {
+    border: 1px solid #FFD100;
+    cursor: pointer;
+    background-color: #ffd000bb;
+}
+
+#addTag input:focus {
+    outline: none;
+    border: 1px solid #FFD100;
+    background-color: white;
+}
+
+#addTag i {
+    font-size: 12px;
+}
+
+.createInput select {
+    border: none;
+    background: white;
+    font-family: 'League Gothic', Arial, Helvetica, sans-serif;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.createInput select:hover {
+    background: #ffd000bb;
+}
+
+.createInput select:focus {
+    border: 1px solid #ffd000bb;
+    background: white;
+}
+
+select option {
+    font-family: 'League Gothic', Arial, Helvetica, sans-serif;
+    padding: 20px;
+    font-size: 18px;
+}
+#formContainer {
+    margin: 0 auto; 
+}
+#formContainer h1 {
+    font-family: 'Rubrik', Arial, Helvetica, sans-serif;
+    text-align: center;
+}
 

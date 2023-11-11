@@ -66,14 +66,14 @@
             <td>{{$product->price}}</td>
             <td style="font-size:large;"><b>{{$product->type}}</b></td>
             <td>
-                <a href='{{url("product/$product->id/edit")}}'><button>EDIT</button></a>  
+                <a href='{{url("product/$product->id/edit")}}'><button class="pBtn" style="--c:#dadada; color:#ff7b00;">EDIT</button></a>  
             </td>
             <td>
                 <form method="POST" action='{{url("product/$product->id")}}' enctype="multipart/form-data">
                     {{csrf_field()}}
                     {{method_field('DELETE')}}
-                    <input name="product_id" type="hidden" value="{{$product->id}}" /> 
-                    <button type="submit">
+                    <input name="product_id" type="hidden" value="{{$product->id}}"/> 
+                    <button type="submit" class="pBtn"  style="--c:#dadada; color:#e20f0f;">
                         DELETE
                     </button>
                 </form>
