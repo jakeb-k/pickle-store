@@ -86,7 +86,65 @@ button.pBtn:active {
   background-color: var(--c);
   color: #fff;
 }
+ /* Dropdown Button */
+ .dropbtn2 {
+     background: none;
+     padding: 10px;
+     color: rgb(40, 40, 40);
+     font-size: 24px;
+     border: none;
+ }
 
+ /* The container <div> - needed to position the dropdown content */
+ .dropdown2 {
+     position: relative;
+     display: inline-block;
+ }
+
+ /* Dropdown Content (Hidden by Default) */
+ .dropdown-content2 {
+     display: none;
+     position: absolute;
+     background-color: rgba(40, 40, 40, .9);
+     min-width: 160px;
+     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+     z-index: 1;
+     margin-left: -50px;
+ }
+
+ /* Links inside the dropdown */
+ .dropdown-content2 button,
+ .dropdown-content2 h3 {
+     color: #FFD100;
+     padding: 6px 34px;
+     text-decoration: none;
+     display: block;
+     background: none;
+     border: none;
+     font-family: 'League Gothic', Arial, Helvetica, sans-serif;
+     align-self: center;
+ }
+
+ .dropdown-content2 button {
+     color: white;
+     font-family: 'Rubrik', Arial, Helvetica, sans-serif;
+ }
+
+ /* Change color of dropdown links on hover */
+ .dropdown-content2 button:hover {
+     background-color: #FFD100;
+ }
+
+ /* Show the dropdown menu on hover */
+ .dropdown2:hover .dropdown-content2 {
+     color: #ffb300;
+     display: block;
+ }
+
+ /* Change the background color of the dropdown button when the dropdown content is shown */
+ .dropdown2:hover .dropbtn2 {
+     color: #ffb300;
+ }
 
 /*
 
@@ -259,7 +317,7 @@ PRODUCT DETAIL PAGE STYLING
 }
 
 #showContainer .emphasis a:hover {
-    color: #7cadc8;
+    color: #ffb300;
 }
 
 .ratingsAvg {
@@ -448,7 +506,7 @@ PRODUCT DETAIL PAGE STYLING
 }
 
 .createSubmit3 button {
-    background-color: #7cadc8;
+    background-color: #ffb300;
     border: none;
     box-shadow: 0 0 10px black;
     font-family: 'League Gothic', Arial, Helvetica, sans-serif;
@@ -644,3 +702,109 @@ AUTH FORM STYLING
     width:30%;
     height:auto; 
 }
+/*
+
+
+
+
+
+ADMIN PAGE STYLING
+
+
+
+*/
+#adminContainer {
+    padding:25px 0; 
+    background: linear-gradient(rgb(218, 218, 218), #FFD100);
+}
+#adminContent table,
+#orderContent table {
+    align-self: center;
+    margin: 25px auto;
+    background: rgb(40, 40, 40);
+
+    border-spacing: 0;
+    border-collapse: separate;
+    border-radius: 10px;
+    border: 3px solid #ffb300;
+    border-radius: 15px;
+    font-family: 'Rubrik', Arial, Helvetica, sans-serif;
+    color: #FFD100;
+}
+
+#adminContent img {
+    width: 100%;
+    height: 150px;
+}
+
+#adminContent td,
+#orderContent td {
+    border-right: 1px solid #ffb300;
+    border-bottom: 1px solid #ffb300;
+}
+
+#adminContent,
+#orderContent {
+    align-self: center;
+}
+
+#adminOps {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#adminOps .dropbtn2 {
+    margin-top: 55px;
+    font-size: 42px;
+}
+
+#adminOps .dropdown-content2 {
+    margin-left: -220px;
+}
+
+#orderContent td {
+    padding: 20px;
+}
+
+#orderOps {
+    width: 100%;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#orderOps a {
+    font-size: 42px;
+    margin-right: 20px;
+
+}
+
+#orderOps a:hover {
+    color: #ffb300;
+}
+
+#sentShow {
+    align-self: center;
+    margin-top: 50px;
+}
+
+#sentShow button {
+    font-family: 'League Gothic', Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: rgb(40, 40, 40);
+    color: #FFD100;
+    border: 3px solid #ffb300;
+}
+
+#sentShow button:hover {
+    border: 3px solid #FFD100;
+    color: #FFD100;
+    box-shadow: 0 0 10px black;
+    transition: .25s ease-in-out;
+}
+
+

@@ -70,4 +70,13 @@ class ProductController extends Controller
     {
         //
     }
+
+    //Show the admin dashboard
+    public function admin(){
+        $cats = ['Accessories','Paddle','Court','Kit','Clothing'];
+
+        $products = Product::all();
+
+        return view('products.admin')->with('products',$products)->with('cats', $cats);
+    }
 }
