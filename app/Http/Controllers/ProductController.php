@@ -165,4 +165,19 @@ class ProductController extends Controller
 
         return view('products.admin')->with('products',$products)->with('cats', $cats);
     }
+    //update product availability 
+    
+    public function available($id){
+        $product = Product::find($id); 
+      
+        $product->available = !$product->available; 
+
+        $product->save(); 
+
+        $cats = ['Golf','Yoga','Gymnastics','Lifting','Vehicle','Bathroom','Office','Pets','Fatigue','Placeproducts','Rugs','Kids','Welcome','Outdoor','Tapestry'];
+        
+        $products = Product::all(); 
+
+        return redirect()->back();
+    }
 }
