@@ -2,13 +2,31 @@
 @section('content')
 
     <div id="splashCont">
-        <div class="cta">
-            <h1>Don't miss out - grab your gear NOW!</h1>
-            <p>Ready to elevate your pickleball game? Explore OzPickle's premium selection 
-                of paddles, court essentials, and accessories now! Don't miss out on the 
-                winning advantage – gear up and dominate the court. Shop at OzPickle and 
-                experience pickleball excellence today! <br>#PlayToWin #OzPicklePower</p>
-            <button class="sBtn">GO! →</button>
+        <div class="ctaTitle">
+            <h1>Don't Miss Out - Grab Your Gear NOW ↓</h1>
+            <p>Free Shipping STOREWIDE! </p> 
+        </div>
+        
+        <div id="court">
+            <div class="cSec">
+                <div class="qcSec">
+                    <img src="{{url('images/a1.jpg')}}" /> 
+                </div>
+                <div class="qcSec">
+                    <img src="{{url('images/c2.webp')}}" /> 
+                </div>
+            </div>
+            <div class="cSec" style="flex-direction:row; background:rgba(110,110,110,0.65)">
+                <div class="net"></div>
+            </div>
+            <div class="cSec">
+                <div class="qcSec">
+                    <img src="{{url('images/a1.jpg')}}" /> 
+                </div>
+                <div class="qcSec">
+                    <img src="{{url('images/p1.webp')}}" /> 
+                </div> 
+            </div>
         </div>
 
     </div>

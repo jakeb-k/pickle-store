@@ -51,18 +51,7 @@
                     </a>
                 </div>
                 @endguest
-                <div class="uLink">
-                    @guest
-                    <a id="login" href="{{ route('login') }}">
-                        <button class="pBtn"><i class="fa-solid fa-left-from-bracket"></i></button>
-                    </a>
-                    @else
-                    <form id="logout" method="POST"action ="{{url('/logout')}}">
-                        {{csrf_field()}}
-                        <button type="submit" class="pBtn"><i class="fa-solid fa-right-to-bracket"></i></button>
-                    </form>
-                    @endguest
-                </div>
+    
                 @auth
                 @if(Auth::user()->role != 0)
                 <div class="uLink">
@@ -93,6 +82,18 @@
                 </div>
                 @endif
                 @endauth
+                <div class="uLink">
+                    @guest
+                    <a id="login" href="{{ route('login') }}">
+                        <button class="pBtn"><i class="fa-regular fa-user"></i></button>
+                    </a>
+                    @else
+                    <form id="logout" method="POST"action ="{{url('/logout')}}">
+                        {{csrf_field()}}
+                        <button type="submit" class="pBtn"><i class="fa-solid fa-right-to-bracket"></i></button>
+                    </form>
+                    @endguest
+                </div>
             </div>
         </div>
         @yield('content') 

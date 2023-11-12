@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/bevan');
+@import url('https://fonts.cdnfonts.com/css/oswald-4');
 /*
 
 
@@ -166,27 +168,36 @@ SPLASH SECTION STYLING
 
 
 */
+.net {
+    width:10px;
+    height:105%; 
+    border-radius:5px; 
+    background-color: #ffb300;
+    margin:-12.5px auto;
+    border:2.5px solid rgb(0, 0, 0); 
+    box-shadow:7.5px 5px 2.5px rgba(0, 0, 0, 0.568); 
+}
 .welcome {
     background: rgb(218, 218, 218); 
     margin-left:10%;
     display:inline;  
 }
 #splashCont {
-    width:100%; 
-    padding:10% 0 15% 0; 
-    background: linear-gradient(rgb(218, 218, 218),#FFD100); 
+    width:100%;
+    min-height:650px; 
+    padding:5.3% 0 7.5% 0; 
+    background:url('../images/pBg.webp') no-repeat; 
 }
-.cta {
-    background:gray; 
-    border:2px solid #FFD100;
-    border-radius:15px; 
-    padding:20px;
-    box-shadow:0 0 10px black; 
-    margin:0 10%; 
+.ctaTitle {
+    color:#FFD100;
+    margin:0 15% 25px; 
+    text-shadow:2px 2px 2.5px black; 
 }
-.cta h1 {
-    color:white;
-
+.ctaTitle h1 {
+    font-family:'Bevan', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.ctaTitle p {
+    font-family:'Oswald', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
 }
 .sBtn {
     padding:30px; 
@@ -196,6 +207,29 @@ SPLASH SECTION STYLING
     color:white; 
     font-size:32px; 
 
+}
+#court {
+    width:55%;
+    height:100%; 
+    margin:auto; 
+    display:flex;
+    flex-direction:row; 
+}
+.cSec {
+    width:100%; 
+    border:2.5px solid #FFD100; 
+    display:flex;
+    flex-direction:column; 
+}
+.qcSec {
+    height:auto; 
+    width:100%;
+
+    border:2.5px solid #FFD100; 
+}
+.qcSec img {
+    width:100%;
+    height:auto; 
 }
 /*
 
@@ -1059,13 +1093,13 @@ CART MODAL STYLING
 .quantityInput button {
     background: none;
     border: none;
-    color: #F49110;
+    color: #FFD100;
 }
 
 .quantityInput button:hover {
     border-radius: 100%;
 
-    background: #F49110;
+    background: #FFD100;
     color: white;
 
 }
@@ -1082,36 +1116,36 @@ CART MODAL STYLING
     border-top-left-radius: 35px;
     border-bottom-left-radius: 35px;
     background-color: black;
-    color: #F49110
+    color: #FFD100
 }
 
 #deleteCart button:hover {
     background-color: rgba(0, 0, 0, 0.815);
-    color: #ffc400d9
+    color: #ffe600d9
 }
 
 #purchaseCart button {
     border-top-right-radius: 35px;
     border-bottom-right-radius: 35px;
-    background-color: #F49110;
+    background-color: #FFD100;
     color: black;
 }
 
 #purchaseCart button:hover {
-    background-color: #ffc400d9;
+    background-color: #ffe600d9;
     color: rgba(0, 0, 0, 0.815);
 }
 
 #clearCart button {
     font-size: 18px;
     padding: 0 10px 0 10px;
-    color: #F49110;
+    color: #FFD100;
     background-color: white;
     border: none;
 }
 
 #clearCart button:hover {
-    color: #ffc400da;
+    color: #ffe600d9;
 }
 
 .cartItem {
@@ -1149,7 +1183,7 @@ CART MODAL STYLING
 }
 
 .quantityInput input {
-    border: 1px solid #F49110;
+    border: 1px solid #FFD100;
     border-radius: 5px;
     display: inline;
     width: 20%;
@@ -1169,7 +1203,7 @@ CART MODAL STYLING
     margin: 175px auto 0 auto;
     display: flex;
     flex-direction: column;
-    border: 5px solid #F49110;
+    border: 5px solid #FFD100;
     border-radius: 35px;
     background-color: white;
 }
@@ -1181,7 +1215,7 @@ CART MODAL STYLING
 }
 
 #cartTitle em {
-    color: #F49110;
+    color: #FFD100;
     font-weight: bold;
 }
 
