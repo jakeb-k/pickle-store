@@ -41,15 +41,15 @@
                 {{number_format($product->rating, 2)}} ★ (0)
             </div>
 
-            <div id="subtitles">
-
-                
-                    <div class="discount"> ${{number_format($product->price * 1.25, 2)}} </div>
-                    <div class="emphasis"> ${{number_format($product->price, 2)}} </div>
-                
-                
+            <div id="subtitles"> 
+                @if($product->discount > 0)
+                <div class="discount"> ${{number_format($product->price, 2)}} </div>
+                <div class="emphasis"> ${{number_format($product->price-($product->price*$product->discount), 2)}} </div>
+                @else
+                <div class="emphasis"> ${{number_format($product->price, 2)}} </div>
+                @endif
             </div>
-
+    
             <div class="line"></div>
 
             <div id="desc">

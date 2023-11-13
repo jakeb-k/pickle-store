@@ -33,6 +33,7 @@ class ProductController extends Controller
         $this->validate($request,[
             'name'=>'required|max:100',
             'price'=>'required|numeric|gt:0',
+            'discount'=>'numeric|gt:0',
             'type'=>'required',
             'imageFile' => 'required',
             'imageFile.*' => 'image|mimes:jpeg,png,jpg,gif,svg,avif|max:2048',
@@ -60,6 +61,7 @@ class ProductController extends Controller
             $product->image = implode(",",$images); 
             $product->tags = str_replace(" ", ",",$request->name);
             $product->rating = 0; 
+            $product->discount = $request->discount ?? 0; 
             $product->available = true; 
            
             $product->save();
@@ -107,6 +109,7 @@ class ProductController extends Controller
          $this->validate($request,[
             'name'=>'required|max:255',
             'price'=>'required|numeric|gt:0',
+            'discount'=>'numeric|gt:0',
             'type'=>'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg,avif|max:2048'
         ]);
@@ -131,7 +134,7 @@ class ProductController extends Controller
         } else {
             $fileName = $product->image; 
         }
-        if($request->type == 'Golf'){
+        if($request->type == $product->type){
             $type = $product->type; 
         } else {
             $type = $request->type;
@@ -141,6 +144,7 @@ class ProductController extends Controller
         $product->description = $request->description ?? ""; 
         $product->type = $type; 
         $product->image = $img; 
+        $product->discount = $request->discount ?? 0; 
         $product->save();
         return redirect('/admin')->with('success', 'Added Successfully!'); 
     }

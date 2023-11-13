@@ -29,6 +29,13 @@
                 @enderror
             </div>
             <div class="createInput">
+                <label class="form-label"> Discount: </label>
+                <input type="text" name="discount" placeholder="Add a discount (optional)">
+                @error('discount')
+                    <div class="alert">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="createInput">
                 <label class="form-label"> Url<span class="formReq">*</span>: </label>
                 <input type="text" name="url" placeholder="Paste the supplier link">
                 @error('url')

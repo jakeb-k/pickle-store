@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('url');
             $table->string('type'); 
             $table->float('price');
+            $table->float('discount')->nullable();
             $table->string('sku')->unique();
             $table->string('description')->nullable();
             $table->string('image')->nullable();
