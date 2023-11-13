@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\StripeController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Product; 
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +42,14 @@ Route::middleware('auth')->group(function () {
 
     Route::get('favs/{id}', [ProfileController::class, 'show']);
     Route::any('user/{id}/new-fav', [ProfileController::class, 'newFav']);
+});
+
+Route::post('/checkout', 'App\Http\Controllers\StripeController@checkout')->name('checkout');
+
+Route::get('/success', 'App\Http\Controllers\StripeController@success')->name('success');
+
+Route::get('/checkout', function () {
+    return redirect('/')->with('products', Product::paginate(6));
 });
 
 require __DIR__.'/auth.php';
