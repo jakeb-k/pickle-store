@@ -36,7 +36,13 @@
                         <div class="alert">{{ $message }}</div>
                     @enderror
                 </div>
-        
+                <div class="createInput">
+                    <label class="form-label"> Discount: </label>
+                    <input type="text" name="discount" placeholder="Add a discount (optional)">
+                    @error('discount')
+                        <div class="alert">{{ $message }}</div>
+                    @enderror
+                </div>
                 <div class="createInput">
                     <label class="form-label"> Type<span class="formReq">*</span>: </label><br /> 
                         <select name="type">

@@ -20,7 +20,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $cats = ['Accessories','Paddle','Court','Kits','Clothing'];
+        $cats = ['Accessories','Paddles','Court','Kits','Clothing'];
       
         return view('products.create')->with('cats', $cats); 
     }
@@ -92,7 +92,7 @@ class ProductController extends Controller
     {
         $product = Product::find($id); 
         
-        $cats = ['Accessories','Paddle','Court','Kits','Clothing'];
+        $cats = ['Accessories','Paddles','Court','Kits','Clothing'];
 
         $tags = explode(",", $product->tags); 
 
@@ -134,7 +134,7 @@ class ProductController extends Controller
         } else {
             $fileName = $product->image; 
         }
-        if($request->type == $product->type){
+        if($request->type == 'Accessories'){
             $type = $product->type; 
         } else {
             $type = $request->type;

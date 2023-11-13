@@ -29,7 +29,7 @@
                     <a href="{{url('items/accessories')}}">Accessories</a>
                 </div>
                 <div class="sLink">
-                    <a href="{{url('items/paddle')}}">Paddles</a>
+                    <a href="{{url('items/paddles')}}">Paddles</a>
                 </div>
                 <div class="sLink">
                     <a href="{{url('items/court')}}">Court</a>

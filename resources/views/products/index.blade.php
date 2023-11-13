@@ -53,7 +53,14 @@
                     <img src="{{url('images/pickleLogo.png')}}" /> 
                     <a href="{{url('/product/'.$product->id)}}">{{$product->name}} </a> 
                     <div class="pInfo">
-                        <p class="price">${{number_format($product->price, 2)}}<p>
+                        <div class="prices">
+                            @if($product->discount > 0)
+                            <p class="dPrice">${{number_format($product->price, 2)}}<p>
+                            <p class="price"> ${{number_format($product->price-($product->price*$product->discount), 2)}} </p>
+                            @else
+                            <p class="price">${{number_format($product->price, 2)}}<p>
+                            @endif
+                        </div>
                         <p>{{$product->rating}} ★</p>
                     </div>
 
