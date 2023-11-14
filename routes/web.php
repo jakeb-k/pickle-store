@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\StripeController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Product; 
@@ -46,6 +47,8 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('orders', OrderController::class);
     Route::get('user/orders', [ProfileController::class, 'orders']); 
+
+    Route::post('/addReview/{id}', [ReviewController::class, 'addReview']);
 });
 
 Route::post('/checkout', 'App\Http\Controllers\StripeController@checkout')->name('checkout');

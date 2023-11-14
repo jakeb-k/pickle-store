@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Review extends Model
 {
     function mat(){
-        return $this->belongsTo('App\Models\Mat');
+        return $this->belongsTo('App\Models\Product');
     }
     use HasFactory;
 

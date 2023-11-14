@@ -1,5 +1,10 @@
 @import url('https://fonts.cdnfonts.com/css/bevan');
 @import url('https://fonts.cdnfonts.com/css/oswald-4');
+.alert {
+    font-size:14px; 
+    color:#e20f0f; 
+    font-family:'Oswald'; 
+}
 /*
 
 
@@ -137,7 +142,7 @@ button.pBtn:active {
 
  .dropdown-content2 button {
      color: white;
-     font-family: 'Rubrik', Arial, Helvetica, sans-serif;
+     font-family: 'Oswald', Arial, Helvetica, sans-serif;
  }
 
  /* Change color of dropdown links on hover */
@@ -406,7 +411,7 @@ PRODUCT DETAIL PAGE STYLING
 }
 
 #showContainer #desc {
-    font-family: 'Rubrik', Arial, Helvetica, sans-serif;
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;
     font-size: 16px;
 }
 
@@ -439,7 +444,7 @@ PRODUCT DETAIL PAGE STYLING
 }
 
 #showContainer h1 {
-    font-family: 'Bevan', Arial, Helvetica, sans-serif;
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;
     color: black;
     font-size: 28px;
 }
@@ -520,11 +525,11 @@ PRODUCT DETAIL PAGE STYLING
     overflow-y: scroll;
     margin-bottom: 25px;
     font-size: 14px;
-    font-family: 'Rubrik', Arial, Helvetica, sans-serif;
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;
 }
 
 .reviewBox h3 {
-    font-family: 'Bevan', Arial, Helvetica, sans-serif;
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;
     font-size: 28px;
 }
 
@@ -564,7 +569,7 @@ PRODUCT DETAIL PAGE STYLING
     padding: 5px;
     margin: 10px 0px;
     font-size: 14px;
-    font-family: 'Rubrik', Arial, Helvetica, sans-serif;
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;
 
 }
 
@@ -799,7 +804,7 @@ ADMIN PAGE STYLING
     border-radius: 10px;
     border: 3px solid #ffb300;
     border-radius: 15px;
-    font-family: 'Rubrik', Arial, Helvetica, sans-serif;
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;
     color: #FFD100;
 }
 
@@ -934,7 +939,7 @@ CREATE & EDIT FORM STYLING
     align-self: flex-start;
     font-size: 20px;
 
-    font-family: 'Rubrik', Arial, Helvetica, sans-serif;
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;
 
 }
 
@@ -1069,7 +1074,7 @@ select option {
     margin: 0 auto; 
 }
 #formContainer h1 {
-    font-family: 'Rubrik', Arial, Helvetica, sans-serif;
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;
     text-align: center;
 }
 /*
@@ -1119,7 +1124,7 @@ CART MODAL STYLING
     width: 245px;
     padding: 10px 20px;
     border: none;
-    font-family: 'Rubrik', Arial, Helvetica, sans-serif;
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;
 }
 
 #deleteCart button {
@@ -1186,7 +1191,7 @@ CART MODAL STYLING
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    font-family: 'Rubrik', Arial, Helvetica, sans-serif;
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;
     font-size: 18px;
     margin: 5px;
     width: 100%;
@@ -1219,7 +1224,7 @@ CART MODAL STYLING
 }
 
 #cartTitle {
-    font-family: 'Rubrik', Arial, Helvetica, sans-serif;
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;
     font-size: 24px;
     align-self: center;
 }
@@ -1236,7 +1241,7 @@ CART MODAL STYLING
     font-style: italic;
     font-size: 14px;
     margin: auto;
-    font-family: 'Rubrik', Arial, Helvetica, sans-serif;
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;
     font-weight: 600;
 }
 

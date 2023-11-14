@@ -3,8 +3,7 @@
 {{ucwords($product->name)}}
 @endsection
 @section('content')
-<!-- DUMMY VALUES -->
-<?php $reviews = [] ?> 
+
 <div id="showContainer">
     <div id="itemContainer">
 
@@ -37,7 +36,7 @@
                 <h1>{{$product->name}}</h1>
             </div>
             <div class="ratingsAvg">
-                {{number_format($product->rating, 2)}} ★ (0)
+                {{number_format($product->rating, 2)}} ★ ({{count($reviews)}})
             </div>
 
             <div id="subtitles"> 
@@ -151,6 +150,12 @@
                 </div>
                 <div>
                     <input type="text" name="content" placeholder="Enter your thoughts on the product" />
+                    @error('content')
+                        <div class="alert">{{ $message }}</div>
+                    @enderror
+                    @error('rating')
+                        <div class="alert">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="createSubmit3">
                     <button type="submit">

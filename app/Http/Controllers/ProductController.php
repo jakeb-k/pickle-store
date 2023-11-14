@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Review;
+use App\Models\User;
 
 class ProductController extends Controller
 {
@@ -82,7 +84,27 @@ class ProductController extends Controller
     public function show(string $id) {
 
         $product = Product::find($id);
-        return view('products.show')->with('product', $product); 
+        if($product == null) {
+            abort(404);
+        }
+        $rReviews = Review::whereRaw('product_id = ?', array($id))->get(); 
+        $reviews = []; 
+        $totAvg = 0; 
+        //potentially add image, probs not tho
+        foreach($rReviews as $r) {
+            $u = User::find($r['user_id']);
+            $n = [$u['name'],$r['rating'],$r['content']];
+            $totAvg += $r['rating']; 
+            $reviews[]=$n; 
+        }
+        if(count($reviews)==0){
+            $avg = 0; 
+        } else {
+            $avg = $totAvg / count($reviews);
+            $product->rating = $avg;  
+        }
+
+        return view('products.show')->with('product', $product)->with('reviews',$reviews); 
 
     }
     /**
