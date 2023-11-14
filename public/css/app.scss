@@ -469,6 +469,7 @@ button.opsBtn i {
     width:100%; 
     display:flex;
     flex-direction:column; 
+    padding-top: 125px;
 }
 .row {
     display:flex;
@@ -552,13 +553,15 @@ PRODUCT DETAIL PAGE STYLING
 }
 
 #showContainer {
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding:50px auto;
+     
     font-family: 'Bevan', Arial, Helvetica, sans-serif;
     font-size: 24px;
     background: linear-gradient(rgb(218, 218, 218),#FFD100); 
+    padding-top:125px; 
 }
 
 #showContainer #desc {
@@ -941,7 +944,7 @@ ADMIN PAGE STYLING
 
 */
 #adminContainer {
-    padding:25px 0; 
+    padding:75px 0; 
     background: linear-gradient(rgb(218, 218, 218), #FFD100);
 }
 #adminContent table,
