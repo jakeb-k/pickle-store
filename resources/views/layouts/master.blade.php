@@ -31,12 +31,13 @@
         
         <div id="nav">
             <!-- SHOP LINK SECTION --> 
-            <div class="sSec">
-                <div>
-                    <a href="{{url('/')}}">
+            <div class="sImg">
+                <a href="{{url('/')}}">
                     <img src="{{url('images/pickleLogo.png')}}" alt="oz pickle logo"/>
-                    </a>
-                </div>
+                </a>
+            </div>
+            <div class="sSec">
+                
 
                 <div class="cont">
                     <a href="{{url('items/accessories')}}">

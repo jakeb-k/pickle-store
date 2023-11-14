@@ -147,7 +147,9 @@ i {
 #nav.shrunken * {
     transition: 0.5s ease-in-out;
     scale: 0.9;
-
+}
+.shrunken.d-2 {
+    transition:0.2s; 
 }
 .shrunken.uSec .pBtn{
     margin-top:60px; 
@@ -183,6 +185,7 @@ i {
     margin-top: 1.5%;
 }
 .sSec {
+    margin-left:5%; 
     width:55%;
     justify-content: space-evenly;
 }
@@ -190,13 +193,18 @@ i {
     justify-content: flex-end;
     padding-right:5%;
 }
-.sSec img {
+.sImg img {
+    position:fixed; 
     width:70px;
     height:auto;
-    border-radius:15px; 
-    margin-top:-10px; 
+    top:10px;
+    left:10px;  
 }
-
+.shrunken img {
+    top:-30px;
+    scale:0.9; 
+    left:20px;  
+}
 .sLink, .uLink {
     padding:0 0 1.5%; 
     display:flex;
