@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Order;
+use App\Models\Product; 
 
 class StripeController extends Controller
-{
+{   
+    //Need to make a Stripe Web Hook to validate processed payment before 
+    //creating new order.
      public function checkout(Request $request)
     {
         $price = $request->price;
@@ -41,18 +45,18 @@ class StripeController extends Controller
         $id = Auth::user()->id; 
 
         $products = [];
-      
+        $total = 0; 
         foreach($cart as $details){
             $x = $details['quantity'].','.$details['name']; 
-            $total += $details['total']; 
+            $total += $details['price']*$details['quantity']; 
 
             $products[] = $x; 
         }
-        $taxedTotal = $total + ($total*0.1); 
+       
 
         $order = new Order();
         $order->products = implode(',', $products);
-        $order->total = $taxedTotal;
+        $order->total = $total;
         $order->user_id = $id;
         $order->sent = false;
         $order->save(); 
