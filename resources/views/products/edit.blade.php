@@ -30,15 +30,15 @@
                     @enderror
                 </div>
                 <div class="createInput">
-                    <label class="form-label"> Description<span class="formReq">*</span>: </label>
+                    <label class="form-label"> Description: </label>
                     <input type="text" name="description" value="{{$product->description}}">
                     @error('description')
                         <div class="alert">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="createInput">
-                    <label class="form-label"> Discount: </label>
-                    <input type="text" name="discount" placeholder="Add a discount (optional)">
+                    <label class="form-label"> Discount:<span class="formReq">*</span></label>
+                    <input type="text" name="discount" placeholder="Add a discount (Enter 0 for None)">
                     @error('discount')
                         <div class="alert">{{ $message }}</div>
                     @enderror

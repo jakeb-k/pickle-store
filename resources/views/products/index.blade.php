@@ -61,7 +61,7 @@
                             <p class="price">${{number_format($product->price, 2)}}<p>
                             @endif
                         </div>
-                        <p>{{$product->rating}} ★</p>
+                        <p>{{number_format($product->rating, 2)}} ★</p>
                     </div>
 
                 </div>

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->string('url');
             $table->string('type'); 
+            //$table->string('delivery'); 
             $table->float('price');
             $table->float('discount')->nullable();
             $table->string('sku')->unique();

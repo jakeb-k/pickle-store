@@ -89,20 +89,14 @@ class ProductController extends Controller
         }
         $rReviews = Review::whereRaw('product_id = ?', array($id))->get(); 
         $reviews = []; 
-        $totAvg = 0; 
+ 
         //potentially add image, probs not tho
         foreach($rReviews as $r) {
             $u = User::find($r['user_id']);
             $n = [$u['name'],$r['rating'],$r['content']];
-            $totAvg += $r['rating']; 
             $reviews[]=$n; 
         }
-        if(count($reviews)==0){
-            $avg = 0; 
-        } else {
-            $avg = $totAvg / count($reviews);
-            $product->rating = $avg;  
-        }
+     
 
         return view('products.show')->with('product', $product)->with('reviews',$reviews); 
 
@@ -131,7 +125,7 @@ class ProductController extends Controller
          $this->validate($request,[
             'name'=>'required|max:255',
             'price'=>'required|numeric|gt:0',
-            'discount'=>'numeric|gt:0',
+            'discount'=>'numeric',
             'type'=>'required',
             'image' => 'image|mimes:jpeg,png,jpg,gif,svg,avif|max:2048'
         ]);
