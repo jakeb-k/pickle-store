@@ -16,32 +16,52 @@
        
         <script src="https://kit.fontawesome.com/0abaa836ef.js" crossorigin="anonymous"></script>
     </head>
+    <script>
+         $(document).ready(function() {
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 50) { // Adjust the scroll position as needed
+                    $('#nav').addClass('shrunken');
+                } else {
+                    $('#nav').removeClass('shrunken');
+                }
+                });
+            });  
+    </script>
     <body>
+        
         <div id="nav">
             <!-- SHOP LINK SECTION --> 
             <div class="sSec">
-                <div class="sLink">
+                <div>
                     <a href="{{url('/')}}">
                     <img src="{{url('images/pickleLogo.png')}}" alt="oz pickle logo"/>
                     </a>
                 </div>
-                <div class="sLink">
-                    <a href="{{url('items/accessories')}}">Accessories</a>
+
+                <div class="cont">
+                    <a href="{{url('items/accessories')}}">
+                        <h3 class="d-2">Accessories</h3>
+                    </a> 
                 </div>
-                <div class="sLink">
-                    <a href="{{url('items/paddles')}}">Paddles</a>
-                </div>
-                <div class="sLink">
-                    <a href="{{url('items/court')}}">Court</a>
-                </div>
-                <div class="sLink">
-                    <a href="{{url('items/kits')}}">Kits</a>
-                </div>
-                <div class="sLink">
-                    <a href="{{url('items/clothing')}}">Clothing</a>
+                <div class="cont">
+                    <a href="{{url('items/paddles')}}">
+                        <h3 class="d-2">Paddles</h3>
+                    </a> 
+                </div><div class="cont">
+                    <a href="{{url('items/court')}}">
+                        <h3 class="d-2">Court</h3>
+                    </a> 
+                </div><div class="cont">
+                    <a href="{{url('items/kits')}}">
+                        <h3 class="d-2">Kits</h3>
+                    </a> 
+                </div><div class="cont">
+                    <a href="{{url('items/clothing')}}">
+                        <h3 class="d-2">Clothing</h3>
+                    </a> 
                 </div>
             </div>
-            <h2> Oz Pickle </h2> 
+           
                 <!-- USER LINK SECTION - ARE BUTTONS NOT <a> --> 
             <div class="uSec">
                 @guest
@@ -195,6 +215,7 @@
             </div>
         </div>
         <div class="line"> </div>
+        <!-- 
         <div id="cartOptions">
             <div id="deleteCart">
                 <form method="POST" action='{{url("clear-cart")}}'>
@@ -210,8 +231,10 @@
                     <button type="submit"> Purchase </button> 
                 </form>
             </div>
+        </div> --> 
 
-        </div>
+        
+
         @endauth 
         @else
         <div id="empty">

@@ -23,6 +23,10 @@ Route::resource('product', ProductController::class);
 Route::get('/', [ProductController::class, 'index']); 
 Route::get('items/{type}', [ProductController::class, 'type']); 
 
+Route::get('/test',function(){
+    return view('products.test'); 
+}); 
+
 Route::get('/dashboard', function () {
     return redirect('/');
 })->middleware(['auth', 'verified'])->name('dashboard');
