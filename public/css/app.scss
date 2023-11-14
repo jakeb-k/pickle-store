@@ -131,7 +131,7 @@ button.pBtn:active {
      display: block;
      background: none;
      border: none;
-     font-family: 'League Gothic', Arial, Helvetica, sans-serif;
+     font-family: 'Bevan', Arial, Helvetica, sans-serif;
      align-self: center;
  }
 
@@ -400,7 +400,7 @@ PRODUCT DETAIL PAGE STYLING
     flex-direction: column;
     justify-content: center;
     padding:50px auto;
-    font-family: 'League Gothic', Arial, Helvetica, sans-serif;
+    font-family: 'Bevan', Arial, Helvetica, sans-serif;
     font-size: 24px;
     background: linear-gradient(rgb(218, 218, 218),#FFD100); 
 }
@@ -439,7 +439,7 @@ PRODUCT DETAIL PAGE STYLING
 }
 
 #showContainer h1 {
-    font-family: 'League Gothic', Arial, Helvetica, sans-serif;
+    font-family: 'Bevan', Arial, Helvetica, sans-serif;
     color: black;
     font-size: 28px;
 }
@@ -524,7 +524,7 @@ PRODUCT DETAIL PAGE STYLING
 }
 
 .reviewBox h3 {
-    font-family: 'League Gothic', Arial, Helvetica, sans-serif;
+    font-family: 'Bevan', Arial, Helvetica, sans-serif;
     font-size: 28px;
 }
 
@@ -552,7 +552,7 @@ PRODUCT DETAIL PAGE STYLING
 #noMatch h1 {
     margin-top: 50px;
     margin-bottom: 150px;
-    font-family: 'League Gothic', Arial, Helvetica, sans-serif;
+    font-family: 'Bevan', Arial, Helvetica, sans-serif;
     font-size: 46px;
     text-align: center;
 }
@@ -580,7 +580,7 @@ PRODUCT DETAIL PAGE STYLING
     background-color: #ffb300;
     border: none;
     box-shadow: 0 0 10px black;
-    font-family: 'League Gothic', Arial, Helvetica, sans-serif;
+    font-family: 'Bevan', Arial, Helvetica, sans-serif;
     font-size: 32px;
     width: 90%;
 }
@@ -751,7 +751,7 @@ AUTH FORM STYLING
 #authForm button,
 #regForm button {
     width: 100%;
-    font-family: 'League Gothic', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Bevan', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 32px;
     border: 2px solid #FFD100;
     background: none;
@@ -862,7 +862,7 @@ ADMIN PAGE STYLING
 }
 
 #sentShow button {
-    font-family: 'League Gothic', Arial, Helvetica, sans-serif;
+    font-family: 'Bevan', Arial, Helvetica, sans-serif;
     font-size: 24px;
     padding: 10px 20px;
     border-radius: 25px;
@@ -900,7 +900,7 @@ CREATE & EDIT FORM STYLING
     border: none;
     padding: 15px;
     box-shadow: 0 0 10px black;
-    font-family: 'League Gothic', Arial, Helvetica, sans-serif;
+    font-family: 'Bevan', Arial, Helvetica, sans-serif;
     font-size: 32px;
 }
 
@@ -943,7 +943,7 @@ CREATE & EDIT FORM STYLING
     width: 100%;
     padding: 20px;
     font-size: 18px;
-    font-family: 'League Gothic', Arial, Helvetica, sans-serif;
+    font-family: 'Bevan', Arial, Helvetica, sans-serif;
 }
 
 
@@ -1046,7 +1046,7 @@ CREATE & EDIT FORM STYLING
 .createInput select {
     border: none;
     background: white;
-    font-family: 'League Gothic', Arial, Helvetica, sans-serif;
+    font-family: 'Bevan', Arial, Helvetica, sans-serif;
     padding: 20px;
     font-size: 18px;
 }
@@ -1061,7 +1061,7 @@ CREATE & EDIT FORM STYLING
 }
 
 select option {
-    font-family: 'League Gothic', Arial, Helvetica, sans-serif;
+    font-family: 'Bevan', Arial, Helvetica, sans-serif;
     padding: 20px;
     font-size: 18px;
 }
@@ -1243,4 +1243,162 @@ CART MODAL STYLING
 #empty p {
     text-align: center;
 }
+/*
 
+
+
+
+
+ORDER TABLE STYLING
+
+
+
+
+
+*/
+#orderContent td {
+    padding: 20px;
+}
+
+#orderOps {
+    width: 100%;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#orderOps a {
+    font-size: 42px;
+    margin-right: 20px;
+
+}
+
+#orderOps a:hover {
+    color: #7cadc8;
+}
+
+#sentShow {
+    margin: 50px auto 0;
+    text-align:center; 
+}
+
+#sentShow button {
+    font-family: 'Bevan', Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: rgb(40, 40, 40);
+    color: #FFD100;
+    border: 3px solid rgb(218, 218, 218);
+    align-self: center;
+}
+
+#sentShow button:hover {
+    border: 3px solid #FFD100;
+    color: #FFD100;
+    box-shadow: 0 0 10px black;
+    transition: .25s ease-in-out;
+}
+/*
+
+
+
+SINGLE ORDER PAGE STYLING
+
+
+
+
+*/
+.orderTick {
+    position:absolute;
+    top:39.5%; 
+    left:68.5%; 
+    font-size:xx-large; 
+}
+#ordContainer {
+    padding-top: 50px;
+    padding-bottom: 150px;
+    background: linear-gradient(rgb(218, 218, 218), #FFD100);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.orderBox {
+    width: 45%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    background-color: white;
+    align-self: center;
+    box-shadow: 0 0 10px black;
+}
+.orderBox img {
+    width: 50%;
+    height:auto; 
+
+}
+.rInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px;
+    margin-top: 5px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.line {
+    margin: auto;
+    width: 97%;
+    height: 1px;
+    background-color: #FFD100;
+}
+
+#background {
+    background-color: rgb(209, 207, 207);
+    height: 2000px;
+    width: 100%;
+    position: fixed;
+
+    margin-top: -250px;
+}
+
+#ordContainer img {
+    align-self: center;
+
+    margin-bottom: -50px;
+    margin-top: -20px;
+
+}
+
+.quant {
+    background-color: #FFD100;
+    align-self: center;
+    border-radius: 5px;
+    padding: 0px 0px 0px 5px;
+    margin-right: 10px;
+    margin-left: 6px;
+}
+
+.time {
+    font-size: small;
+    align-self: center;
+}
+
+#pageBar {
+    align-self: center;
+}
+
+#ordContainer a {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    width: 100%;
+}
+
+#ordContainer a:hover {
+    text-decoration: none;
+}

@@ -29,5 +29,21 @@ class UserSeeder extends Seeder
             'favs'=>'4,5,8',
             'password' => bcrypt('123456'),
         ]);
+        DB::table('users')->insert([
+            'name' => "Bob",
+            'email' => 'Bob@gmail.com',
+            'address'=>'123 Mat Street',
+            'role'=>1,
+            'favs'=>'1',
+            'password' => bcrypt('123456'),
+        ]);
+        DB::table('users')->insert([
+            'name' => "Fred",
+            'email' => 'Fred@gmail.com',
+            'address'=>'456 Carpet Crescent',
+            'role'=>1,
+            'favs'=>'3',
+            'password' => bcrypt('123456'),
+        ]);
     }
 }
