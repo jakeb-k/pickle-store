@@ -58,7 +58,7 @@
 }
 
 .d-2 {
-    
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;
     --c: #FFD100;
     /* the color */
     --b: .1em;
@@ -186,7 +186,7 @@ i {
 }
 .sSec {
     margin-left:5%; 
-    width:55%;
+    width:45%;
     justify-content: space-evenly;
 }
 .uSec {
@@ -229,6 +229,8 @@ PRIMARY BUTTON STYLING
 
 */
 button.pBtn { 
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;
+    color: white;
     border-radius:15px; 
     font-weight:bold; 
     border:none; 
@@ -628,7 +630,12 @@ PRODUCT DETAIL PAGE STYLING
     flex-direction: row;
     justify-content: space-between;
 }
+.delivery p {
+    font-size:16px;
+    font-family:'Oswald', Arial, Helvetica, sans-serif; 
+    color:black; 
 
+}
 
 #addCartButton button {
     width: 100%;

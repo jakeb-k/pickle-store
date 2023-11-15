@@ -55,6 +55,20 @@
             </div>
 
             <div class="line"></div>
+            <?php 
+                $del1 = new DateTime();
+                $del2 = new DateTime();
+
+                $del1 = $del1->modify('+'.$product->delivery.' days'); 
+
+                $l = $product->delivery + 13; 
+                $del2 = $del2->modify('+'.$l.' days');
+            ?>
+            <div class="delivery">
+                <p> <b>Estimated Delivery Time:</b>
+                <br>
+                <em>{{$del1->format('D d M.')}} and {{$del2->format('D d M.')}} </em> </p>
+            </div>
             @auth
             @if(Auth::user()->role == 0)
                     <div id="addCartButton">
