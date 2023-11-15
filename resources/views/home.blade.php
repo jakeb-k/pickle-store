@@ -10,10 +10,18 @@
         <div id="court">
             <div class="cSec">
                 <div class="qcSec">
-                    <img src="{{url('images/a1.jpg')}}" /> 
+                    <a href="{{url('items/accessories')}}">
+                    <img src="{{url('images/a1.jpg')}}" />
+                    <div class="overlayL">
+                        <div class="text">Accessories</div>
+                    </div> </a> 
                 </div>
                 <div class="qcSec">
+                    <a href="{{url('items/clothing')}}">
                     <img src="{{url('images/c2.webp')}}" /> 
+                    <div class="overlayL">
+                        <div class="text">Clothing</div>
+                    </div></a>
                 </div>
             </div>
             <div class="cSec" style="flex-direction:row; background:rgba(110,110,110,0.65)">
@@ -21,10 +29,18 @@
             </div>
             <div class="cSec">
                 <div class="qcSec">
+                    <a href="{{url('items/court')}}">
                     <img src="{{url('images/a1.jpg')}}" /> 
+                    <div class="overlayR">
+                        <div class="text">Court</div>
+                    </div></a> 
                 </div>
                 <div class="qcSec">
+                    <a href="{{url('items/paddles')}}">
                     <img src="{{url('images/p1.webp')}}" /> 
+                    <div class="overlayR">
+                        <div class="text">Paddles</div>
+                    </div></a>
                 </div> 
             </div>
         </div>

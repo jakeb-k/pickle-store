@@ -381,21 +381,83 @@ SPLASH SECTION STYLING
     margin:auto; 
     display:flex;
     flex-direction:row; 
+    position:relative; 
 }
 .cSec {
     width:100%; 
     border:2.5px solid #FFD100; 
     display:flex;
     flex-direction:column; 
+    position:relative; 
 }
 .qcSec {
     height:auto; 
     width:100%;
-    border:2.5px solid #FFD100; 
+    border:2.5px solid #FFD100;
+    position: relative;
+    align-self: center;
 }
 .qcSec img {
     width:100%;
     height:auto; 
+}
+
+.text {
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;
+    color:rgba(0,0,0,0); 
+    font-size: 32px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.overlayL {
+    pointer-events: none;
+    position: absolute; 
+    top: 0;
+    left: -100%;
+    /* Initially, the overlay is hidden off the left side */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.0);
+    /* Adjust the color and opacity as needed */
+    transition: left 0.3s ease;
+    /* Transition effect on hover */
+}
+
+.qcSec:hover .overlayL{
+    
+    background-color: rgba(113, 113, 113, 0.5);
+    left: 0;
+    transition: 0.5s ease-in-out;
+    /* On hover, slide the overlay to cover the image */
+}
+.overlayR {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    /* Initially, the overlay is hidden off the left side */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.0);
+    /* Adjust the color and opacity as needed */
+    transition: right 0.3s ease;
+    /* Transition effect on hover */
+}
+
+.qcSec:hover .overlayR {
+    background-color: rgba(113, 113, 113, 0.5);
+    right: 0;
+    transition: 0.5s ease-in-out;
+    /* On hover, slide the overlay to cover the image */
+}
+.qcSec:hover .text {
+    color: #FFD100; 
 }
 /*
 
