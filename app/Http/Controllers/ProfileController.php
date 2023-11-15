@@ -26,17 +26,22 @@ class ProfileController extends Controller
     /**
      * Update the user's profile inforproduction.
      */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
+     public function update(Request $request, $id)
     {
-        $request->user()->fill($request->validated());
-
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
-        }
-
-        $request->user()->save();
-
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
+        #$user = User::whereRaw('name = ?', array($request->name))->get(); 
+        $user = User::find($id);
+        
+        $this->validate($request, [
+            'name' => 'max:255',
+            'email' => 'email',
+            'address' => 'max:255',
+        ]);
+        
+        $user->name = $request->name;
+        $user->email = $request->email; 
+        $user->address = $request->address; 
+        $user->save(); 
+        return redirect()->back();
     }
 
     /**

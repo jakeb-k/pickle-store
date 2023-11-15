@@ -6,7 +6,7 @@
 <div id="adminContainer">
     <div id="adminOps">
         <div class="dropdown2">
-                <button class="dropbtn2"><i class="fa-solid fa-filter"> </i></button>
+                <button class="dropbtn2"><i class="fa-solid fa-filter" style="color:rgb(50,50,50);"> </i></button>
                 <div class="dropdown-content2">
                     <h3>Filter Options </h3>
                     <table>
@@ -33,11 +33,11 @@
                     </table>
                 </div>
             </div>
-            <div id="shopNow" style="margin-top:50px;">
-             <a href='{{url("product/create")}}'>
-                <button class="pBtn">Create Product</button>
-             </a>
-        </div>
+            <div id="shopNow" style="margin-top:50px;padding-top:20px; ">
+                <a href='{{url("product/create")}}'>
+                    <button class="pBtn"  style="color:rgb(50,50,50);">Create Product</button>
+                </a>
+            </div>
     </div>
         
     <div id="adminContent">

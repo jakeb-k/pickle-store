@@ -53,6 +53,9 @@ Route::middleware('auth')->group(function () {
     Route::get('user/orders', [ProfileController::class, 'orders']); 
 
     Route::post('/addReview/{id}', [ReviewController::class, 'addReview']);
+
+    Route::post('user/{id}',[ProfileController::class, 'update']); 
+
 });
 
 Route::post('/checkout', 'App\Http\Controllers\StripeController@checkout')->name('checkout');

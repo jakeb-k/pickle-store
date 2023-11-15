@@ -480,6 +480,7 @@ button.opsBtn i {
     display:flex;
     flex-direction:column; 
     padding-top: 125px;
+    background: linear-gradient(rgb(235, 235, 235), rgb(50,50,50));
 }
 .row {
     display:flex;
@@ -491,7 +492,7 @@ button.opsBtn i {
     text-align:center;
     border-radius:15px; 
     background:rgb(218, 218, 218);
-    box-shadow:0 0 10px #FFD100; 
+    box-shadow:0 0 20px #FFD100; 
     width:25%; 
     display:flex;
     flex-direction:column; 
@@ -1068,14 +1069,14 @@ CREATE & EDIT FORM STYLING
 }
 
 .createSubmit2 button {
-    margin: 50px 0px;
+    margin: 15px 0px;
     width: 95%;
     background-color: #dadada;
     border: none;
-    padding: 15px;
+    padding: 8px;
     box-shadow: 0 0 10px black;
     font-family: 'Bevan', Arial, Helvetica, sans-serif;
-    font-size: 32px;
+    font-size: 26px;
 }
 
 .createSubmit2 button:hover {
@@ -1477,7 +1478,7 @@ ORDER TABLE STYLING
 
 
 
-SINGLE ORDER PAGE STYLING
+ORDER (RECEIPT) PAGE STYLING
 
 
 
