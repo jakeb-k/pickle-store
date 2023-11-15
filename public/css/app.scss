@@ -401,7 +401,14 @@ SPLASH SECTION STYLING
     width:100%;
     height:auto; 
 }
+/* 
 
+
+
+OVERLAY CSS
+
+
+*/
 .text {
     font-family: 'Oswald', Arial, Helvetica, sans-serif;
     color:rgba(0,0,0,0); 
@@ -419,20 +426,20 @@ SPLASH SECTION STYLING
     pointer-events: none;
     position: absolute; 
     top: 0;
-    left: -100%;
+    left: 0;
     /* Initially, the overlay is hidden off the left side */
-    width: 100%;
+    width: 0;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.0);
     /* Adjust the color and opacity as needed */
-    transition: left 0.3s ease;
+    transition: left 0.2s ease;
     /* Transition effect on hover */
 }
 
 .qcSec:hover .overlayL{
     
     background-color: rgba(113, 113, 113, 0.5);
-    left: 0;
+    width: 100%;
     transition: 0.5s ease-in-out;
     /* On hover, slide the overlay to cover the image */
 }
@@ -440,19 +447,19 @@ SPLASH SECTION STYLING
     pointer-events: none;
     position: absolute;
     top: 0;
-    right: -100%;
+    right: 0;
     /* Initially, the overlay is hidden off the left side */
-    width: 100%;
+    width: 0;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.0);
     /* Adjust the color and opacity as needed */
-    transition: right 0.3s ease;
+    transition: right 0.2s ease;
     /* Transition effect on hover */
 }
 
 .qcSec:hover .overlayR {
     background-color: rgba(113, 113, 113, 0.5);
-    right: 0;
+        width: 100%;
     transition: 0.5s ease-in-out;
     /* On hover, slide the overlay to cover the image */
 }
