@@ -56,7 +56,10 @@
         <?php $images = explode(",",$product->image); ?>
         <tr>
             <td> @if($product->image ?? "")
-                    <img src="{{ Storage::disk('public')->url('images/'.$images[0]) }}" /> 
+                <!-- PROD LINK
+                    <img src="{{ Storage::disk('public')->url('images/'.$images[0]) }}" /> -->
+
+                    <img src="{{url('storage/images/'.$images[2])}}" /> 
                     
                 @else
                      <img src="{{url('images/noImg.jpg')}}" /> 

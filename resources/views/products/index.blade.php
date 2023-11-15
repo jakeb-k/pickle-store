@@ -50,7 +50,12 @@
             
 
                 <div class="prodBox">
+                    @if($product->image)
+                    <?php $images = explode(",",$product->image) ?>
+                    <img src="{{url('storage/images/'.$images[0])}}"/> 
+                    @else 
                     <img src="{{url('images/pickleLogo.png')}}" /> 
+                    @endif
                     <a href="{{url('/product/'.$product->id)}}">{{$product->name}} </a> 
                     <div class="pInfo">
                         <div class="prices">

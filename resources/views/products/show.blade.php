@@ -9,19 +9,20 @@
 
         <div id="showImg">
              @if($product->image)
+             <?php $images = explode(",",$product->image); ?>
                     <div class="detailSlides" style="max-width:1200px">
-                        <img class="dSlides" src="{{url('images/pickleLogo.png')}}" style="width:100%;"/>
-                        <img class="dSlides" src="{{url('images/pickleLogo.png')}}" style="width:100%;display:none;"/>
-                        <img class="dSlides" src="{{url('images/pickleLogo.png')}}" style="width:100%;display:none;"/>
+                        <img class="dSlides" src="{{url('storage/images/'.$images[2])}}" style="width:100%;"/>
+                        <img class="dSlides" src="{{url('storage/images/'.$images[1])}}" style="width:100%;display:none;"/>
+                        <img class="dSlides" src="{{url('storage/images/'.$images[0])}}" style="width:100%;display:none;"/>
                             <div id="slideOps" class="w3-row-padding w3-section">
                                 <div class="w3-col s4">
-                                    <img class="demo w3-opacity w3-hover-opacity-off"   src="{{url('images/pickleLogo.png')}}" style="width:100%;cursor:pointer" onclick="currentDiv(1)">
+                                    <img class="demo w3-opacity w3-hover-opacity-off" src="{{url('storage/images/'.$images[2])}}" style="width:100%;cursor:pointer" onclick="currentDiv(1)">
                                 </div>
                                 <div class="w3-col s4">
-                                    <img class="demo w3-opacity w3-hover-opacity-off"  src="{{url('images/pickleLogo.png')}}" style="width:100%;cursor:pointer" onclick="currentDiv(2)">
+                                    <img class="demo w3-opacity w3-hover-opacity-off" src="{{url('storage/images/'.$images[1])}}" style="width:100%;cursor:pointer" onclick="currentDiv(2)">
                                 </div>
                                 <div class="w3-col s4">
-                                    <img class="demo w3-opacity w3-hover-opacity-off" src="{{url('images/pickleLogo.png')}}" style="width:100%;cursor:pointer" onclick="currentDiv(3)">
+                                    <img class="demo w3-opacity w3-hover-opacity-off" src="{{url('storage/images/'.$images[0])}}" style="width:100%;cursor:pointer" onclick="currentDiv(3)">
                                 </div>
                             </div>
                         </div>

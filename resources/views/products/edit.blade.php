@@ -3,7 +3,7 @@
     Edit {{$product->name}}
 @endsection
 @section('content')
-    <div id="adminContainer">
+    <div id="adminContainer" style="margin-top:50px;">
         @if(Auth::user()->role != 0)
         <div id="hacked">
         <h1>Nice Try Dipshit<h1>
@@ -38,7 +38,7 @@
                 </div>
                 <div class="createInput">
                     <label class="form-label"> Discount:<span class="formReq">*</span></label>
-                    <input type="text" name="discount" placeholder="Add a discount (Enter 0 for None)">
+                    <input type="text" name="discount" value="{{$product->discount ?? 0}}">
                     @error('discount')
                         <div class="alert">{{ $message }}</div>
                     @enderror

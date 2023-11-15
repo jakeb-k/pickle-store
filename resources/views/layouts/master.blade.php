@@ -3,6 +3,7 @@
     <head>
         <title> Oz Pickle @yield('titleDetail')</title>
         @yield('meta') 
+        <link rel="icon" type="image/x-icon" href="{{url('images/favicon.ico')}}">
 
         <link rel="stylesheet" href="{{asset('css/app.scss')}}" type="text/css">
 
