@@ -14,14 +14,14 @@ class OptionSeeder extends Seeder
     public function run(): void
     {
         DB::table('options')->insert(['type'=>'Cover','values'=>'On.Off','product_id'=>1]);
-        DB::table('options')->insert(['type'=>'Color','values'=>'A.B','product_id'=>2]);
-        DB::table('options')->insert(['type'=>'color','values'=>'B.Y.R','product_id'=>3]);
+        DB::table('options')->insert(['type'=>'Color','values'=>'yellow.pink','product_id'=>2]);
+        DB::table('options')->insert(['type'=>'color','values'=>'black.yellow.red','product_id'=>3]);
         DB::table('options')->insert(['type'=>'cover','values'=>'On.Off','product_id'=>4]);
         DB::table('options')->insert(['type'=>'cover','values'=>'On.Off','product_id'=>6]);
         DB::table('options')->insert(['type'=>'cover','values'=>'On.Off','product_id'=>7]);
-        DB::table('options')->insert(['type'=>'color','values'=>'O.B.G.R','product_id'=>10]);
-        DB::table('options')->insert(['type'=>'color','values'=>'A.B','product_id'=>12]);
-        DB::table('options')->insert(['type'=>'color','values'=>'O.W','product_id'=>13]);
+        DB::table('options')->insert(['type'=>'color','values'=>'orange.blue.green.red','product_id'=>10]);
+        DB::table('options')->insert(['type'=>'color','values'=>'deepskyblue.orangered','product_id'=>12]);
+        DB::table('options')->insert(['type'=>'color','values'=>'orange.white','product_id'=>13]);
         DB::table('options')->insert(['type'=>'size','values'=>'S.M.L','product_id'=>23]);
         DB::table('options')->insert(['type'=>'color','values'=>'lightblue.green.yellow','product_id'=>20]);
         DB::table('options')->insert(['type'=>'color','values'=>'green.yellow','product_id'=>21]);
@@ -39,6 +39,7 @@ class OptionSeeder extends Seeder
         DB::table('options')->insert(['type'=>'color ','values'=>'gray.red.white','product_id'=>33]);
         DB::table('options')->insert(['type'=>'color ','values'=>'gray.red.white','product_id'=>34]);
         DB::table('options')->insert(['type'=>'color ','values'=>'darkblue.green.black','product_id'=>35]);
+
 
     }
 }

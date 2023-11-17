@@ -114,7 +114,7 @@ class ProductController extends Controller
             $options = []; 
             $colors = []; 
             foreach($ops as $o) {
-                if($o->type == 'color') {
+                if($o->type == 'color' || $o->type == 'Color' ) {
                     $colors = explode(".",$o->values); 
                 }
                 else {
@@ -279,7 +279,7 @@ class ProductController extends Controller
             $options = [$option, $color];
         }
         
-        
+        //dd($cart); 
         // if cart is empty then this the first product
         if(!$cart) {
             $cart = [
@@ -300,11 +300,21 @@ class ProductController extends Controller
             if($cart[$id]['options'] == implode(",",$options)) {
             $cart[$id]['quantity']++;
             session()->put('cart', $cart);
+            } 
+            $cart[$id+1] = [
+            "id"=> $product->id,
+            "name" => $product->name,
+            "quantity" => 1,
+            "price" => $product->price - ($product->price * $product->discount ?? 0),
+            "image" => $image,
+            "options"=>implode(",",$options ?? []) 
+            ];
+            session()->put('cart', $cart);
+
             return redirect()->back()->with('success', 'Product added to cart successfully!');
-            }
+
         }
-      
-        // if item not exist in cart then add to cart with quantity = 1
+            // if item not exist in cart then add to cart with quantity = 1
         $cart[$id] = [
             "id"=> $product->id,
             "name" => $product->name,
@@ -314,9 +324,8 @@ class ProductController extends Controller
             "options"=>implode(",",$options ?? []) 
         ];
         session()->put('cart', $cart);
-       
+    
         return redirect()->back()->with('success', 'Product added to cart successfully!');
-        
     }
     public function remove(Request $request)
     { 

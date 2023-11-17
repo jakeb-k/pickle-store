@@ -30,7 +30,7 @@
             <div class="cSec">
                 <div class="qcSec">
                     <a href="{{url('items/court')}}">
-                    <img src="{{url('images/a1.jpg')}}" /> 
+                    <img src="{{url('images/x1.jpg')}}" /> 
                     <div class="overlayR">
                         <div class="text">Court</div>
                     </div></a> 

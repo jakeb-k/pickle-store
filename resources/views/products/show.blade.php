@@ -86,7 +86,7 @@
                 @endif
                     
                 @foreach($options as $o)
-                    <label for="option">{{$o->type}} Options</label>
+                    <label for="option">{{ucfirst($o->type)}} Options:</label>
                     <input type="hidden" value="{{$o->type}}" /> 
                     <select name="option" id="option" style="width:100%;">
                     @foreach(explode(".",$o->values) as $s)
@@ -95,7 +95,9 @@
                     </select>
                 @endforeach
             @endif
-
+            @if($colors ?? "")
+                <p class="alert" style="color:black;">*No selection means one will be randomly selected!</p>
+            @endif
                 <div class="line"></div>
 
                 <div id="desc">
