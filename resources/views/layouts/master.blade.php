@@ -145,7 +145,7 @@
             <div class="cartItem">
                 <div id="cartImg">
                     
-                     @if($mat->image ?? "")
+                     @if($product->image ?? "")
                     <img src="{{ Storage::disk('public')->url('images/'.$images[0]) }}" /> 
                     
                     @else
@@ -175,10 +175,21 @@
                     </div>
                     <div class="cartDetails">
                         <div> 
+                            <b> Options </b> 
+                        </div>
+                        <div>
+                            <?php $x = explode(",",$details['options']??"") ?>
+                            @foreach($x as $o)
+                                {{$o}}
+                            @endforeach
+                        </div> 
+                    </div>
+                    <div class="cartDetails">
+                        <div> 
                             <b> Price </b> 
                         </div>
                         <div>
-                            ${{number_format($details['quantity'] * $details['price'], 2)}}
+                            <b>$</b>{{number_format($details['quantity'] * $details['price'], 2)}}
                         </div> 
                     </div>
 

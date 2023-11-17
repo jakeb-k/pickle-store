@@ -54,75 +54,77 @@
             <!-- Options Section -->
             @if($clothing)
             <div class="line"></div>
-            <label for="cars">Choose a size:</label>
+            <label for="size">Choose a size:</label>
+            <form action='{{url("add-to-cart/$product->id")}}' method="POST">
+                {{csrf_field()}}
+                <select name="size" id="size" style="width:100%;">
+                    @foreach($sizes as $s)
+                    <option value="{{$s}}">{{$s}}</option>
+                    @endforeach
+                </select>
 
-            <select name="sizes" id="sizes">
-                @foreach($sizes as $s)
-                <option value="{{$s}}">{{$s}}</option>
-                @endforeach
-            </select>
-
-            <div class="oSec">
-                @foreach($colors as $c)
-                        <input type="radio" id="{{$c}}" name="color" value="{{$c}}" style="display: none;" />
-                        <label for="{{$c}}" class="color-label" style="background-color: {{$c}}; border-radius: 50%;"></label>
-                        <p style="margin-top:25px; ">{{ucfirst($c)}}</p>
-                @endforeach
-            </div>
-            @endif
-            <div class="line"></div>
-
-            <div id="desc">
-                <p> {{$product->description}} </p>
-            </div>
-
-            <div class="line"></div>
-            <?php 
-                $del1 = new DateTime();
-                $del2 = new DateTime();
-
-                $del1 = $del1->modify('+'.$product->delivery.' days'); 
-
-                $l = $product->delivery + 13; 
-                $del2 = $del2->modify('+'.$l.' days');
-            ?>
-            <div class="delivery">
-                <p> <b>Estimated Delivery Time:</b>
-                <br>
-                <em>{{$del1->format('D d M.')}} and {{$del2->format('D d M.')}} </em> </p>
-            </div>
-            @auth
-            @if(Auth::user()->role == 0)
-                    <div id="addCartButton">
-                        <a href='{{url("product/$product->id/edit")}}'> 
-                            <button>
-                                 Edit  
-                            </button>
-                        </a>  
-                    </div>
-            @elseif(Auth::user()->role == 1)
-                @if($product->available)
-                <div id="addCartButton">
-                    <a href='{{url("add-to-cart/$product->id")}}'>
-                        <button>Add To Cart! </button>
-                    </a>
-                </div>
-                @else
-                <div id="addCartButton">
-                    <a href='{{url("#")}}'>
-                        <button disabled>Item out of Stock</button>
-                    </a>
+                <div class="oSec">
+                    @foreach($colors as $c)
+                            <input type="radio" id="{{$c}}" name="color" value="{{$c}}" style="display: none;" />
+                            <label for="{{$c}}" class="color-label" style="background-color: {{$c}}; border-radius: 50%;"></label>
+                            <p style="margin-top:25px; ">{{ucfirst($c)}}</p>
+                    @endforeach
                 </div>
                 @endif
-            @endif
+                <div class="line"></div>
 
-            @else
-             <div id="addCartButton">
-                <a href='{{url("login")}}'>
-                    <button>Login to Start Shopping! </button>
-                </a>
-            </div>
-            @endauth
+                <div id="desc">
+                    <p> {{$product->description}} </p>
+                </div>
+
+                <div class="line"></div>
+                <?php 
+                    $del1 = new DateTime();
+                    $del2 = new DateTime();
+
+                    $del1 = $del1->modify('+'.$product->delivery.' days'); 
+
+                    $l = $product->delivery + 13; 
+                    $del2 = $del2->modify('+'.$l.' days');
+                ?>
+                <div class="delivery">
+                    <p> <b>Estimated Delivery Time:</b>
+                    <br>
+                    <em>{{$del1->format('D d M.')}} and {{$del2->format('D d M.')}} </em> </p>
+                </div>
+                @auth
+                @if(Auth::user()->role == 0)
+                        <div id="addCartButton">
+                            <a href='{{url("product/$product->id/edit")}}'> 
+                                <button>
+                                    Edit  
+                                </button>
+                            </a>  
+                        </div>
+                @elseif(Auth::user()->role == 1)
+                    @if($product->available)
+                    <div id="addCartButton">
+                        <a>
+                            <button type="submit">Add To Cart! </button>
+                        </a>
+                    </div>
+                    @else
+                    <div id="addCartButton">
+                        <a href='{{url("#")}}'>
+                            <button disabled>Item out of Stock</button>
+                        </a>
+                    </div>
+                    @endif
+                @endif
+
+                @else
+                <div id="addCartButton">
+                    <a href='{{url("login")}}'>
+                        <button>Login to Start Shopping! </button>
+                    </a>
+                </div>
+                @endauth
+            </form>
 
         </div>
 

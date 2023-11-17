@@ -244,7 +244,7 @@ class ProductController extends Controller
     }
 
     //cart functions
-    public function addToCart($id)
+    public function addToCart($id, Request $request)
     {
         $product = Product::find($id);
         
@@ -255,6 +255,13 @@ class ProductController extends Controller
         $a = explode(",",$product->image); 
         $image = $a[0]; 
         $cart = session()->get('cart');
+        $options = []; 
+        if($product->type == 'Clothing') {
+            $color = $request->color ?? ""; 
+            $size = $request->size ?? "";
+            $options = [$color,$size]; 
+        }
+        
         
         // if cart is empty then this the first product
         if(!$cart) {
@@ -264,7 +271,8 @@ class ProductController extends Controller
                         "name" => $product->name,
                         "quantity" => 1,
                         "price" => $product->price - ($product->price * $product->discount ?? 0),
-                        "image"=>$image
+                        "image"=>$image,
+                        "options"=>implode(",",$options ?? [])
                     ]
             ];
             session()->put('cart', $cart);
@@ -283,7 +291,8 @@ class ProductController extends Controller
             "name" => $product->name,
             "quantity" => 1,
             "price" => $product->price - ($product->price * $product->discount ?? 0),
-            "image" => $image 
+            "image" => $image,
+            "options"=>implode(",",$options ?? []) 
         ];
         session()->put('cart', $cart);
        

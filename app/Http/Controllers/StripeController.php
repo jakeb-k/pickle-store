@@ -47,7 +47,7 @@ class StripeController extends Controller
         $products = [];
         $total = 0; 
         foreach($cart as $details){
-            $x = $details['quantity'].','.$details['name']; 
+            $x = $details['quantity'].','.$details['name'].','.$details['options']??""; 
             $total += $details['price']*$details['quantity']; 
 
             $products[] = $x; 
