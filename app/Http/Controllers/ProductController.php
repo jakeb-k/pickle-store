@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Review;
 use App\Models\User;
+use App\Models\Options;
 
 class ProductController extends Controller
 {
@@ -96,9 +97,27 @@ class ProductController extends Controller
             $n = [$u['name'],$r['rating'],$r['content']];
             $reviews[]=$n; 
         }
-     
+        $type = $product->type; 
+        $options = []; 
+        
+        if($type == "Clothing") {
+            $s = Options::find(15); 
+            $sizes = explode(".",$s->values); 
 
-        return view('products.show')->with('product', $product)->with('reviews',$reviews); 
+            $cOptions = Options::whereRaw('product_id = ?', array($id))->get();
+            $colors = explode(".",$cOptions[0]->values); 
+            $clothing = true; 
+            return view('products.show')->with('product', $product)->with('reviews',$reviews)->with('colors',$colors)->with('sizes',$sizes)->with('clothing',true); 
+
+        } else {
+            $options = $product->options()->get(); 
+            $clothing = false; 
+            return view('products.show')->with('product', $product)->with('reviews',$reviews)->with('options',$options)->with('clothing',false); 
+
+        }
+        
+       
+
 
     }
     /**

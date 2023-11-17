@@ -629,6 +629,7 @@ PRODUCT DETAIL PAGE STYLING
 }
 
 .ratingsAvg {
+    padding-top:15px; 
     font-size: 24px;
 }
 
@@ -672,7 +673,11 @@ PRODUCT DETAIL PAGE STYLING
     margin-left:30px; 
 
 }
-
+.priceRatings {
+    display:flex;
+    flex-direction:row; 
+    justify-content: space-around;
+}
 #showDetails * {
     margin: 10px 0px;
 }
@@ -682,8 +687,34 @@ PRODUCT DETAIL PAGE STYLING
     color: black;
     font-size: 28px;
 }
+.oSec {
+    display:flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    font-size: 16px;
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;
+}
+.color-label {
+    display: inline-block;
+    width: 50px;
+    /* Adjust size as needed */
+    height: 50px;
+    /* Adjust size as needed */
+    /* Adjust spacing as needed */
+    cursor: pointer;
+    border: 2px solid gray;
+    /* Set initial border */
+}
 
+.color-label:hover {
+    border-color: #FFD100;
+    /* Set border color on hover */
+}
 
+input[type="radio"]:checked+label {
+    border-color: #FFD100;
+    /* Set border color when checked */
+}
 #subtitles {
     display: flex;
     flex-direction: row;
@@ -788,7 +819,6 @@ PRODUCT DETAIL PAGE STYLING
 }
 
 #subtitles .emphasis {
-    margin-left: 20px;
     color: #FFD100;
     font-size: 36px;
 }

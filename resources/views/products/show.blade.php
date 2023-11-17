@@ -33,22 +33,43 @@
         </div>
 
         <div id="showDetails">
-            <div>
-                <h1>{{$product->name}}</h1>
-            </div>
-            <div class="ratingsAvg">
-                {{number_format($product->rating, 2)}} ★ ({{count($reviews)}})
+            
+            <h1>{{$product->name}}</h1>
+            
+            <div class="priceRatings">
+                <div class="ratingsAvg">
+                    {{number_format($product->rating, 2)}} ★ ({{count($reviews)}})
+                </div>
+
+                <div id="subtitles"> 
+                    @if($product->discount > 0)
+                    <div class="discount"> ${{number_format($product->price, 2)}} </div>
+                    <div class="emphasis"> ${{number_format($product->price-($product->price*$product->discount), 2)}} </div>
+                    @else
+                    <div class="emphasis"> ${{number_format($product->price, 2)}} </div>
+                    @endif
+                </div>
             </div>
 
-            <div id="subtitles"> 
-                @if($product->discount > 0)
-                <div class="discount"> ${{number_format($product->price, 2)}} </div>
-                <div class="emphasis"> ${{number_format($product->price-($product->price*$product->discount), 2)}} </div>
-                @else
-                <div class="emphasis"> ${{number_format($product->price, 2)}} </div>
-                @endif
+            <!-- Options Section -->
+            @if($clothing)
+            <div class="line"></div>
+            <label for="cars">Choose a size:</label>
+
+            <select name="sizes" id="sizes">
+                @foreach($sizes as $s)
+                <option value="{{$s}}">{{$s}}</option>
+                @endforeach
+            </select>
+
+            <div class="oSec">
+                @foreach($colors as $c)
+                        <input type="radio" id="{{$c}}" name="color" value="{{$c}}" style="display: none;" />
+                        <label for="{{$c}}" class="color-label" style="background-color: {{$c}}; border-radius: 50%;"></label>
+                        <p style="margin-top:25px; ">{{ucfirst($c)}}</p>
+                @endforeach
             </div>
-    
+            @endif
             <div class="line"></div>
 
             <div id="desc">
