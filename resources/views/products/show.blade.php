@@ -92,6 +92,12 @@
                     <br>
                     <em>{{$del1->format('D d M.')}} and {{$del2->format('D d M.')}} </em> </p>
                 </div>
+                @error('color')
+                    <div class="alert">{{ $message }}</div>
+                @enderror
+                @error('size')
+                    <div class="alert">{{ $message }}</div>
+                @enderror
                 @auth
                 @if(Auth::user()->role == 0)
                         <div id="addCartButton">

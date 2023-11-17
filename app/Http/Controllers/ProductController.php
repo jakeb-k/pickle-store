@@ -246,6 +246,10 @@ class ProductController extends Controller
     //cart functions
     public function addToCart($id, Request $request)
     {
+        $this->validate($request,[
+            'color'=>'required',
+            'size'=>'required'
+        ]);
         $product = Product::find($id);
         
         
@@ -278,11 +282,13 @@ class ProductController extends Controller
             session()->put('cart', $cart);
             return redirect()->back()->with('success', 'Product added to cart successfully!');
         }
-        // if cart not empty then check if this product exist then increment quantity
+        //if cart not empty then check if this product exist then increment quantity
         if(isset($cart[$id])) {
+            if($cart[$id]['options'] == implode(",",$options)) {
             $cart[$id]['quantity']++;
             session()->put('cart', $cart);
             return redirect()->back()->with('success', 'Product added to cart successfully!');
+            }
         }
       
         // if item not exist in cart then add to cart with quantity = 1
