@@ -263,7 +263,7 @@ class ProductController extends Controller
                         "id"=> $product->id, 
                         "name" => $product->name,
                         "quantity" => 1,
-                        "price" => $product->price,
+                        "price" => $product->price - ($product->price * $product->discount ?? 0),
                         "image"=>$image
                     ]
             ];
@@ -282,7 +282,7 @@ class ProductController extends Controller
             "id"=> $product->id,
             "name" => $product->name,
             "quantity" => 1,
-            "price" => $product->price,
+            "price" => $product->price - ($product->price * $product->discount ?? 0),
             "image" => $image 
         ];
         session()->put('cart', $cart);

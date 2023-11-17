@@ -217,7 +217,7 @@
             </div>
         </div>
         <div class="line"> </div>
-        <!-- 
+         
         <div id="cartOptions">
             <div id="deleteCart">
                 <form method="POST" action='{{url("clear-cart")}}'>
@@ -233,7 +233,7 @@
                     <button type="submit"> Purchase </button> 
                 </form>
             </div>
-        </div> --> 
+        </div>
 
         
 
