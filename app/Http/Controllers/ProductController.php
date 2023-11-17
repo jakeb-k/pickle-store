@@ -110,9 +110,20 @@ class ProductController extends Controller
             return view('products.show')->with('product', $product)->with('reviews',$reviews)->with('colors',$colors)->with('sizes',$sizes)->with('clothing',true); 
 
         } else {
-            $options = $product->options()->get(); 
+            $ops = $product->options()->get(); 
+            $options = []; 
+            $colors = []; 
+            foreach($ops as $o) {
+                if($o->type == 'color') {
+                    $colors = explode(".",$o->values); 
+                }
+                else {
+                    $options[] = $o; 
+                }
+            } 
+            //dd($options); 
             $clothing = false; 
-            return view('products.show')->with('product', $product)->with('reviews',$reviews)->with('options',$options)->with('clothing',false); 
+            return view('products.show')->with('product', $product)->with('reviews',$reviews)->with('options',$options)->with('clothing',false)->with('colors',$colors); 
 
         }
         
@@ -245,11 +256,8 @@ class ProductController extends Controller
 
     //cart functions
     public function addToCart($id, Request $request)
-    {
-        $this->validate($request,[
-            'color'=>'required',
-            'size'=>'required'
-        ]);
+    { 
+
         $product = Product::find($id);
         
         
@@ -259,11 +267,16 @@ class ProductController extends Controller
         $a = explode(",",$product->image); 
         $image = $a[0]; 
         $cart = session()->get('cart');
-        $options = []; 
+       
         if($product->type == 'Clothing') {
             $color = $request->color ?? ""; 
             $size = $request->size ?? "";
             $options = [$color,$size]; 
+        } else {
+            $color = $request->color ?? "";
+            
+            $option = $request->option ?? ""; 
+            $options = [$option, $color];
         }
         
         

@@ -52,11 +52,13 @@
             </div>
 
             <!-- Options Section -->
+            <form action='{{url("add-to-cart/$product->id")}}' method="POST">
+             {{csrf_field()}}
             @if($clothing)
             <div class="line"></div>
-            <label for="size">Choose a size:</label>
-            <form action='{{url("add-to-cart/$product->id")}}' method="POST">
-                {{csrf_field()}}
+            <label for="option">Choose a size:</label>
+            
+               
                 <select name="size" id="size" style="width:100%;">
                     @foreach($sizes as $s)
                     <option value="{{$s}}">{{$s}}</option>
@@ -70,7 +72,30 @@
                             <p style="margin-top:25px; ">{{ucfirst($c)}}</p>
                     @endforeach
                 </div>
+
+            @else
+
+                @if($colors != [])
+                <div class="oSec"> 
+                    @foreach($colors as $c)
+                            <input type="radio" id="{{$c}}" name="color" value="{{$c}}" style="display: none;" />
+                            <label for="{{$c}}" class="color-label" style="background-color: {{$c}}; border-radius: 50%;"></label>
+                            <p style="margin-top:25px; ">{{ucfirst($c)}}</p>
+                    @endforeach
+                </div>
                 @endif
+                    
+                @foreach($options as $o)
+                    <label for="option">{{$o->type}} Options</label>
+                    <input type="hidden" value="{{$o->type}}" /> 
+                    <select name="option" id="option" style="width:100%;">
+                    @foreach(explode(".",$o->values) as $s)
+                    <option value="{{$s}}">{{$s}}</option>
+                    @endforeach
+                    </select>
+                @endforeach
+            @endif
+
                 <div class="line"></div>
 
                 <div id="desc">
