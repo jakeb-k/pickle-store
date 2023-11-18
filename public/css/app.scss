@@ -485,7 +485,6 @@ CARD SECTION STYLING
     display:flex;
     flex-direction:row; 
     justify-content: space-evenly;
-    overflow-x: scroll;
 
 }
 .prodSec img {
@@ -1736,4 +1735,37 @@ ORDER (RECEIPT) PAGE STYLING
 
 #ordContainer a:hover {
     text-decoration: none;
+}
+/*
+
+
+
+
+
+FOOTER STYLING
+
+
+
+
+*/
+#footer {
+    display:flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    background:#FFD100;
+}
+.fSec {
+    width:100%;
+    text-align:center; 
+    padding:10px; 
+    font-family:'Oswald', Arial, Helvetica, sans-serif; 
+}
+.fSec ul {
+    text-align:left;
+}
+.fSec .email {
+    text-align:left; 
+}
+.fSec h3 {
+    font-family:'Bevan', Arial, Helvetica, sans-serif; 
 }

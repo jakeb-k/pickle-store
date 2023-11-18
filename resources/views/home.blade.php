@@ -46,7 +46,7 @@
         </div>
 
     </div>
-    <h1 class="prodTitle">Kits <a href="">View All Kits</a></h1>
+    <h1 class="prodTitle">Kits <a href="{{url('items/accessories')}}">View All Kits</a></h1>
     <div class="prodSec">
         <div class="psBox">
             <img src="{{url('images/pickleLogo.png')}}" alt="starter kit 1" /> 
@@ -79,6 +79,42 @@
                 expert-level gloves for unparalleled grip, a tournament-quality pack of 
                 balls for optimal performance, and a high-performance shirt designed for 
                 top-tier play.</p>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="fSec">
+            <h3> Links </h3>
+            <ul>
+                <li>
+                    <a href="{{url('items/accessories')}}">Accessories</a>
+                </li>
+                <li>
+                    <a href="{{url('items/paddles')}}">Paddles</a>
+                </li>
+                <li>
+                    <a href="{{url('items/court')}}">Court</a>
+                </li>
+                <li>
+                    <a href="{{url('items/kits')}}">Kits</a>
+                </li>
+                <li>
+                    <a href="{{url('items/clothing')}}">Clothing</a>
+                </li>
+            </ul>
+        </div>
+        <div class="fSec">
+            <h3> About </h3>
+            <p>Discover the heart of Australian-owned excellence in pickleball gear. At Oz Pickle, 
+                we're committed to being the premier destination for all things pickleball. As the 
+                leading Australian retailer, we're dedicated to delivering top-notch equipment, 
+                ensuring you have everything you need to elevate your pickleball game.
+            </p>
+            <p> © 2023 JK Web Dev </p>
+        </div>
+        <div class="fSec">
+            <h3>Contact</h3>
+            <a class="email" href="mailto:jk_web_dev@outlook.com"> Email: jk_web_dev@outlook.com </a> 
+            <p class="email"> Once an email has been sent, allow 3-5 days for our skilled developer Jakeb to get back to you!</p> 
         </div>
     </div>
 @endsection
