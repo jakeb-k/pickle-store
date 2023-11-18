@@ -38,6 +38,9 @@ Route::middleware('auth')->group(function () {
     Route::post('product/{id}/add-tag', [ProductController::class, 'addTag']);
     Route::get('product/{id}/add-tag/{tag}', [ProductController::class, 'deleteTag']); 
 
+    Route::post('product/{id}/add-option', [ProductController::class, 'addOption']);
+    Route::get('product/{id}/add-option/{option}', [ProductController::class, 'deleteOption']); 
+
     Route::any('add-to-cart/{id}', [ProductController::class, 'addToCart']);
     Route::delete('remove-from-cart', [ProductController::class, 'remove']);
     Route::delete('clear-cart', [ProductController::class, 'clearCart']);

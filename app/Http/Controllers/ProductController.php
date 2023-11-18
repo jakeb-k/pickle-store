@@ -142,7 +142,9 @@ class ProductController extends Controller
 
         $tags = explode(",", $product->tags); 
 
-        return view('products.edit')->with('product', $product)->with('cats', $cats)->with('tags', $tags); 
+        $ops = $product->options()->get();  
+
+        return view('products.edit')->with('product', $product)->with('cats', $cats)->with('tags', $tags)->with('options',$ops); 
 
 
     }
@@ -342,4 +344,32 @@ class ProductController extends Controller
         session()->forget('cart');
         return redirect()->back()->with('products', Product::paginate(6));
     }
+
+     //add and delete tags on edit form
+    public function addOption(Request $request, $id) {
+
+       
+        $option = Options::find($id); 
+        
+        $values = explode(".",$option->values); 
+
+        $values[] = $request->option; 
+        
+        $option->values = implode(".",$values);
+        $option->save(); 
+        return redirect()->back(); 
+    }
+    public function deleteOption($id, $tag){
+        
+        $option = Options::find($id);
+        $values = explode(".",$option->values); 
+    
+        $index = array_search($tag, $values);
+        array_splice($values, $index, 1); 
+        $option->values = implode(".", $values); 
+        $option->save();
+        
+        return redirect()->back(); 
+    }
+
 }

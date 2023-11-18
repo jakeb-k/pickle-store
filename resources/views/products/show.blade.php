@@ -127,6 +127,7 @@
                 @enderror
                 @auth
                 @if(Auth::user()->role == 0)
+                </form>
                         <div id="addCartButton">
                             <a href='{{url("product/$product->id/edit")}}'> 
                                 <button>

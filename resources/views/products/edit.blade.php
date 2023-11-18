@@ -61,6 +61,7 @@
                         <div class="alert">{{ $message }}</div>
                     @enderror
                 </div>
+
                 <div class="createInput2">
                     <a data-toggle="modal" data-target="#exampleModal3">
                         <label class="form-label">Add Tags: </label>
@@ -78,7 +79,24 @@
                         <div class="alert">{{ $message }}</div>
                     @enderror
                 </div>
-                
+
+                @foreach($options as $o)
+                <div class="optionsInput">
+                <a data-toggle="modal" data-target="#exampleModal{{$o->id}}">
+                    <label class="form-label" style="color:#ffd100;cursor:pointer;">Add {{$o->type}}: </label>
+                    </a>
+                    <div>
+                        <span class="form-label"> Click to Remove </span> <br />
+                        <?php $values = explode(".",$o->values); ?>
+                        @foreach($values as $v)
+                            <a href='{{url("product/$o->id/add-option/$v/")}}' class="tag"> {{$v}} </a> 
+                        @endforeach
+                        
+                        
+                    </div>
+                </div>
+                @endforeach
+
                 <div class="createSubmit2">
                     <button type="submit">
                         Update Product!
@@ -89,6 +107,30 @@
     </div>
     @endif
 @endsection
+{{-- options modals start here  --}}
+@foreach($options as $o)
+    <div class="modal fade" id="exampleModal{{$o->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3> Add {{$o->type}} Value </h3> 
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="menuItem2">
+                        <form method="POST" action='{{url("product/$o->id/add-option")}}'>
+                            {{csrf_field()}}
+                            <input id="searchInput" type="text" name="option" placeholder="Enter Option Value" > 
+                            <button id="rm2" type="submit"> Add Option </button> 
+                        </form>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+@endforeach
 
 {{-- tag modal start here  --}}
 

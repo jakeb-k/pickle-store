@@ -11,4 +11,7 @@ class Options extends Model
     function product(){
         return $this->belongsTo('App\Models\Product');
     }
+
+    protected $fillable=['values'];
+
 }

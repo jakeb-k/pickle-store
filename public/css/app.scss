@@ -1162,6 +1162,62 @@ CREATE & EDIT FORM STYLING
 
 
 */
+.optionsInput {
+    padding:0 2.5%; 
+    margin:0 auto; 
+}
+
+.menuItem2 {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    margin:0 auto; 
+    font-size:20px; 
+ }
+.menuItem2 form {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}
+
+.menuItem2 input {
+    width: 80%;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;
+    height:50px;
+    border: 3px solid #FFD100;
+}
+
+.menuItem2 button {
+    width: 30%;
+    height: 50px;
+    height:auto; 
+    border: 3px solid #FFD100;
+    border-left: none;
+    background: none;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;
+    color: #FFD100;
+}
+
+.menuItem2 button:hover {
+
+    color: white;
+    background: #ffb300;
+    transition: 0.1s ease-in-out;
+}
+
+.menuItem2 input:focus {
+    outline: 1px solid #bc700c;
+}
+
+
+
 .createSubmit2 {
     display: flex;
     justify-content: center;
@@ -1203,7 +1259,12 @@ CREATE & EDIT FORM STYLING
 
 
 }
-
+.optionsInput label.form-label {
+    color:#FFD100;
+    &:hover {
+        text-decoration:underline; 
+    }
+}
 .form-label {
     align-self: flex-start;
     font-size: 20px;
@@ -1345,6 +1406,7 @@ select option {
     font-family: 'Oswald', Arial, Helvetica, sans-serif;
     text-align: center;
 }
+
 /*
 
 
