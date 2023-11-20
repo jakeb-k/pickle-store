@@ -3,7 +3,9 @@
 
     <div id="splashCont">
         <div class="ctaTitle">
-            <h1>Don't Miss Out - Grab Your Gear NOW ↓</h1>
+            <h1> Welcome to Oz Pickle </h1> 
+            <h2>The Best Aussie Pickleball Outlet! </h2> 
+            <h3>Don't Miss Out - Grab Your Gear NOW ↓</h3>
             <p>Free Shipping STOREWIDE! </p> 
         </div>
         
