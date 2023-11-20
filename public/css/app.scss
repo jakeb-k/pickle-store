@@ -1769,3 +1769,21 @@ FOOTER STYLING
 .fSec h3 {
     font-family:'Bevan', Arial, Helvetica, sans-serif; 
 }
+
+.links a {
+    font-size:18px; 
+    padding:5px; 
+    text-decoration: none;
+    box-shadow: inset 0 0 0 0 rgb(50, 50, 50);
+    color: rgb(50,50,50);
+    margin: 0 -.25rem;
+    padding: 0 .25rem;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+#footer ul {
+    list-style-type: none;
+}
+.links a:hover {
+    box-shadow: inset 150px 0 0 0 rgb(50, 50, 50);
+    color: #FFD100;
+}

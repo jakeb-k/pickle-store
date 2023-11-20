@@ -119,6 +119,42 @@
             </div>
         </div>
         @yield('content') 
+         <div id="footer">
+        <div class="fSec">
+            <h3> Links </h3>
+            <ul class="links">
+                <li>
+                    <a href="{{url('items/accessories')}}">Accessories</a>
+                </li>
+                <li>
+                    <a href="{{url('items/paddles')}}">Paddles</a>
+                </li>
+                <li>
+                    <a href="{{url('items/court')}}">Court</a>
+                </li>
+                <li>
+                    <a href="{{url('items/kits')}}">Kits</a>
+                </li>
+                <li>
+                    <a href="{{url('items/clothing')}}">Clothing</a>
+                </li>
+            </ul>
+        </div>
+        <div class="fSec">
+            <h3> About </h3>
+            <p>Discover the heart of Australian-owned excellence in pickleball gear. At Oz Pickle, 
+                we're committed to being the premier destination for all things pickleball. As the 
+                leading Australian retailer, we're dedicated to delivering top-notch equipment, 
+                ensuring you have everything you need to elevate your pickleball game.
+            </p>
+            <p> © 2023 JK Web Dev </p>
+        </div>
+        <div class="fSec">
+            <h3>Contact</h3>
+            <a class="email" href="mailto:jk_web_dev@outlook.com"> Email: jk_web_dev@outlook.com </a> 
+            <p class="email"> Once an email has been sent, allow 3-5 days for our skilled developer Jakeb to get back to you!</p> 
+        </div>
+    </div>
     </body>
     {{-- CART MODAL START HERE --}}
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
