@@ -350,20 +350,20 @@ SPLASH SECTION STYLING
 }
 #splashCont {
     width:100%;
-    min-height:650px; 
+    height:110%; 
     padding:10% 0 5% 0; 
     background: url('../images/pickleBg2.webp') no-repeat;  
  }
 
 .ctaTitle {
     color:#FFD100;
-    margin:0 15% 25px; 
+    margin:0 15% 15px; 
     text-shadow:2px 2px 2.5px black; 
 }
 .ctaTitle h1 {
     font-family:'Bevan', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.ctaTitle p {
+.ctaTitle p,.ctaTitle h2,.ctaTitle h3 {
     font-family:'Oswald', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
 }
 .sBtn {
@@ -479,7 +479,7 @@ CARD SECTION STYLING
 
 */
 .prodSec {
-    margin-top: -55px;
+    margin-top: -105px;
     background-image: url('../images/pickleBg.webp');
     padding:10%; 
     display:flex;
