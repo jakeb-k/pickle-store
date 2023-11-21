@@ -23,6 +23,8 @@ Route::resource('product', ProductController::class);
 Route::get('/', [ProductController::class, 'index']); 
 Route::get('items/{type}', [ProductController::class, 'type']); 
 
+Route::any('items/{type}/filter', [ProductController::class, 'filter']);
+
 Route::get('/test',function(){
     return view('products.test'); 
 }); 

@@ -50,6 +50,7 @@
                     @endif
                 </div>
             </div>
+           
 
             <!-- Options Section -->
             <form action='{{url("add-to-cart/$product->id")}}' method="POST">
@@ -74,7 +75,7 @@
                 </div>
 
             @else
-
+            <div class="line"></div>
                 @if($colors != [])
                 <div class="oSec"> 
                     @foreach($colors as $c)

@@ -5,6 +5,30 @@
 @section('content')
 
     <div id="prodCont">
+        <div class="filter">
+            <h1> Filter </h1> 
+            <div class="dropdown2">
+                <button class="dropbtn2"><i class="fa-solid fa-filter" style="color:#ffd100;"> </i></button>
+                <div class="dropdown-content2">
+                    <h3>Filter Options </h3>
+                    <form method="POST" action='{{url("items/$type/filter")}}'>
+                            {{csrf_field()}}
+                        <input type="hidden" value="pop" name="filter" />
+                        <button type="submit"> Highest Rated </button>
+                    </form>
+                    <form method="POST" action='{{url("items/$type/filter")}}'>
+                        {{csrf_field()}}
+                        <input type="hidden" value="ex" name="filter" />
+                        <button type="submit"> Lowest Priced </button>
+                    </form>
+                    <form method="POST" action='{{url("items/$type/filter")}}'>
+                        {{csrf_field()}}
+                        <input type="hidden" value="ch" name="filter" />
+                        <button type="submit"> Highest Priced</button>
+                    </form>
+                </div>
+            </div>
+        </div>
         @foreach($products->chunk(3) as $chunk)
             <div class="row">
             @foreach($chunk as $product)

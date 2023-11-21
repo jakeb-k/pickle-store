@@ -357,7 +357,7 @@ SPLASH SECTION STYLING
 
 .ctaTitle {
     color:#FFD100;
-    margin:0 15% 15px; 
+    margin:0 22.5% 15px; 
     text-shadow:2px 2px 2.5px black; 
 }
 .ctaTitle h1 {
@@ -542,7 +542,14 @@ button.opsBtn i {
         fill: #FFD100;
     }
 }
-
+.filter {
+    display:flex;
+    flex-direction:row;
+    margin-left:10%; 
+    font-family:'Oswald', Arial, Helvetica, sans-serif;
+    color:#FFD100;
+    text-shadow: 2px 2px 2.5px black;
+}
 #prodCont {
     width:100%; 
     display:flex;
@@ -640,7 +647,7 @@ PRODUCT DETAIL PAGE STYLING
      
     font-family: 'Bevan', Arial, Helvetica, sans-serif;
     font-size: 24px;
-    background: linear-gradient(rgb(218, 218, 218),#FFD100); 
+    background: linear-gradient(rgb(235, 235, 235), rgb(50, 50, 50));
     padding-top:125px; 
 }
 

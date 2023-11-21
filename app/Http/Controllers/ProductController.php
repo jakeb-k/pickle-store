@@ -371,5 +371,26 @@ class ProductController extends Controller
         
         return redirect()->back(); 
     }
+    public function filter(Request $request, $type){
+        $fil = $request->filter; 
+        
+       //add rating field to products to sort by popularity
+        switch($fil) {
+            case 'ex':
+                $products =  Product::where('type', 'like', '%' . $type . '%')->orderBy('price')->get(); 
+                $filterTag = 'Filtered by Price ↓'; 
+                break;
+            case 'ch':
+                $products = Product::where('type', 'like', '%' . $type . '%')->orderByDesc('price')->get();
+                $filterTag = 'Filtered by Price ↑'; 
+                break;
+            case 'pop':
+                $products =  Product::where('type', 'like', '%' . $type . '%')->orderBy('rating')->get(); 
+                $filterTag = 'Filtered by Popularity ↓';
+                break;
+        }
+        
+        return view('products.index')->with('products', $products)->with('filterTag', $filterTag)->with('paginated', false)->with('type', $type); 
+    }
 
 }
