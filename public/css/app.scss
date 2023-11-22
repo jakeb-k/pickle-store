@@ -154,7 +154,7 @@ i {
 }
 #nav.shrunken {
     padding-top: 25px;
-    height: 55px;
+    height: 57.5px;
     transition: 0.3s ease-in-out;
     background:rgba(25, 25, 25, 0.85);
     box-shadow: 0 0 30px #FFD100;
@@ -179,8 +179,11 @@ i {
     flex-direction:row; 
     width:45%; 
 }
-.uSec, .sLink img {
-    margin-top: 1.5%;
+.shrunken .uSec {
+    padding-top: 15px;
+}
+.uSec {
+    padding-top: 15px;
 }
 .sSec {
     margin-left:5%; 
@@ -195,7 +198,7 @@ i {
     position:fixed; 
     width:70px;
     height:auto;
-    top:10px;
+    top:0px;
     left:10px;  
 }
 .shrunken img {
@@ -215,9 +218,10 @@ i {
 #logout {
     margin-bottom:0;  
 }
-#logo {
+#logo, #arrow {
     transform-origin: center;
     transition:linear 0.3s; 
+    cursor: pointer;
 }
 /*
 
@@ -511,17 +515,23 @@ CARD SECTION STYLING
     text-shadow: 2px 2px 2.5px black;
 }
 .prodTitle {
-   margin:0 0 0 10%; 
+    margin:0 0 0 10%; 
     color:#FFD100; 
     z-index: 1;
+    font-family: 'Bevan', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .prodTitle a {
     border-radius:50px; 
     border:2.5px solid #FFD100; 
     padding:5px 10px; 
     color:white; 
-    font-style: italic; 
     font-size:x-large;
+    font-family:'Oswald', Arial, Helvetica, sans-serif; 
+    &:hover {
+        background:#FFD100; 
+        color:rgb(40,40,40); 
+        transition:0.15s; 
+    }
 }
 /*
 
@@ -1940,11 +1950,13 @@ MEDIA QUERIES
    }
 
 }
-.sTitle {
+.sTitle,
+#arrow {
     display:none; 
+    
 }
 @media only screen and (max-width:975px) {
-    .sSec {
+    .sSec{
         display:none; 
     }
     .sTitle {
@@ -1952,9 +1964,27 @@ MEDIA QUERIES
         left:100px; 
         position:fixed; 
         display:block;
+    }
+    #arrow {
+        display:block; 
+        position:fixed; 
+        color:#ffd100; 
+        text-shadow: 2.5px 2.5px 2.5px black;
+        top:5px; 
+        left:80px; 
+    }
+    .sTitle a {
         color:#ffd100; 
         font-family:'Bevan', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        text-shadow: 2.5px 2.5px 2.5px black; 
+        text-shadow: 2.5px 2.5px 2.5px black;  
+        &:hover {
+            transition: 0.25s ease-in-out;
+            color: #b09104;
+            border-bottom: solid #b09104 4px; 
+        }
+    }
+    .sTitle a h3 {
+        padding-bottom:2px; 
     }
     .shrunken .sTitle {
         top:10px; 
@@ -1984,13 +2014,45 @@ MEDIA QUERIES
         font-size:18px; 
     }
 }
+@media only screen and (max-width: 900px) {
+    #itemContainer {
+        flex-direction: column
+    }
+    #showDetails {
+        margin-left:0; 
+    }
+
+}
+@media only screen and (max-width:650px) {
+    .rating {
+        font-size: 32px;
+    }
+
+    #reviewContainer {
+        width: 95%;
+    }
+
+    #itemContainer {
+        width: 95%;
+    }
+
+    #desc p {
+        font-size: 12px;
+    }
+
+    #authForm,
+    #regForm {
+        width: 95% !important;
+    }
+}
 @media only screen and (max-width:850px) {
     .row {
         flex-direction:column; 
     }
     .prodBox {
+        min-width:350px; 
         width:55%;
-        margin:30px auto; 
+        margin:20px auto; 
     }
     .prodBox img {
         width:50%;

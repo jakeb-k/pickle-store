@@ -110,9 +110,19 @@
                     </a> 
                 </div>
             </div>
+            @guest
             <div class="sTitle">
-                <h1> Oz Pickle </h1> 
+                <a href="{{url('/')}}">
+                    <h1> Oz Pickle </h1> 
+                </a>
+                <div id="arrow" class="js-menu_toggle closed" style="display:none;">
+                </div>
             </div>
+            @else 
+            <div id="arrow" class="js-menu_toggle closed">
+                <h1>→</h1>                 
+            </div>
+            @endguest
                 <!-- USER LINK SECTION - ARE BUTTONS NOT <a> --> 
             <div class="uSec">
                 @guest
@@ -416,15 +426,34 @@ document.getElementById('logo').addEventListener('click', function() {
   if (!opened) {
     rotate = -90; 
     document.getElementById('logo').style.transform = `rotate(${rotate}deg)`;
+    document.getElementById('arrow').style.transform = `rotate(${-rotate}deg)`;
     opened = true;
     return;
   } else {
     rotate = 0;
     document.getElementById('logo').style.transform = `rotate(${rotate}deg)`;
+    document.getElementById('arrow').style.transform = `rotate(${rotate}deg)`;
     opened = false; 
     return; 
   }
 });
+document.getElementById('arrow').addEventListener('click', function() {
+    // Change rotation direction after the first click
+  if (!opened) {
+    rotate = -90; 
+    document.getElementById('logo').style.transform = `rotate(${rotate}deg)`;
+    document.getElementById('arrow').style.transform = `rotate(${-rotate}deg)`;
+    opened = true;
+    return;
+  } else {
+    rotate = 0;
+    document.getElementById('logo').style.transform = `rotate(${rotate}deg)`;
+    document.getElementById('arrow').style.transform = `rotate(${rotate}deg)`;
+    opened = false; 
+    return; 
+  }
+});
+
 
 $(document).on('click','.js-menu_toggle.closed',function(e){
 	e.preventDefault(); $('.list_load, .list_item').stop();

@@ -85,7 +85,7 @@
                     @endforeach
                 </div>
                 @endif
-                    
+                <div class="optSec">
                 @foreach($options as $o)
                     <label for="option">{{ucfirst($o->type)}} Options:</label>
                     <input type="hidden" value="{{$o->type}}" /> 
@@ -95,6 +95,7 @@
                     @endforeach
                     </select>
                 @endforeach
+                </div>
             @endif
             @if($colors ?? "")
                 <p class="alert" style="color:black;">*No selection means one will be randomly selected!</p>
