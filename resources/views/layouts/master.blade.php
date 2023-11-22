@@ -110,7 +110,9 @@
                     </a> 
                 </div>
             </div>
-           
+            <div class="sTitle">
+                <h1> Oz Pickle </h1> 
+            </div>
                 <!-- USER LINK SECTION - ARE BUTTONS NOT <a> --> 
             <div class="uSec">
                 @guest
@@ -168,7 +170,7 @@
         @yield('content') 
          <div id="footer">
         <div class="fSec">
-            <h3 style="text-align:left; margin-left:5%;"> Links </h3>
+            <h3> Links </h3>
             <ul class="links">
                 <li>
                     <a href="{{url('items/accessories')}}">Accessories</a>

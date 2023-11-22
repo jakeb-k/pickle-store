@@ -5,7 +5,9 @@
     color:#e20f0f; 
     font-family:'Oswald'; 
 }
-
+body{
+    overflow-x: hidden;
+}
 //EXTERNAL TEST CSS
 .d-1 {
     --c: #1095c1;
@@ -25,7 +27,7 @@
         0 calc(-1*var(--_t, 0em)) var(--c),
         0 calc(var(--h) - var(--_t, 0em)) #fff;
     border: solid #0000;
-    overflow: hidden;
+   
     border-width: var(--b) var(--b) var(--_s) var(--_s);
     background:
         linear-gradient(var(--c) 0 0) 100% 100% /101% var(--_p, 0%) no-repeat,
@@ -145,15 +147,14 @@ i {
     }
 }
 #nav.shrunken * {
-    transition: 0.5s ease-in-out;
-    scale: 0.9;
+    scale: 0.95;
 }
 .shrunken.uSec .pBtn{
     margin-top:60px; 
 }
 #nav.shrunken {
-    padding-top: 15px;
-    height: 45px;
+    padding-top: 25px;
+    height: 55px;
     transition: 0.3s ease-in-out;
     background:rgba(25, 25, 25, 0.85);
     box-shadow: 0 0 30px #FFD100;
@@ -285,9 +286,7 @@ button.pBtn:active {
      z-index: 1;
      margin-left: -50px;
  }
-.test {
-    color:#e20f0f;
-}
+
  /* Links inside the dropdown */
  .dropdown-content2 button,
  .dropdown-content2 h3 {
@@ -348,12 +347,15 @@ SPLASH SECTION STYLING
     margin-left:10%;
     display:inline;  
 }
-#splashCont {
-    margin-top:75px; 
-    width:100%;
+#splashCont { 
+    margin-top:55px; 
+    min-width:100%;
     height:110%; 
-    padding:20px 0 5% 0; 
+    padding:40px 0 5% 0; 
     background: url('../images/pickleBg2.webp') no-repeat;  
+    background-size: cover;
+        /* Ensures the image covers the container */
+    background-position: center;
  }
 
 .ctaTitle {
@@ -377,6 +379,7 @@ SPLASH SECTION STYLING
 
 }
 #court {
+    min-width:375px; 
     width:55%;
     height:100%; 
     margin:auto; 
@@ -500,6 +503,12 @@ CARD SECTION STYLING
     box-shadow:0 0 20px #FFD100; 
     text-align: center;
     padding:30px 10px; 
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;
+}
+.psBox h3 {
+    font-family:'Bevan', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    color:#ffd100; 
+    text-shadow: 2px 2px 2.5px black;
 }
 .prodTitle {
    margin:0 0 0 10%; 
@@ -585,7 +594,7 @@ button.opsBtn i {
     display:flex;
     flex-direction:row;
     justify-content: space-around;
-
+    
     font-weight: bold;
     font-size:22px;
     
@@ -1929,5 +1938,67 @@ MEDIA QUERIES
    .ctaTitle h3 {
        font-size: 18px;
    }
+
+}
+.sTitle {
+    display:none; 
+}
+@media only screen and (max-width:975px) {
+    .sSec {
+        display:none; 
+    }
+    .sTitle {
+        top:25px;
+        left:100px; 
+        position:fixed; 
+        display:block;
+        color:#ffd100; 
+        font-family:'Bevan', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        text-shadow: 2.5px 2.5px 2.5px black; 
+    }
+    .shrunken .sTitle {
+        top:10px; 
+    }
+  
+}
+@media only screen and (max-width:900px) {
+    .prodSec {
+        flex-direction:column; 
+    }
+    .links li{
+        text-align:center; 
+    }
+    .psBox {
+        width:70%;
+        margin:20px auto;
+        height:fit-content; 
+        font-size:18px; 
+    }
+    
+    .psBox img {
+        scale:0.75; 
+        margin:-30px -20px 0;
+        padding:0; 
+    }
+    .text {
+        font-size:18px; 
+    }
+}
+@media only screen and (max-width:550px) {
+    #footer {
+        flex-direction:column;
+        padding-right:auto; 
+    }
+    .sTitle h1{
+        font-size:24px; 
+    }
+    .psBox h3 {
+        font-size:20px;
+    }
+    .psBox p{
+        font-size:14px; 
+    }
+}
+@media only screen and (max-width:450px) {
 
 }
