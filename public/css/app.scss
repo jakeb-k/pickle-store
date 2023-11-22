@@ -6,7 +6,7 @@
     font-family:'Oswald'; 
 }
 body{
-    overflow: hidden;
+    overflow-x: hidden;
 }
 //EXTERNAL TEST CSS
 .d-1 {
@@ -994,6 +994,7 @@ AUTH FORM STYLING
     align-items: center;
     font-family: 'Rubik', Arial, Helvetica, sans-serif;
     margin: auto;
+    margin-bottom:25px;
     box-shadow: 0 0 10px rgb(43, 43, 43);
 }
 

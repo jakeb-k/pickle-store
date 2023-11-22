@@ -1,5 +1,7 @@
 <title> Register </title> 
 <link rel="stylesheet" href="{{asset('css/app.scss')}}" type="text/css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- Session Status -->
     <div id="regForm">
 
