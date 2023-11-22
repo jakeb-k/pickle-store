@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <title> Oz Pickle @yield('titleDetail')</title>
         @yield('meta') 
+
+        
+
         <link rel="icon" type="image/x-icon" href="{{url('images/favicon.ico')}}">
 
         <link rel="stylesheet" href="{{asset('css/app.scss')}}" type="text/css">
@@ -29,12 +35,53 @@
             });  
     </script>
     <body>
+    
+    <div class="side_menu">
+    
+        <div class="container">
+            <ul class="list_load">
+                <div class="cont">
+                    <a href="{{url('/')}}">
+                        <h3 class="d-2">Home</h3>
+                    </a> 
+                </div>
+
+                <div class="cont">
+                    <a href="{{url('items/accessories')}}">
+                        <h3 class="d-2">Accessories</h3>
+                    </a> 
+                </div>
+
+                <div class="cont">
+                    <a href="{{url('items/paddles')}}">
+                        <h3 class="d-2">Paddles</h3>
+                    </a> 
+                </div>
+                <div class="cont">
+                    <a href="{{url('items/court')}}">
+                        <h3 class="d-2">Court</h3>
+                    </a> 
+                </div>
+                <div class="cont">
+                    <a href="{{url('items/kits')}}">
+                        <h3 class="d-2">Kits</h3>
+                    </a> 
+                </div>
+                <div class="cont">
+                    <a href="{{url('items/clothing')}}">
+                        <h3 class="d-2">Clothing</h3>
+                    </a> 
+                </div>
+                 
+            </ul>
+        </div>
+    </div>
         
         <div id="nav">
             <!-- SHOP LINK SECTION --> 
             <div class="sImg">
-                <a href="{{url('/')}}">
-                    <img src="{{url('images/pickleLogo.png')}}" alt="oz pickle logo"/>
+                <a href="#"  class="menu-icon js-menu_toggle closed">
+                    <img id="logo" src="{{url('images/pickleLogo.png')}}" alt="oz pickle logo"/>
                 </a>
             </div>
             <div class="sSec">
@@ -121,7 +168,7 @@
         @yield('content') 
          <div id="footer">
         <div class="fSec">
-            <h3> Links </h3>
+            <h3 style="text-align:left; margin-left:5%;"> Links </h3>
             <ul class="links">
                 <li>
                     <a href="{{url('items/accessories')}}">Accessories</a>
@@ -358,3 +405,56 @@
     @endauth
     {{--acc modal end here  --}}
 </html> 
+
+<script>
+let opened = false; 
+let rotate = 90;
+document.getElementById('logo').addEventListener('click', function() {
+    // Change rotation direction after the first click
+  if (!opened) {
+    rotate = -90; 
+    document.getElementById('logo').style.transform = `rotate(${rotate}deg)`;
+    opened = true;
+    return;
+  } else {
+    rotate = 0;
+    document.getElementById('logo').style.transform = `rotate(${rotate}deg)`;
+    opened = false; 
+    return; 
+  }
+});
+
+$(document).on('click','.js-menu_toggle.closed',function(e){
+	e.preventDefault(); $('.list_load, .list_item').stop();
+	$(this).removeClass('closed').addClass('opened');
+
+	$('.side_menu').css({ 'left':'0px' });
+
+	var count = $('.list_item').length;
+	$('.list_load').slideDown( (count*.6)*100 );
+	$('.list_item').each(function(i){
+		var thisLI = $(this);
+		timeOut = 100*i;
+		setTimeout(function(){
+			thisLI.css({
+				'opacity':'1',
+				'margin-left':'0'
+			});
+		},100*i);
+	});
+});
+
+$(document).on('click','.js-menu_toggle.opened',function(e){
+	e.preventDefault(); $('.list_load, .list_item').stop();
+	$(this).removeClass('opened').addClass('closed');
+
+	$('.side_menu').css({ 'left':'-250px' });
+
+	var count = $('.list_item').length;
+	$('.list_item').css({
+		'opacity':'0',
+		'margin-left':'-20px'
+	});
+	$('.list_load').slideUp(300);
+});
+</script>

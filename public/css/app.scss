@@ -67,7 +67,6 @@
     /* the cube depth */
     --h: 1.2em;
     /* the height */
-
     --_s: calc(var(--d) + var(--b));
     color: #0000;
     text-shadow:
@@ -117,11 +116,12 @@
 
 
 h3 {
-    font-family: system-ui, sans-serif;
-    font-size: 3rem;
-    margin: 0;
-    cursor: pointer;
-    padding: 0 .1em;
+    width: 100%;
+    padding: 0 .2em;
+}
+.side_menu h3 {
+    width: 200px;
+    text-align: center;
 }
 /*
 
@@ -147,9 +147,6 @@ i {
 #nav.shrunken * {
     transition: 0.5s ease-in-out;
     scale: 0.9;
-}
-.shrunken.d-2 {
-    transition:0.2s; 
 }
 .shrunken.uSec .pBtn{
     margin-top:60px; 
@@ -217,7 +214,10 @@ i {
 #logout {
     margin-bottom:0;  
 }
-
+#logo {
+    transform-origin: center;
+    transition:linear 0.3s; 
+}
 /*
 
 
@@ -349,9 +349,10 @@ SPLASH SECTION STYLING
     display:inline;  
 }
 #splashCont {
+    margin-top:75px; 
     width:100%;
     height:110%; 
-    padding:10% 0 5% 0; 
+    padding:20px 0 5% 0; 
     background: url('../images/pickleBg2.webp') no-repeat;  
  }
 
@@ -479,7 +480,7 @@ CARD SECTION STYLING
 
 */
 .prodSec {
-    margin-top: -105px;
+    margin-top: -50px;
     background-image: url('../images/pickleBg.webp');
     padding:10%; 
     display:flex;
@@ -1777,9 +1778,8 @@ FOOTER STYLING
     font-family:'Bevan', Arial, Helvetica, sans-serif; 
 }
 
-.links a {
-    font-size:18px; 
-    padding:5px; 
+#footer .links a {
+    font-size:20px; 
     text-decoration: none;
     box-shadow: inset 0 0 0 0 rgb(50, 50, 50);
     color: rgb(50,50,50);
@@ -1789,8 +1789,145 @@ FOOTER STYLING
 }
 #footer ul {
     list-style-type: none;
+    padding:0px;
+    margin:0 5%; 
 }
-.links a:hover {
+#footer li {
+    margin:2.5px 0; 
+}
+#footer .links a:hover {
     box-shadow: inset 150px 0 0 0 rgb(50, 50, 50);
     color: #FFD100;
+}
+/* PULL OUT MENU CODE */
+
+
+
+
+
+
+
+
+
+
+#logo2 {
+    width: 50%;
+    height:auto; 
+    scale: 0.9;
+    background: rgb(255, 255, 255);
+    border-radius: 25px;
+    margin: 0 0 0 -20px;
+    border: 3px solid #F49110;
+
+}
+
+.page_title,
+.what_to_do {
+    font-weight: 300;
+    line-height: 120%;
+    text-align: center;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, .8);
+    text-transform: uppercase;
+
+}
+
+/* PEN STYLES ========== */
+a,
+.side_menu {
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+
+.menu_title {
+    font-family: 'League Gothic', Arial, Helvetica, sans-serif;
+    color: #F49110;
+}
+
+/* MENU CONTAINER ----- */
+.side_menu {
+    padding-top:125px; 
+    background: rgba(40, 40, 40, .9);
+    height: 100vh;
+    left: -250px;
+    position: fixed;
+    top: 0;
+    width: 250px;
+    z-index: 1;
+    font-family: 'Rubrik', Arial, Helvetica, sans-serif;
+    font-size: 12px;
+
+}
+
+.list_title {
+    font-family: 'League Gothic', Arial, Helvetica, sans-serif;
+    color: #F49110;
+    font-size: 24px;
+    margin-bottom: 0px;
+}
+
+.side_menu .container {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 0 1em;
+}
+
+
+
+/* STAGGER LIST ----- */
+.list_load {
+    display: none;
+    list-style: none;
+    padding: 0;
+}
+
+.list_item {
+    margin-left: -20px;
+    opacity: 0;
+    -webkit-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+}
+
+.list_item a {
+    color: #fff;
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+
+.list_item a:hover {
+    background: rgba(255, 255, 255, .2);
+}
+
+/*
+
+
+
+MEDIA QUERIES
+
+
+
+
+*/ 
+@media only screen and (max-width:1200px) {
+   .ctaTitle h2 {
+        font-size:24px; 
+   }
+   .ctaTitle h3 {
+       font-size: 20px;
+   }
+}
+@media only screen and (max-width:1100px){
+    .d-2 {
+        scale:0.85;
+    }
+    .sSec {
+        margin-left:10%; 
+    }
+    .ctaTitle h2 {
+        font-size:20px; 
+   }
+   .ctaTitle h3 {
+       font-size: 18px;
+   }
+
 }

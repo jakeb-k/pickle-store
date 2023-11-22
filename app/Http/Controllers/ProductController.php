@@ -385,7 +385,7 @@ class ProductController extends Controller
                 $filterTag = 'Filtered by Price ↑'; 
                 break;
             case 'pop':
-                $products =  Product::where('type', 'like', '%' . $type . '%')->orderBy('rating')->get(); 
+                $products =  Product::where('type', 'like', '%' . $type . '%')->orderByDesc('rating')->get(); 
                 $filterTag = 'Filtered by Popularity ↓';
                 break;
         }
