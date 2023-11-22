@@ -6,7 +6,7 @@
     font-family:'Oswald'; 
 }
 body{
-    overflow-x: hidden;
+    overflow: hidden;
 }
 //EXTERNAL TEST CSS
 .d-1 {
@@ -1984,6 +1984,20 @@ MEDIA QUERIES
         font-size:18px; 
     }
 }
+@media only screen and (max-width:850px) {
+    .row {
+        flex-direction:column; 
+    }
+    .prodBox {
+        width:55%;
+        margin:30px auto; 
+    }
+    .prodBox img {
+        width:50%;
+        margin:0 auto; 
+    }
+}
+
 @media only screen and (max-width:550px) {
     #footer {
         flex-direction:column;
@@ -1998,7 +2012,4 @@ MEDIA QUERIES
     .psBox p{
         font-size:14px; 
     }
-}
-@media only screen and (max-width:450px) {
-
 }
