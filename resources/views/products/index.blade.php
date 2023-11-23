@@ -6,6 +6,7 @@
 
     <div id="prodCont">
         <div class="filter">
+        @if($type != "Wishlist")
             <h1> Filter </h1> 
             <div class="dropdown2">
                 <button class="dropbtn2"><i class="fa-solid fa-filter" style="color:#ffd100;"> </i></button>
@@ -28,7 +29,11 @@
                     </form>
                 </div>
             </div>
+            @else
+            <h1> Wishlist </h1>
+        @endif
         </div>
+
         @foreach($products->chunk(3) as $chunk)
             <div class="row">
             @foreach($chunk as $product)

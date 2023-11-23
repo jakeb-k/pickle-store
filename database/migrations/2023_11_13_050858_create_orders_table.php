@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->decimal('total'); 
             $table->string('products');
+            $table->string('status'); 
+            $table->string('session_id')->nullable(); 
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->boolean('sent'); 
