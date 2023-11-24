@@ -34,12 +34,19 @@ class ProfileController extends Controller
         $this->validate($request, [
             'name' => 'max:255',
             'email' => 'email',
-            'address' => 'max:255',
+            'street'=>['required', 'string', 'max:255'],
+            'city'=>['required', 'string', 'max:255'],
+            'state'=>['required', 'string', 'max:255'],
+            'postcode'=>['required', 'digits:4'],
         ]);
         
         $user->name = $request->name;
         $user->email = $request->email; 
-        $user->address = $request->address; 
+        $user->street = $request->street; 
+        $user->city = $request->city; 
+        $user->state = $request->state; 
+        $user->postcode = $request->postcode; 
+
         $user->save(); 
         return redirect()->back();
     }

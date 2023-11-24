@@ -394,9 +394,51 @@
                         </div>
 
                         <div class="createInput">
-                            <label class="form-label"> Address: </label>
-                            <input type="text" name="address" placeholder="Enter new Address" value="{{Auth::user()->address}}"> 
-                            @error('address')
+                            <label class="form-label"> Street: </label>
+                            <input type="text" name="street" placeholder="Enter new Street" value="{{Auth::user()->street}}"> 
+                            @error('street')
+                                <div class="alert">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="line">
+                        </div>
+
+                        <div class="createInput">
+                            <label class="form-label"> City: </label>
+                            <input type="text" name="city" placeholder="Enter new City" value="{{Auth::user()->city}}"> 
+                            @error('city')
+                                <div class="alert">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="line">
+                        </div>
+
+                        <div class="createInput">
+                            <label class="form-label"> State: </label>
+                            <select name="state" style="width:90%; padding:10px; margin-left:5%; ">
+                                <option name="state" value="QLD">QLD</option>
+                                <option name="state" value="NSW">NSW</option>
+                                <option name="state" value="VIC">VIC</option>
+                                <option name="state" value="SA">SA</option>
+                                <option name="state" value="ACT">ACT</option>
+                                <option name="state" value="WA">WA</option>
+                                <option name="state" value="NT">NT</option>
+                                <option name="state" value="TAS">TAS</option>
+                            </select>
+                            @error('state')
+                                <div class="alert">{{ $message }}</div>
+                            @enderror
+                        </div>
+
+                        <div class="line">
+                        </div>
+
+                        <div class="createInput">
+                            <label class="form-label"> Postcode: </label>
+                            <input type="text" name="postcode" placeholder="Enter new Postcode" value="{{Auth::user()->postcode}}"> 
+                            @error('postcode')
                                 <div class="alert">{{ $message }}</div>
                             @enderror
                         </div>
