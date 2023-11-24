@@ -35,6 +35,8 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [ProductController::class, 'admin']); 
+    Route::any('admin/filter',[ProductController::class, 'adminSort']); 
+
     Route::get('product/{id}/available', [ProductController::class, 'available']);
 
     Route::post('product/{id}/add-tag', [ProductController::class, 'addTag']);

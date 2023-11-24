@@ -28,6 +28,7 @@
                 <td>SENT</td>
             </tr>
             @for($i = 0; $i < count($orders); $i++)
+            @if($orders[$i]->status != 'unpaid')
             @if($orders[$i]->sent == false and $sentB == false)
             <tr>
                 <td>{{$orders[$i]->id}}</td>
@@ -54,6 +55,7 @@
                     @endif
                 </td>
             </tr>
+            @endif
             @endif
             @endfor
         </table>

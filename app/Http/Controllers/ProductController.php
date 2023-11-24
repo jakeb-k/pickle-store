@@ -209,14 +209,7 @@ class ProductController extends Controller
         return redirect()->back(); 
     }
 
-    //Show the admin dashboard
-    public function admin(){
-        $cats = ['Accessories','Paddle','Court','Kit','Clothing'];
-
-        $products = Product::all();
-
-        return view('products.admin')->with('products',$products)->with('cats', $cats);
-    }
+    
     //update product availability 
     
     public function available($id){
@@ -225,8 +218,6 @@ class ProductController extends Controller
         $product->available = !$product->available; 
 
         $product->save(); 
-
-        $cats = ['Golf','Yoga','Gymnastics','Lifting','Vehicle','Bathroom','Office','Pets','Fatigue','Placeproducts','Rugs','Kids','Welcome','Outdoor','Tapestry'];
         
         $products = Product::all(); 
 
@@ -392,5 +383,24 @@ class ProductController extends Controller
         
         return view('products.index')->with('products', $products)->with('filterTag', $filterTag)->with('paginated', false)->with('type', $type); 
     }
+    //Show the admin dashboard
+    public function admin(){
+        $cats = ['Accessories','Paddle','Court','Kit','Clothing'];
+
+        $products = Product::all();
+
+        return view('products.admin')->with('products',$products)->with('cats', $cats);
+    }
+    //sort admin results for quicker access
+    public function adminSort(Request $request){
+            $fil = $request->filter; 
+            $cats = ['Accessories','Paddle','Court','Kit','Clothing'];
+               
+            $products =  Product::where('type', 'like', '%' . $fil . '%')->get(); 
+    
+            
+            return view('products.admin')->with('products', $products)->with('cats', $cats); 
+        }
+
 
 }

@@ -226,7 +226,7 @@
                 <div id="cartTitle">
                     <em> Order For: </em> <b> {{Auth::user()->name}} </b>
                 </div>
-            <p class="addy"> {{Auth::user()->address}} · {{date('D jS M y g:i A')}} </p>
+            <p class="addy"> {{Auth::user()->street.' '.Auth::user()->city.' '.Auth::user()->state }} <br > {{date('D jS M y g:i A')}} </p>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>

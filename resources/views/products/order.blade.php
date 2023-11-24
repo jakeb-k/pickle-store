@@ -43,7 +43,7 @@ Mat-Mart Orders
                             Delivery Address 
                         </div>
                         <div>
-                            {{$user->address}} 
+                             {{$user->street.' '.$user->city.' '.$user->state.' '.$user->postcode}}
                         </div>
                     </div> 
                     <div class="line">
