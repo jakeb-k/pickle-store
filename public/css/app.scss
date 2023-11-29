@@ -400,6 +400,7 @@ SPLASH SECTION STYLING
 }
 .qcSec {
     height:100%; 
+    width:100%;
     border:2.5px solid #FFD100;
     position: relative;
     align-self: center;
@@ -500,7 +501,7 @@ CARD SECTION STYLING
 }
 .psBox {
     margin:0 2.5%;
-    width:100%; 
+    min-width:300px; 
     background:rgb(218, 218, 218); 
     border-radius:15px; 
     box-shadow:0 0 20px #FFD100; 
@@ -2109,7 +2110,10 @@ MEDIA QUERIES
         text-align: center;
     }
     .sTitle h1{
-        font-size:24px; 
+        font-size:22px; 
+    }
+    .pBtn {
+        padding:5px 10px; 
     }
     .psBox h3 {
         font-size:20px;
