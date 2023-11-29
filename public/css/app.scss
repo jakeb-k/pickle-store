@@ -400,7 +400,6 @@ SPLASH SECTION STYLING
 }
 .qcSec {
     height:100%; 
-    width:100%;
     border:2.5px solid #FFD100;
     position: relative;
     align-self: center;
@@ -562,6 +561,27 @@ button.opsBtn i {
         fill: #FFD100;
     }
 }
+.backBtn i {
+    font-size: 30px;
+    color: #ffd100;
+    margin-right: 12.5px;
+    &:hover {
+    color:rgb(40,40,40); 
+    transition:0.2s ease-in-out;
+    }
+}
+.backBtn {
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;
+    color:#FFD100;
+    text-shadow:2px 2px 2.5px black; 
+    font-size:38px; 
+    font-weight:500; 
+    &:hover {
+        color:rgb(40,40,40); 
+        transition:0.2s ease-in-out;
+    }
+}
+
 .filter {
     display:flex;
     flex-direction:row;
@@ -2074,11 +2094,19 @@ MEDIA QUERIES
         margin:0 auto; 
     }
 }
-
+.linkTitle {
+    text-align:left; 
+}
 @media only screen and (max-width:550px) {
     #footer {
         flex-direction:column;
         padding-right:auto; 
+    }
+    #footer h3 {
+        text-align:center; 
+    }
+    .linkTitle {
+        text-align: center;
     }
     .sTitle h1{
         font-size:24px; 

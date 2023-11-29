@@ -180,8 +180,11 @@
         @yield('content') 
          <div id="footer">
         <div class="fSec">
-            <h3> Links </h3>
+            <h3 class="linkTitle"> Links </h3>
             <ul class="links">
+                <li>
+                    <a href="{{url('/')}}">Home</a>
+                </li>
                 <li>
                     <a href="{{url('items/accessories')}}">Accessories</a>
                 </li>
