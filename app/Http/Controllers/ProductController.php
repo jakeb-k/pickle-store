@@ -92,11 +92,16 @@ class ProductController extends Controller
         $reviews = []; 
  
         //potentially add image, probs not tho
+        $tot = 0; 
         foreach($rReviews as $r) {
             $u = User::find($r['user_id']);
+            $tot += $r['rating']; 
             $n = [$u['name'],$r['rating'],$r['content']];
             $reviews[]=$n; 
         }
+        $product->rating = $tot/count($rReviews); 
+        $product->save(); 
+        
         $type = $product->type; 
         $options = []; 
         

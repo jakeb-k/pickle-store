@@ -20,12 +20,18 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
+        $states = ['NSW', 'VIC', 'QLD', 'WA', 'SA', 'TAS', 'ACT', 'NT'];
         return [
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
+            'street' => $this->faker->streetAddress,
+            'city' => $this->faker->city,
+            'role'=>1,
+            'state' => $this->faker->randomElement($states), // Randomly select a state abbreviation
+            'postcode' => $this->faker->postcode,
         ];
     }
 

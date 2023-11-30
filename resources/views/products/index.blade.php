@@ -38,7 +38,16 @@
     @foreach($products->chunk(3) as $chunk)
     <div class="row">
         @foreach($chunk as $product)
-
+        <?php 
+            $reviews = $product->review; 
+            
+            $x = 0; 
+            foreach($reviews as $r) {
+                $x += $r->rating; 
+            }
+            $product->rating = $x/$product->review()->count(); 
+            $product->save(); 
+        ?>
         @auth
         @if(Auth::user()->role == 1)
         <?php $check = explode(",", Auth::user()->favs); ?>
@@ -81,7 +90,7 @@
 
         <div class="prodBox">
             @if($product->image)
-            <?php $images = explode(",", $product->image) ?>
+            <?php $images = explode(",", $product->image); ?>
             <img src="{{url('storage/images/'.$images[0])}}" />
             @else
             <img src="{{url('images/pickleLogo.png')}}" />

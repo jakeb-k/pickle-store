@@ -73,7 +73,7 @@ body{
     color: #0000;
     text-shadow:
         0 calc(-1*var(--_t, 0em)) var(--c),
-        0 calc(var(--h) - var(--_t, 0em)) #fff;
+        0 calc(var(--h) - var(--_t, 0em)) rgb(40, 40, 40);
     border: solid #0000;
     overflow: hidden;
     border-width: var(--b) var(--_s) var(--_s) var(--b);
@@ -506,13 +506,17 @@ CARD SECTION STYLING
     border-radius:15px; 
     box-shadow:0 0 20px #FFD100; 
     text-align: center;
-    padding:30px 10px; 
+    padding:30px 10px 15px; 
     font-family: 'Oswald', Arial, Helvetica, sans-serif;
 }
 .psBox h3 {
     font-family:'Bevan', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
     color:#ffd100; 
     text-shadow: 2px 2px 2.5px black;
+}
+.psBox .backBtn {
+    margin-left:77.5%; 
+    justify-self:end;
 }
 .prodTitle {
     margin:0 0 0 10%; 

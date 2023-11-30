@@ -60,8 +60,9 @@
             kickstart your pickleball journey with everything you need! This
             comprehensive set includes a specially crafted beginner's net for easy
             setup, quality paddles tailored for novice players, gloves offering
-            comfort and grip, a pack of durable balls for countless rallies, and a
+            comfort and grip, a pack of balls for countless rallies, and a
             stylish shirt to add a touch of flair to your game. </p>
+        <a class="backBtn" href="{{url('product/27')}}" ><i class="fa-regular fa-circle-right fa-2xl" style="font-size: 64px; margin-top:-150px; "></i></a>
     </div>
 
     <div class="psBox" style="display: none;">
@@ -73,6 +74,7 @@
             control, specialized gloves for a competitive edge, a pro-grade pack of
             balls for consistent performance, and a sleek shirt to showcase your
             commitment to the game.</p>
+        <a class="backBtn" href="{{url('product/28')}}"><i class="fa-regular fa-circle-right fa-2xl" style="font-size: 64px;"></i></a>
     </div>
 
     <div class="psBox" style="display: none;">
@@ -84,6 +86,8 @@
             expert-level gloves for unparalleled grip, a tournament-quality pack of
             balls for optimal performance, and a high-performance shirt designed for
             top-tier play.</p>
+        <a class="backBtn" href="{{url('product/29')}}"><i class="fa-regular fa-circle-right fa-2xl"  style="font-size: 64px;"></i></a>
+
     </div>
 </div>
 <script>
