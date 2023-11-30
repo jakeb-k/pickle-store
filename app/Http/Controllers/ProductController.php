@@ -293,6 +293,7 @@ class ProductController extends Controller
             if($cart[$id]['options'] == implode(",",$options)) {
             $cart[$id]['quantity']++;
             session()->put('cart', $cart);
+            return redirect()->back()->with('success', 'Product added to cart successfully!');
             } 
             $cart[$id+1] = [
             "id"=> $product->id,

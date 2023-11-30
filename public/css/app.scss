@@ -150,11 +150,11 @@ i {
     scale: 0.95;
 }
 .shrunken.uSec .pBtn{
-    margin-top:60px; 
+    margin-top:90px; 
 }
 #nav.shrunken {
     padding-top: 25px;
-    height: 57.5px;
+    height: 54.5px;
     transition: 0.3s ease-in-out;
     background:rgba(25, 25, 25, 0.85);
     box-shadow: 0 0 30px #FFD100;
@@ -180,7 +180,7 @@ i {
     width:45%; 
 }
 .shrunken .uSec {
-    padding-top: 15px;
+    padding-top: 25px;
 }
 .uSec {
     padding-top: 15px;
@@ -203,7 +203,7 @@ i {
 }
 .shrunken img {
     top:-30px;
-    scale:0.9; 
+    scale:0.7; 
     left:20px;  
 }
 .sLink, .uLink {
@@ -578,8 +578,8 @@ button.opsBtn i {
     font-size:38px; 
     font-weight:500; 
     &:hover {
-        color:rgb(40,40,40); 
-        transition:0.2s ease-in-out;
+        color: #FFD100; 
+        text-decoration: none;
     }
 }
 
@@ -615,10 +615,18 @@ button.opsBtn i {
     display:flex;
     flex-direction:column; 
 }
+.prodBox a {
+    padding:5px; 
+    color:#c0a404;
+    font-weight:500;
+    font-family:'Oswald','Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;  
+    font-size:18px; 
+}
 .prodBox img{
     width:100%;
     height:auto; 
-    border-radius:15px; 
+    border-top-right-radius:15px; 
+    border-top-left-radius: 15px;
 }
 .pInfo {
     width:100%; 
