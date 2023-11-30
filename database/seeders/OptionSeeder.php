@@ -13,32 +13,38 @@ class OptionSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('options')->insert(['type'=>'Cover','values'=>'On.Off','product_id'=>1]);
-        DB::table('options')->insert(['type'=>'Color','values'=>'yellow.pink','product_id'=>2]);
-        DB::table('options')->insert(['type'=>'color','values'=>'black.yellow.red','product_id'=>3]);
+        DB::table('options')->insert(['type'=>'cover','values'=>'On.Off','product_id'=>1]);
+        DB::table('options')->insert(['type'=>'size','values'=>'M.L','product_id'=>12]);
+        DB::table('options')->insert(['type'=>'cover','values'=>'On.Off','product_id'=>3]);
         DB::table('options')->insert(['type'=>'cover','values'=>'On.Off','product_id'=>4]);
-        DB::table('options')->insert(['type'=>'cover','values'=>'On.Off','product_id'=>6]);
+        DB::table('options')->insert(['type'=>'cover','values'=>'On.Off','product_id'=>5]);
+        DB::table('options')->insert(['type'=>'size','values'=>'M.L.XL','product_id'=>13]);
         DB::table('options')->insert(['type'=>'cover','values'=>'On.Off','product_id'=>7]);
-        DB::table('options')->insert(['type'=>'color','values'=>'orange.blue.green.red','product_id'=>10]);
-        DB::table('options')->insert(['type'=>'color','values'=>'deepskyblue.orangered','product_id'=>12]);
-        DB::table('options')->insert(['type'=>'color','values'=>'orange.white','product_id'=>13]);
-        DB::table('options')->insert(['type'=>'size','values'=>'S.M.L','product_id'=>23]);
-        DB::table('options')->insert(['type'=>'color','values'=>'lightblue.green.yellow','product_id'=>20]);
-        DB::table('options')->insert(['type'=>'color','values'=>'green.yellow','product_id'=>21]);
-        DB::table('options')->insert(['type'=>'hand ','values'=>'Finger.less','product_id'=>22]);
-        DB::table('options')->insert(['type'=>'hand ','values'=>'L.R','product_id'=>23]);
-        DB::table('options')->insert(['type'=>'size','values'=>'XS.S.M.L.XL','product_id'=>24]);
-        DB::table('options')->insert(['type'=>'color ','values'=>'red.green.black','product_id'=>25]);
-        DB::table('options')->insert(['type'=>'color ','values'=>'yellow.green.black','product_id'=>26]);
-        DB::table('options')->insert(['type'=>'color ','values'=>'green.white.yellow','product_id'=>27]);
-        DB::table('options')->insert(['type'=>'color ','values'=>'blue.red.black','product_id'=>28]);
-        DB::table('options')->insert(['type'=>'color ','values'=>'white.orange.blue','product_id'=>29]);
-        DB::table('options')->insert(['type'=>'color ','values'=>'green.orange.black','product_id'=>30]);
-        DB::table('options')->insert(['type'=>'color ','values'=>'black.darkgray.green','product_id'=>31]);
-        DB::table('options')->insert(['type'=>'color ','values'=>'black.lightblue.orange','product_id'=>32]);
-        DB::table('options')->insert(['type'=>'color ','values'=>'gray.red.white','product_id'=>33]);
-        DB::table('options')->insert(['type'=>'color ','values'=>'gray.red.white','product_id'=>34]);
-        DB::table('options')->insert(['type'=>'color ','values'=>'darkblue.green.black','product_id'=>35]);
+        DB::table('options')->insert(['type'=>'cover','values'=>'On.Off','product_id'=>8]);
+        DB::table('options')->insert(['type'=>'size','values'=>'M.L ','product_id'=>14]);
+        DB::table('options')->insert(['type'=>'color','values'=>'blue.white.black.yellow.pink','product_id'=>10]);
+        DB::table('options')->insert(['type'=>'color','values'=>'white.black.green.darkblue.purple','product_id'=>11]);
+        DB::table('options')->insert(['type'=>'color','values'=>'pink.green.black','product_id'=>12]);
+        DB::table('options')->insert(['type'=>'color','values'=>'black.green.khaki.camo','product_id'=>13]);
+        DB::table('options')->insert(['type'=>'color','values'=>'green.brown.black','product_id'=>14]);
+        DB::table('options')->insert(['type'=>'color','values'=>'red.orange.lightblue.yellow.white.darkblue','product_id'=>15]);
+        DB::table('options')->insert(['type'=>'color','values'=>'red.yellow.orange','product_id'=>19]);
+        DB::table('options')->insert(['type'=>'color','values'=>'blue.white.pink.yellow','product_id'=>21]);
+        DB::table('options')->insert(['type'=>'color','values'=>'yellow.orange','product_id'=>25]);
+        DB::table('options')->insert(['type'=>'color','values'=>'darkblue.black.red.gray.blue.brown.darkgray','product_id'=>30]);
+        DB::table('options')->insert(['type'=>'color','values'=>'black.darkblue.gray.red','product_id'=>31]);
+        DB::table('options')->insert(['type'=>'size','values'=>'XS.S.M.L.XL','product_id'=>34]);
+        DB::table('options')->insert(['type'=>'color','values'=>'darkgray.black.navy.red.lightgray.deepskyblue.brown','product_id'=>33]);
+        DB::table('options')->insert(['type'=>'color','values'=>'black.khaki.navy.pink.gray.purple.deepskyblue.white','product_id'=>34]);
+        DB::table('options')->insert(['type'=>'color','values'=>'black.deepskyblue.blue.green.navy.khaki.lightgray.gray.purple','product_id'=>35]);
+        DB::table('options')->insert(['type'=>'color','values'=>'black.white.gray.red.blue.navy','product_id'=>36]);
+        DB::table('options')->insert(['type'=>'color','values'=>'black.white.gray.red.blue.navy','product_id'=>37]);
+        DB::table('options')->insert(['type'=>'color','values'=>'white.black.blue.deepskyblue.darkgreen.khaki.pink.purple.red.yellow.navy.lightgray','product_id'=>38]);
+        DB::table('options')->insert(['type'=>'color','values'=>'white.gray.red.purple.blue.darkred.navy.black','product_id'=>39]);
+        DB::table('options')->insert(['type'=>'color','values'=>'navy.black.gray.red.purple.deepskyblue.darkred.white','product_id'=>40]);
+        DB::table('options')->insert(['type'=>'color','values'=>'black.blue.deepskyblue.brown.gray.olivedrab.khaki.orange.pink.purple','product_id'=>41]);
+        DB::table('options')->insert(['type'=>'color','values'=>'white.green.red.purple.blue.darkred.navy.black','product_id'=>42]);
+
 
 
     }

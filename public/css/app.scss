@@ -602,7 +602,9 @@ button.opsBtn i {
     display:flex;
     flex-direction:row;
     justify-content: center; 
+    
 }
+
 .prodBox {
     margin:1.5%; 
     text-align:center;
@@ -736,10 +738,19 @@ PRODUCT DETAIL PAGE STYLING
 }
 .oSec {
     display:flex;
-    flex-direction:row;
+    flex-direction:column;
     justify-content: space-evenly;
     font-size: 16px;
     font-family: 'Oswald', Arial, Helvetica, sans-serif;
+}
+.oSec .row {
+    width:100%; 
+    justify-content: flex-start;
+    margin-bottom:-50px; 
+
+}
+.colorInput {
+    padding:0 10px;  
 }
 .color-label {
     display: inline-block;

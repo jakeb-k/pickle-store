@@ -68,22 +68,39 @@
                     @endforeach
                 </select>
 
+                    <?php 
+                    if($colors) {
+                       $colors = collect($colors);
+                    }; ?> 
                 <div class="oSec">
-                    @foreach($colors as $c)
-                    <input type="radio" id="{{$c}}" name="color" value="{{$c}}" style="display: none;" />
-                    <label for="{{$c}}" class="color-label" style="background-color: {{$c}}; border-radius: 50%;"></label>
-                    <p style="margin-top:25px; ">{{ucfirst($c)}}</p>
+                    @foreach($colors->chunk(6) as $chunk)
+                        <div class="row">
+                        @foreach($chunk as $c)
+                        <div class="colorInput">
+                            <input type="radio" id="{{$c}}" name="color" value="{{$c}}" style="display: none;" />
+                            <label for="{{$c}}" class="color-label" style="background-color: {{$c}}; border-radius: 50%;"></label>
+                            <p style="margin-top:25px; ">{{ucfirst($c)}}</p>
+                        </div>
+                        @endforeach
+                        </div>
                     @endforeach
                 </div>
 
                 @else
                 <div class="line"></div>
                 @if($colors != [])
+                <?php $colors = collect($colors) ?> 
                 <div class="oSec">
-                    @foreach($colors as $c)
-                    <input type="radio" id="{{$c}}" name="color" value="{{$c}}" style="display: none;" />
-                    <label for="{{$c}}" class="color-label" style="background-color: {{$c}}; border-radius: 50%;"></label>
-                    <p style="margin-top:25px; ">{{ucfirst($c)}}</p>
+                    @foreach($colors->chunk(8) as $chunk)
+                        <div class="row">
+                        @foreach($chunk as $c)
+                        <div class="colorInput">
+                            <input type="radio" id="{{$c}}" name="color" value="{{$c}}" style="display: none;" />
+                            <label for="{{$c}}" class="color-label" style="background-color: {{$c}}; border-radius: 50%;"></label>
+                            <p style="margin-top:25px; ">{{ucfirst($c)}}</p>
+                        </div>
+                        @endforeach
+                        </div>
                     @endforeach
                 </div>
                 @endif

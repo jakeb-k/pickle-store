@@ -101,7 +101,7 @@ class ProductController extends Controller
         $options = []; 
         
         if($type == "Clothing") {
-            $s = Options::find(15); 
+            $s = Options::find(21); 
             $sizes = explode(".",$s->values); 
 
             $cOptions = Options::whereRaw('product_id = ?', array($id))->get();
