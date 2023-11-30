@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('delivery'); 
             $table->float('price');
             $table->float('discount')->nullable();
-            $table->string('sku')->unique();
+            $table->string('sku')->nullable();
             $table->string('description')->nullable();
             $table->string('image')->nullable();
             $table->string('tags')->nullable(); 

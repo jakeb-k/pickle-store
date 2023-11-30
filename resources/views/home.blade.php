@@ -51,7 +51,7 @@
     </div>
 
 </div>
-<h1 class="prodTitle">Kits <a href="{{url('items/accessories')}}">View All Kits</a></h1>
+<h1 class="prodTitle">Kits <a href="{{url('items/kits')}}">View All Kits</a></h1>
 <div class="prodSec">
     <div class="psBox"  style="display: none;">
         <img src="{{url('images/pickleLogo.png')}}" alt="starter kit 1" />
@@ -97,7 +97,7 @@
 
     // Initially set the width of .psBox elements
     setPsBoxWidth();
-    
+
         function applyPoofEffect(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -113,7 +113,7 @@
         });
     }
 
-        const observer = new IntersectionObserver(applyPoofEffect, { threshold: 0.5 });
+        const observer = new IntersectionObserver(applyPoofEffect, { threshold:1 });
 
         const largeDiv = document.querySelector('.prodSec');
         if (largeDiv) {

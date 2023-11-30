@@ -5,7 +5,7 @@
 @section('content')
 
 <div id="showContainer">
-    <a class="backBtn" href='{{url("items/$product->type")}}' style="margin:10px 17.5%;"><i class="fa-regular fa-circle-left"></i>{{$product->type}}</a>
+    <a class="backBtn" href='{{url("items/".lcfirst($product->type))}}' style="margin:10px 17.5%;"><i class="fa-regular fa-circle-left"></i>{{$product->type}}</a>
 
     <div id="itemContainer">
 
