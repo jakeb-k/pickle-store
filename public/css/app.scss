@@ -340,7 +340,7 @@ SPLASH SECTION STYLING
 .net {
     width:10px;
     height:105%; 
-    border-radius:5px; 
+    border-radius:3px; 
     background-color: #ffb300;
     margin:-12.5px auto;
     border:2.5px solid rgb(0, 0, 0); 
@@ -699,7 +699,6 @@ PRODUCT DETAIL PAGE STYLING
     display: flex;
     flex-direction: column;
     justify-content: center;
-     
     font-family: 'Bevan', Arial, Helvetica, sans-serif;
     font-size: 24px;
     background: linear-gradient(rgb(235, 235, 235), rgb(50, 50, 50));
@@ -721,6 +720,7 @@ PRODUCT DETAIL PAGE STYLING
     background: white;
     box-shadow: 0px 0px 20px rgb(40, 40, 40);
     padding: 20px;
+    border-radius: 24px;
 }
 
 #slideOps img {
@@ -816,6 +816,7 @@ input[type="radio"]:checked+label {
     font-size: 24px;
     background-color: #FFD100;
     box-shadow: 0 0 5px black;
+    border-radius:8px; 
 }
 
 .detailSlides .dSlides {
@@ -831,6 +832,7 @@ input[type="radio"]:checked+label {
 #showImg img{
     width:100%; 
     margin-right: 30px;
+    border-radius: 16px;
 }
 
 #showImg .dSlides {
@@ -848,6 +850,7 @@ input[type="radio"]:checked+label {
     background: white;
     box-shadow: 0px 0px 20px black;
     padding: 20px;
+    border-radius:24px; 
 
 }
 
@@ -870,7 +873,7 @@ input[type="radio"]:checked+label {
 
 .reviewBox h3 {
     font-family: 'Oswald', Arial, Helvetica, sans-serif;
-    font-size: 28px;
+    font-size: 18px;
 }
 
 #reviewContainer a {
@@ -921,12 +924,13 @@ input[type="radio"]:checked+label {
 }
 
 .createSubmit3 button {
-    background-color: #ffb300;
+    background-color: #ffd100;
     border: none;
     box-shadow: 0 0 10px black;
     font-family: 'Bevan', Arial, Helvetica, sans-serif;
     font-size: 32px;
     width: 90%;
+    border-radius:8px; 
 }
 
 .createSubmit3 {
@@ -937,9 +941,10 @@ input[type="radio"]:checked+label {
 }
 
 .createSubmit3 button:hover {
-    background-color: #FFD100;
+    background-color: #ffb300;
     color: black;
     transition: 0.15s ease-in-out;
+    cursor: pointer;
 }
 
 /* 
@@ -1987,12 +1992,10 @@ MEDIA QUERIES
 
 */ 
 @media only screen and (max-width:1200px) {
-   .ctaTitle h2 {
+   .ctaTitle h1 {
         font-size:24px; 
    }
-   .ctaTitle h3 {
-       font-size: 20px;
-   }
+   
 }
 @media only screen and (max-width:1100px){
     .d-2 {
@@ -2001,11 +2004,9 @@ MEDIA QUERIES
     .sSec {
         margin-left:10%; 
     }
-    .ctaTitle h2 {
-        font-size:20px; 
-   }
+  
    .ctaTitle h3 {
-       font-size: 18px;
+       font-size: 16px;
    }
 
 }
@@ -2082,6 +2083,28 @@ MEDIA QUERIES
     }
 
 }
+}
+
+@media only screen and (max-width:850px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .prodBox {
+        min-width: 350px;
+        width: 55%;
+        margin: 20px auto;
+    }
+
+    .prodBox img {
+        width: 50%;
+        margin: 0 auto;
+    }
+}
+
+.linkTitle {
+    text-align: left;
+}
 @media only screen and (max-width:650px) {
     .rating {
         font-size: 32px;
@@ -2103,23 +2126,18 @@ MEDIA QUERIES
     #regForm {
         width: 95% !important;
     }
+    .ctaTitle h1 {
+        font-size:18px; 
+        margin:0; 
+   }
 }
-@media only screen and (max-width:850px) {
-    .row {
-        flex-direction:column; 
+@media only screen and(max-width:575px) {
+    .ctaTitle h1{
+        font-size:14px; 
     }
-    .prodBox {
-        min-width:350px; 
-        width:55%;
-        margin:20px auto; 
+    .ctaTitle h3 {
+        font-size:10px; 
     }
-    .prodBox img {
-        width:50%;
-        margin:0 auto; 
-    }
-}
-.linkTitle {
-    text-align:left; 
 }
 @media only screen and (max-width:550px) {
     #footer {

@@ -3,7 +3,7 @@
 
 <div id="splashCont">
     <div class="ctaTitle">
-        <h2>Welcome to Oz Pickle. The Best Aussie Pickleball Outlet! </h2>
+        <h1>Welcome to AussiePicklePro - The Pro Aussie Pickleball Outlet! </h1>
         <h3>Don't Miss Out - Grab Your Gear NOW ↓</h3>
         <p>Free Shipping STOREWIDE! </p>
     </div>
@@ -27,7 +27,7 @@
                 </a>
             </div>
         </div>
-        <div class="cSec" style="flex-direction:row; background:rgba(110,110,110,0.65)">
+        <div class="cSec" style="flex-direction:row; background:rgba(60,60,60,1)">
             <div class="net"></div>
         </div>
         <div class="cSec">

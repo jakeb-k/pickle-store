@@ -193,7 +193,8 @@
             @if($reviews != [])
             @foreach($reviews as $r)
             <div class="reviews">
-                <h3>{{$r[0]}} - {{$r[1]}} ★</h3>
+                <h3>{{$r[0]}} · {{$r[1]}} ★  <div style="font-size:12px;">({{$r[3]->format('d/m/y')}})</div> </h3>
+            
                 <p>{{$r[2]}}</p>
             </div>
             @endforeach

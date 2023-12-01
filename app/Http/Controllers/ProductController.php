@@ -96,7 +96,7 @@ class ProductController extends Controller
         foreach($rReviews as $r) {
             $u = User::find($r['user_id']);
             $tot += $r['rating']; 
-            $n = [$u['name'],$r['rating'],$r['content']];
+            $n = [$u['name'],$r['rating'],$r['content'],$r['created_at']];
             $reviews[]=$n; 
         }
         $product->rating = $tot/count($rReviews); 
