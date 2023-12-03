@@ -1,4 +1,7 @@
 @extends('layouts.master')
+@section('titleDetail')
+    - Home 
+@endsection
 @section('content')
 
 <div id="splashCont">
@@ -12,7 +15,7 @@
         <div class="cSec">
             <div class="qcSec">
                 <a href="{{url('items/accessories')}}">
-                    <img src="{{url('images/a1.jpg')}}" />
+                    <img src="{{url('images/a1.jpg')}}" alt="Pickleball balls" />
                     <div class="overlayL">
                         <div class="text">Accessories</div>
                     </div>
@@ -20,7 +23,7 @@
             </div>
             <div class="qcSec">
                 <a href="{{url('items/clothing')}}">
-                    <img src="{{url('images/c2.webp')}}" />
+                    <img src="{{url('images/c2.webp')}}" alt="Pickleball shirt" />
                     <div class="overlayL">
                         <div class="text">Clothing</div>
                     </div>
@@ -33,7 +36,7 @@
         <div class="cSec">
             <div class="qcSec">
                 <a href="{{url('items/court')}}">
-                    <img src="{{url('images/x1.jpg')}}" />
+                    <img src="{{url('images/x1.webp')}}" alt="Pickleball court" />
                     <div class="overlayR">
                         <div class="text">Court</div>
                     </div>
@@ -41,7 +44,7 @@
             </div>
             <div class="qcSec">
                 <a href="{{url('items/paddles')}}">
-                    <img src="{{url('images/p1.webp')}}" />
+                    <img src="{{url('images/p1.webp')}}" alt="Pickleball paddle"/>
                     <div class="overlayR">
                         <div class="text">Paddles</div>
                     </div>

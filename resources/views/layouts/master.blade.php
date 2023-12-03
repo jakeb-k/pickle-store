@@ -4,8 +4,10 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title> Oz Pickle @yield('titleDetail')</title>
-        @yield('meta') 
+        <title> AussiePicklePro @yield('titleDetail')</title>
+
+        <meta name="description" content="@yield('meta', 'AussiePicklePro: Your Premier Pickleball E-commerce Destination. Find top-tier gear & accessories for enthusiasts. Seamlessly navigate our platform for personalized shopping. Elevate your game with exclusive products & secure transactions. Shop now! #PickleballPassion #AussiePicklePro')">
+    
 
         
 

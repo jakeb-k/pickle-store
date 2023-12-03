@@ -502,7 +502,7 @@ CARD SECTION STYLING
 .psBox {
     margin:0 2.5%;
     min-width:300px; 
-    background:rgb(218, 218, 218); 
+    background:whitesmoke; 
     border-radius:15px; 
     box-shadow:0 0 20px #FFD100; 
     text-align: center;
@@ -613,7 +613,7 @@ button.opsBtn i {
     margin:1.5%; 
     text-align:center;
     border-radius:15px; 
-    background:rgb(218, 218, 218);
+    background:whitesmoke;
     box-shadow:0 0 20px #FFD100; 
     width:25%; 
     display:flex;
@@ -2083,7 +2083,7 @@ MEDIA QUERIES
     }
 
 }
-}
+
 
 @media only screen and (max-width:850px) {
     .row {

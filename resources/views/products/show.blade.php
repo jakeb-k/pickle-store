@@ -2,6 +2,9 @@
 @section('title')
 {{ucwords($product->name)}}
 @endsection
+@section('meta')
+{{$product->description}}
+@endsection
 @section('content')
 
 <div id="showContainer">

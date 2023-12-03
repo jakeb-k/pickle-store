@@ -2,6 +2,11 @@
 @section('titleDetail')
 - {{ucfirst($type)}}
 @endsection
+@section('meta')
+Discover top-tier pickleball {{$type}} at AussiePicklePro. 
+Shop where the pros shop so you can play like they do. Explore our diverse {{$type}} collection and 
+elevate your pickleball experience today!
+@endsection
 @section('content')
 
 <div id="prodCont">
