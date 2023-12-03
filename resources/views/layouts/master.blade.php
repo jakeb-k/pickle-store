@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title> AussiePicklePro @yield('titleDetail')</title>
+        <link rel="stylesheet" href="{{asset('css/app.scss')}}" type="text/css">
 
         <meta name="description" content="@yield('meta', 'AussiePicklePro: Your Premier Pickleball E-commerce Destination. Find top-tier gear & accessories for enthusiasts. Seamlessly navigate our platform for personalized shopping. Elevate your game with exclusive products & secure transactions. Shop now! #PickleballPassion #AussiePicklePro')">
 
@@ -12,7 +13,6 @@
 
         <link rel="icon" type="image/x-icon" href="{{url('images/favicon.ico')}}">
 
-        <link rel="stylesheet" href="{{asset('css/app.scss')}}" type="text/css">
 
           
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
