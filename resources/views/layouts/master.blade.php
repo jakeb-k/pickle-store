@@ -7,9 +7,8 @@
         <title> AussiePicklePro @yield('titleDetail')</title>
 
         <meta name="description" content="@yield('meta', 'AussiePicklePro: Your Premier Pickleball E-commerce Destination. Find top-tier gear & accessories for enthusiasts. Seamlessly navigate our platform for personalized shopping. Elevate your game with exclusive products & secure transactions. Shop now! #PickleballPassion #AussiePicklePro')">
-    
 
-        
+        <link rel="canonical" href="https://aussiepicklepro.com.au" />
 
         <link rel="icon" type="image/x-icon" href="{{url('images/favicon.ico')}}">
 
