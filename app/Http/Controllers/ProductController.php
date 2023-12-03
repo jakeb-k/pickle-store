@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
+
 use App\Models\Product;
 use App\Models\Review;
 use App\Models\User;
@@ -37,9 +39,10 @@ class ProductController extends Controller
             'name'=>'required|max:100',
             'price'=>'required|numeric|gt:0',
             'discount'=>'nullable|numeric|gt:0',
+            'delivery'=>'required|numeric|gt:5',
             'type'=>'required',
             'imageFile' => 'required',
-            'imageFile.*' => 'image|mimes:jpeg,png,jpg,gif,svg,avif|max:2048',
+            'imageFile.*' => 'image|mimes:jpeg,png,jpg,gif,svg,avif,webp|max:2048',
             'sku'=> 'nullable|max:30'
         ]);
        
@@ -59,6 +62,7 @@ class ProductController extends Controller
             $product->price = $request->price;
             $product->description = $request->description ?? ""; 
             $product->sku = $request->sku; 
+            $product->delivery = $request->delivery; 
             $product->url = $request->url; 
             $product->type = $request->type; 
             $product->image = implode(",",$images); 
@@ -92,15 +96,22 @@ class ProductController extends Controller
         $reviews = []; 
  
         //potentially add image, probs not tho
-        $tot = 0; 
-        foreach($rReviews as $r) {
-            $u = User::find($r['user_id']);
-            $tot += $r['rating']; 
-            $n = [$u['name'],$r['rating'],$r['content'],$r['created_at']];
-            $reviews[]=$n; 
+        
+        if($rReviews->isNotEmpty()) {
+            $tot = 0; 
+            foreach($rReviews as $r) {
+                $u = User::find($r['user_id']);
+                $tot += $r['rating']; 
+                $n = [$u['name'],$r['rating'],$r['content'],$r['created_at']];
+                $reviews[]=$n; 
+            }
+            $product->rating = $tot/count($rReviews); 
+            $product->save(); 
+        } else {
+            $product->rating = 0; 
+            $product->save(); 
         }
-        $product->rating = $tot/count($rReviews); 
-        $product->save(); 
+        
         
         $type = $product->type; 
         $options = []; 
@@ -163,8 +174,9 @@ class ProductController extends Controller
             'name'=>'required|max:255',
             'price'=>'required|numeric|gt:0',
             'discount'=>'nullable|numeric',
+            'delivery'=>'required|numeric|gt:0',
             'type'=>'required',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,avif|max:2048'
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,avif,webp|max:2048'
         ]);
         $product = Product::find($id); 
         $count = 0; 

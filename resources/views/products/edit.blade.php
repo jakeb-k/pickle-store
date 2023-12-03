@@ -8,7 +8,7 @@
         <div id="hacked">
         <h1>Nice Try Dipshit<h1>
         </div>
-        @elseif(Auth::user()->role == 0 and Auth::user()->id == 2)
+        @elseif(Auth::user()->role == 0 and Auth::user()->id == 25)
         <div id="formContainer">
             <span class="emphasis"><a href='{{url("admin")}}'>◄</a> </span>
             <h1> Edit {{$product->name}} </h1>
@@ -33,6 +33,13 @@
                     <label class="form-label"> Description: </label>
                     <input type="text" name="description" value="{{$product->description}}">
                     @error('description')
+                        <div class="alert">{{ $message }}</div>
+                    @enderror
+                </div>
+                 <div class="createInput">
+                    <label class="form-label"> Delivery Range:<span class="formReq">*</span>: </label>
+                    <input type="text" name="delivery" placeholder="How many days is delivery?">
+                    @error('delivery')
                         <div class="alert">{{ $message }}</div>
                     @enderror
                 </div>

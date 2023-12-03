@@ -9,7 +9,7 @@
         <div id="hacked">
         <h1>Nice Try <i class="fa-regular fa-face-grin-wink"></i><h1>
         </div>
-        @elseif(Auth::user()->role == 0)
+        @elseif(Auth::user()->role == 0 and Auth::user()->id == 25)
     <div id="formContainer">
         <span class="emphasis"><a href='url()'>◄</a> </span>
         <h1> Add New Product! </h1> 
@@ -40,6 +40,13 @@
                 <label class="form-label"> Url<span class="formReq">*</span>: </label>
                 <input type="text" name="url" placeholder="Paste the supplier link">
                 @error('url')
+                    <div class="alert">{{ $message }}</div>
+                @enderror
+            </div>
+            <div class="createInput">
+                <label class="form-label"> Delivery Range:<span class="formReq">*</span>: </label>
+                <input type="text" name="delivery" placeholder="How many days is delivery?">
+                @error('delivery')
                     <div class="alert">{{ $message }}</div>
                 @enderror
             </div>

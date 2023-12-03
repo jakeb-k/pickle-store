@@ -44,7 +44,8 @@ elevate your pickleball experience today!
     <div class="row">
         @foreach($chunk as $product)
         <?php 
-            $reviews = $product->review; 
+            if($product->review()->count() != 0) {
+                $reviews = $product->review; 
             
             $x = 0; 
             foreach($reviews as $r) {
@@ -52,6 +53,10 @@ elevate your pickleball experience today!
             }
             $product->rating = $x/$product->review()->count(); 
             $product->save(); 
+            } else
+            $product->rating = 0;
+            $product->save(); 
+            
         ?>
         @auth
         @if(Auth::user()->role == 1)
