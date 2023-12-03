@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <link rel="stylesheet" href="{{asset('css/app.css')}}" type="text/css">
+        <link rel="stylesheet" href="{{asset('css/app.scss')}}" type="text/css">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -113,14 +113,14 @@
             @guest
             <div class="sTitle">
                 <a href="{{url('/')}}">
-                    <h1> Oz Pickle </h1> 
+                    <h1> Aussie<br>PicklePro</h1> 
                 </a>
                 <div id="arrow" class="js-menu_toggle closed" style="display:none;">
                 </div>
             </div>
             @else 
             <div id="arrow" class="js-menu_toggle closed">
-                <h1>→</h1>                 
+                <h1>←</h1>                 
             </div>
             @endguest
                 <!-- USER LINK SECTION - ARE BUTTONS NOT <a> --> 
@@ -204,7 +204,7 @@
         </div>
         <div class="fSec">
             <h3> About </h3>
-            <p>Discover the heart of Australian-owned excellence in pickleball gear. At Oz Pickle, 
+            <p>Discover the heart of Australian-owned excellence in pickleball gear. At AussiePicklePro, 
                 we're committed to being the premier destination for all things pickleball. As the 
                 leading Australian retailer, we're dedicated to delivering top-notch equipment, 
                 ensuring you have everything you need to elevate your pickleball game.

@@ -33,18 +33,17 @@ class OptionSeeder extends Seeder
         DB::table('options')->insert(['type'=>'color','values'=>'yellow.orange','product_id'=>25]);
         DB::table('options')->insert(['type'=>'color','values'=>'darkblue.black.red.gray.blue.brown.darkgray','product_id'=>30]);
         DB::table('options')->insert(['type'=>'color','values'=>'black.darkblue.gray.red','product_id'=>31]);
-        DB::table('options')->insert(['type'=>'size','values'=>'XS.S.M.L.XL','product_id'=>34]);
+        DB::table('options')->insert(['type'=>'size','values'=>'XS.S.M.L.XL.XL','product_id'=>34]);
         DB::table('options')->insert(['type'=>'color','values'=>'darkgray.black.navy.red.lightgray.deepskyblue.brown','product_id'=>33]);
         DB::table('options')->insert(['type'=>'color','values'=>'black.khaki.navy.pink.gray.purple.deepskyblue.white','product_id'=>34]);
         DB::table('options')->insert(['type'=>'color','values'=>'black.deepskyblue.blue.green.navy.khaki.lightgray.gray.purple','product_id'=>35]);
         DB::table('options')->insert(['type'=>'color','values'=>'black.white.gray.red.blue.navy','product_id'=>36]);
         DB::table('options')->insert(['type'=>'color','values'=>'black.white.gray.red.blue.navy','product_id'=>37]);
-        DB::table('options')->insert(['type'=>'color','values'=>'white.black.blue.deepskyblue.darkgreen.khaki.pink.purple.red.yellow.navy.lightgray','product_id'=>38]);
+        DB::table('options')->insert(['type'=>'color','values'=>'white.black.blue.deepskyblue.gray.darkgreen.khaki.pink.purple.red.yellow.navy.lightgray','product_id'=>38]);
         DB::table('options')->insert(['type'=>'color','values'=>'white.gray.red.purple.blue.darkred.navy.black','product_id'=>39]);
         DB::table('options')->insert(['type'=>'color','values'=>'navy.black.gray.red.purple.deepskyblue.darkred.white','product_id'=>40]);
-        DB::table('options')->insert(['type'=>'color','values'=>'black.blue.deepskyblue.brown.gray.olivedrab.khaki.orange.pink.purple','product_id'=>41]);
+        DB::table('options')->insert(['type'=>'color','values'=>'darkgray.black.blue.deepskyblue.brown.gray.lightgray.olivedrab.khaki.orange.pink.purple.red','product_id'=>41]);
         DB::table('options')->insert(['type'=>'color','values'=>'white.green.red.purple.blue.darkred.navy.black','product_id'=>42]);
-
 
 
     }

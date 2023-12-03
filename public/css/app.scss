@@ -341,7 +341,7 @@ SPLASH SECTION STYLING
     width:10px;
     height:105%; 
     border-radius:3px; 
-    background-color: #ffb300;
+    background-color:#FFD100;
     margin:-12.5px auto;
     border:2.5px solid rgb(0, 0, 0); 
     box-shadow:7.5px 5px 2.5px rgba(0, 0, 0, 0.568); 
@@ -383,7 +383,7 @@ SPLASH SECTION STYLING
 
 }
 #court {
-    min-width:375px; 
+    min-width:355px; 
     width:55%;
     height:100%; 
     margin:auto; 
@@ -1573,24 +1573,26 @@ CART MODAL STYLING
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 10px;
 }
 
 .cartInfo {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-direction: column;
-    width: 100%;
+    width: 70%;
     margin-left: auto;
     padding: 0 10px;
 }
-
+#cartImg {
+    width:30%; 
+}
 #cartImg img {
-    width: 150px;
-    height: 100px;
+    width: 100%;
+    height: auto;
     border-radius: 5%;
-    margin: 20px;
+    margin: 5px;
 }
 
 .cartDetails {
@@ -2033,6 +2035,9 @@ MEDIA QUERIES
         top:5px; 
         left:80px; 
     }
+    .sTitle h1 {
+        font-size:100%; 
+    }
     .sTitle a {
         color:#ffd100; 
         font-family:'Bevan', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -2086,6 +2091,9 @@ MEDIA QUERIES
 
 
 @media only screen and (max-width:850px) {
+    #showContainer .row {
+        flex-direction:row; 
+    }
     .row {
         flex-direction: column;
     }
@@ -2140,6 +2148,9 @@ MEDIA QUERIES
     }
 }
 @media only screen and (max-width:550px) {
+    #showContainer .backBtn {
+            margin: 0 2.5% !important;
+        }
     #footer {
         flex-direction:column;
         padding-right:auto; 
@@ -2151,7 +2162,7 @@ MEDIA QUERIES
         text-align: center;
     }
     .sTitle h1{
-        font-size:22px; 
+        font-size:18px; 
     }
     .pBtn {
         padding:5px 10px; 
@@ -2162,4 +2173,24 @@ MEDIA QUERIES
     .psBox p{
         font-size:14px; 
     }
+    #showDetails h1 {
+        font-size:20px; 
+    }
+   
+    #deleteCart button,
+    #purchaseCart button {
+        width: auto;
+    }
+}
+@media only screen and (max-width:405px) {
+    .sTitle h1{
+        font-size:14px; 
+    }
+    .filter {
+        margin:0; 
+    }
+    #addCartButton button {
+        font-size:16px; 
+    }
+   
 }
