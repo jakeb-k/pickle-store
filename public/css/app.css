@@ -1,0 +1,2154 @@
+@import url("https://fonts.cdnfonts.com/css/bevan");
+@import url("https://fonts.cdnfonts.com/css/oswald-4");
+.alert {
+  font-size: 14px;
+  color: #e20f0f;
+  font-family: "Oswald";
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.d-1 {
+  --c: #1095c1;
+  /* the color */
+  --b: .1em;
+  /* border length*/
+  --d: 20px;
+  /* the cube depth */
+  --h: 1.2em;
+  /* the height */
+  --_s: calc(var(--d) + var(--b));
+  line-height: var(--h);
+  color: rgba(0, 0, 0, 0);
+  text-shadow: 0 calc(-1 * var(--_t, 0em)) var(--c), 0 calc(var(--h) - var(--_t, 0em)) #fff;
+  border: solid rgba(0, 0, 0, 0);
+  border-width: var(--b) var(--b) var(--_s) var(--_s);
+  background: linear-gradient(var(--c) 0 0) 100% 100%/101% var(--_p, 0%) no-repeat, conic-gradient(at left var(--d) bottom var(--d), rgba(0, 0, 0, 0) 90deg, rgba(255, 255, 255, 0.3) 0 225deg, rgba(255, 255, 255, 0.6) 0) border-box, conic-gradient(at left var(--_s) bottom var(--_s), rgba(0, 0, 0, 0) 90deg, var(--c) 0) 0 100%/calc(100% - var(--b)) calc(100% - var(--b)) border-box;
+  transform: translate(calc(var(--d) / -1), var(--d));
+  clip-path: polygon(var(--d) 0%, var(--d) 0%, 100% 0%, 100% calc(100% - var(--d)), 100% calc(100% - var(--d)), var(--d) calc(100% - var(--d)));
+  transition: 0.5s;
+}
+
+.d-1:hover {
+  transform: translate(0, 0);
+  clip-path: polygon(0% var(--d), var(--d) 0%, 100% 0%, 100% calc(100% - var(--d)), calc(100% - var(--d)) 100%, 0% 100%);
+  --_t: var(--h);
+  --_p: 105%;
+}
+
+.d-2 {
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  --c: #FFD100;
+  /* the color */
+  --b: .1em;
+  /* border length*/
+  --d: 20px;
+  /* the cube depth */
+  --h: 1.2em;
+  /* the height */
+  --_s: calc(var(--d) + var(--b));
+  color: rgba(0, 0, 0, 0);
+  text-shadow: 0 calc(-1 * var(--_t, 0em)) var(--c), 0 calc(var(--h) - var(--_t, 0em)) rgb(40, 40, 40);
+  border: solid rgba(0, 0, 0, 0);
+  overflow: hidden;
+  border-width: var(--b) var(--_s) var(--_s) var(--b);
+  background: linear-gradient(var(--c) 0 0) -1px 100%/101% var(--_p, 0%) no-repeat, conic-gradient(from -90deg at right var(--d) bottom var(--d), rgba(0, 0, 0, 0) 90deg, rgba(255, 255, 255, 0.3) 0 225deg, rgba(255, 255, 255, 0.6) 0) border-box, conic-gradient(at right var(--_s) bottom var(--_s), var(--c) 270deg, rgba(0, 0, 0, 0) 0) 100% 100%/calc(100% - var(--b)) calc(100% - var(--b)) border-box;
+  transform: translate(var(--d), var(--d));
+  clip-path: polygon(0% 0%, calc(100% - var(--d)) 0%, calc(100% - var(--d)) 0%, calc(100% - var(--d)) calc(100% - var(--d)), 0 calc(100% - var(--d)), 0 calc(100% - var(--d)));
+  transition: 0.5s;
+}
+
+.cont a:hover {
+  text-decoration: none;
+}
+
+.d-2:hover {
+  transform: translate(0, 0);
+  clip-path: polygon(0% 0%, calc(100% - var(--d)) 0%, 100% var(--d), 100% 100%, var(--d) 100%, 0 calc(100% - var(--d)));
+  --_t: var(--h);
+  --_p: 105%;
+}
+
+.cont {
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto auto;
+  place-content: center;
+  align-items: center;
+}
+
+h3 {
+  width: 100%;
+  padding: 0 0.2em;
+}
+
+.side_menu h3 {
+  width: 200px;
+  text-align: center;
+}
+
+/*
+
+
+
+
+
+NAV BAR STYLING
+
+
+
+
+*/
+i {
+  color: #FFD100;
+  padding: auto;
+}
+i:hover {
+  color: white;
+  transition: 0.2s ease-in-out;
+}
+
+#nav.shrunken * {
+  scale: 0.95;
+}
+
+.shrunken.uSec .pBtn {
+  margin-top: 90px;
+}
+
+#nav.shrunken {
+  padding-top: 25px;
+  height: 54.5px;
+  transition: 0.3s ease-in-out;
+  background: rgba(25, 25, 25, 0.85);
+  box-shadow: 0 0 30px #FFD100;
+}
+
+#nav {
+  position: fixed;
+  top: 0;
+  z-index: 4;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background: rgb(54, 54, 54);
+  justify-content: space-between;
+  padding-bottom: 20px;
+}
+
+#nav h2 {
+  align-self: flex-end;
+  text-decoration: underline;
+}
+
+.sSec, .uSec {
+  display: flex;
+  flex-direction: row;
+  width: 45%;
+}
+
+.shrunken .uSec {
+  padding-top: 25px;
+}
+
+.uSec {
+  padding-top: 15px;
+}
+
+.sSec {
+  margin-left: 5%;
+  width: 45%;
+  justify-content: space-evenly;
+}
+
+.uSec {
+  justify-content: flex-end;
+  padding-right: 5%;
+}
+
+.sImg img {
+  position: fixed;
+  width: 70px;
+  height: auto;
+  top: 0px;
+  left: 10px;
+}
+
+.shrunken img {
+  top: -30px;
+  scale: 0.7;
+  left: 20px;
+}
+
+.sLink, .uLink {
+  padding: 0 0 1.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.uLink {
+  margin: 0 1.5%;
+}
+
+#logout {
+  margin-bottom: 0;
+}
+
+#logo, #arrow {
+  transform-origin: center;
+  transition: linear 0.3s;
+  cursor: pointer;
+}
+
+/*
+
+
+
+PRIMARY BUTTON STYLING
+
+
+
+
+*/
+button.pBtn {
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  color: white;
+  border-radius: 15px;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  --c: #FFD100; /* the color*/
+  box-shadow: 0 0 0 0.1em inset var(--c);
+  --_g: linear-gradient(var(--c) 0 0) no-repeat;
+  background: var(--_g) calc(var(--_p, 0%) - 100%) 0%, var(--_g) calc(200% - var(--_p, 0%)) 0%, var(--_g) calc(var(--_p, 0%) - 100%) 100%, var(--_g) calc(200% - var(--_p, 0%)) 100%;
+  background-size: 50.5% calc(var(--_p, 0%) / 2 + 0.5%);
+  outline-offset: 0.1em;
+  transition: background-size 0.4s, background-position 0s 0.4s;
+}
+
+button.pBtn:hover, i {
+  color: white;
+  cursor: pointer;
+  --_p: 100%;
+  transition: background-position 0.4s, background-size 0s;
+}
+
+button.pBtn:active {
+  box-shadow: 0 0 9000000000q inset rgba(0, 0, 0, 0.6);
+  background-color: var(--c);
+  color: #fff;
+}
+
+/* Dropdown Button */
+.dropbtn2 {
+  background: none;
+  padding: 10px;
+  color: rgb(40, 40, 40);
+  font-size: 24px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown2 {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content2 {
+  display: none;
+  position: absolute;
+  background-color: rgba(40, 40, 40, 0.9);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  margin-left: -50px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content2 button,
+.dropdown-content2 h3 {
+  color: #FFD100;
+  padding: 6px 34px;
+  text-decoration: none;
+  display: block;
+  background: none;
+  border: none;
+  font-family: "Bevan", Arial, Helvetica, sans-serif;
+  align-self: center;
+}
+
+.dropdown-content2 button {
+  color: white;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content2 button:hover {
+  background-color: #FFD100;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown2:hover .dropdown-content2 {
+  color: #ffb300;
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown2:hover .dropbtn2 {
+  color: #ffb300;
+}
+
+/*
+
+
+
+
+
+SPLASH SECTION STYLING
+
+
+
+
+*/
+.net {
+  width: 10px;
+  height: 105%;
+  border-radius: 3px;
+  background-color: #ffb300;
+  margin: -12.5px auto;
+  border: 2.5px solid rgb(0, 0, 0);
+  box-shadow: 7.5px 5px 2.5px rgba(0, 0, 0, 0.568);
+}
+
+.welcome {
+  background: rgb(218, 218, 218);
+  margin-left: 10%;
+  display: inline;
+}
+
+#splashCont {
+  margin-top: 55px;
+  min-width: 100%;
+  height: 110%;
+  padding: 40px 0 5% 0;
+  background: url("../images/pickleBg2.webp") no-repeat;
+  background-size: cover;
+  /* Ensures the image covers the container */
+  background-position: center;
+}
+
+.ctaTitle {
+  color: #FFD100;
+  margin: 0 22.5% 15px;
+  text-shadow: 2px 2px 2.5px black;
+}
+
+.ctaTitle h1 {
+  font-family: "Bevan", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.ctaTitle p, .ctaTitle h2, .ctaTitle h3 {
+  font-family: "Oswald", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.sBtn {
+  padding: 30px;
+  border-radius: 50px;
+  border: none;
+  background: black;
+  color: white;
+  font-size: 32px;
+}
+
+#court {
+  min-width: 375px;
+  width: 55%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.cSec {
+  width: 100%;
+  border: 2.5px solid #FFD100;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.qcSec {
+  height: 100%;
+  width: 100%;
+  border: 2.5px solid #FFD100;
+  position: relative;
+  align-self: center;
+}
+
+.qcSec img {
+  width: 100%;
+  height: 100%;
+}
+
+/* 
+
+
+
+OVERLAY CSS
+
+
+*/
+.text {
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  color: rgba(0, 0, 0, 0);
+  font-size: 32px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.overlayL {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* Initially, the overlay is hidden off the left side */
+  width: 0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  /* Adjust the color and opacity as needed */
+  transition: left 0.2s ease;
+  /* Transition effect on hover */
+}
+
+.qcSec:hover .overlayL {
+  background-color: rgba(113, 113, 113, 0.5);
+  width: 100%;
+  transition: 0.5s ease-in-out;
+  /* On hover, slide the overlay to cover the image */
+}
+
+.overlayR {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  /* Initially, the overlay is hidden off the left side */
+  width: 0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  /* Adjust the color and opacity as needed */
+  transition: right 0.2s ease;
+  /* Transition effect on hover */
+}
+
+.qcSec:hover .overlayR {
+  background-color: rgba(113, 113, 113, 0.5);
+  width: 100%;
+  transition: 0.5s ease-in-out;
+  /* On hover, slide the overlay to cover the image */
+}
+
+.qcSec:hover .text {
+  color: #FFD100;
+}
+
+/*
+
+
+
+
+
+CARD SECTION STYLING 
+
+
+
+
+*/
+.prodSec {
+  margin-top: -50px;
+  background-image: url("../images/pickleBg.webp");
+  padding: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.prodSec img {
+  width: 100px;
+  border-radius: 15px;
+}
+
+.psBox {
+  margin: 0 2.5%;
+  min-width: 300px;
+  background: whitesmoke;
+  border-radius: 15px;
+  box-shadow: 0 0 20px #FFD100;
+  text-align: center;
+  padding: 30px 10px 15px;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+}
+
+.psBox h3 {
+  font-family: "Bevan", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #ffd100;
+  text-shadow: 2px 2px 2.5px black;
+}
+
+.psBox .backBtn {
+  margin-left: 77.5%;
+  justify-self: end;
+}
+
+.prodTitle {
+  margin: 0 0 0 10%;
+  color: #FFD100;
+  z-index: 1;
+  font-family: "Bevan", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.prodTitle a {
+  border-radius: 50px;
+  border: 2.5px solid #FFD100;
+  padding: 5px 10px;
+  color: white;
+  font-size: x-large;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+}
+.prodTitle a:hover {
+  background: #FFD100;
+  color: rgb(40, 40, 40);
+  transition: 0.15s;
+}
+
+/*
+
+
+
+
+
+PRODUCTS PAGE STYLING
+
+
+
+
+
+*/
+button.opsBtn {
+  position: absolute;
+  margin: 10px 0 0 22.5%;
+  padding: 5px;
+  border: none;
+  background: none;
+  font-size: 38px;
+}
+
+button.opsBtn i {
+  color: #FFD100;
+}
+button.opsBtn i:hover {
+  cursor: pointer;
+  color: black;
+  fill: #FFD100;
+}
+
+.backBtn i {
+  font-size: 30px;
+  color: #ffd100;
+  margin-right: 12.5px;
+}
+.backBtn i:hover {
+  color: rgb(40, 40, 40);
+  transition: 0.2s ease-in-out;
+}
+
+.backBtn {
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  color: #FFD100;
+  text-shadow: 2px 2px 2.5px black;
+  font-size: 38px;
+  font-weight: 500;
+}
+.backBtn:hover {
+  color: #FFD100;
+  text-decoration: none;
+}
+
+.filter {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10%;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  color: #FFD100;
+  text-shadow: 2px 2px 2.5px black;
+}
+
+#prodCont {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 125px;
+  background: linear-gradient(rgb(235, 235, 235), rgb(50, 50, 50));
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.prodBox {
+  margin: 1.5%;
+  text-align: center;
+  border-radius: 15px;
+  background: whitesmoke;
+  box-shadow: 0 0 20px #FFD100;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+}
+
+.prodBox a {
+  padding: 5px;
+  color: #c0a404;
+  font-weight: 500;
+  font-family: "Oswald", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 18px;
+}
+
+.prodBox img {
+  width: 100%;
+  height: auto;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+
+.pInfo {
+  width: 100%;
+  align-self: center;
+  margin-top: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.price, .dPrice {
+  font-weight: bold;
+  color: #ffb300;
+  font-size: 22px;
+}
+
+.dPrice {
+  color: black;
+  text-decoration: line-through;
+  font-size: 16px;
+}
+
+.prices {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.links {
+  margin: 20px auto;
+}
+
+/*
+
+
+
+
+
+
+
+PRODUCT DETAIL PAGE STYLING
+
+
+
+
+
+*/
+#showContainer .emphasis a {
+  text-decoration: none;
+  margin-left: 20%;
+}
+
+#showContainer .emphasis a:hover {
+  color: #ffb300;
+}
+
+.ratingsAvg {
+  padding-top: 15px;
+  font-size: 24px;
+}
+
+#showContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Bevan", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  background: linear-gradient(rgb(235, 235, 235), rgb(50, 50, 50));
+  padding-top: 125px;
+}
+
+#showContainer #desc {
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+#itemContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 70%;
+  align-self: center;
+  margin: 20px;
+  background: white;
+  box-shadow: 0px 0px 20px rgb(40, 40, 40);
+  padding: 20px;
+  border-radius: 24px;
+}
+
+#slideOps img {
+  height: 150px;
+}
+
+#showDetails {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 30px;
+}
+
+.priceRatings {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#showDetails * {
+  margin: 10px 0px;
+}
+
+#showContainer h1 {
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  color: black;
+  font-size: 28px;
+}
+
+.oSec {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-size: 16px;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+}
+
+.oSec .row {
+  width: 100%;
+  justify-content: flex-start;
+  margin-bottom: -50px;
+}
+
+.colorInput {
+  padding: 0 10px;
+}
+
+.color-label {
+  display: inline-block;
+  width: 50px;
+  /* Adjust size as needed */
+  height: 50px;
+  /* Adjust size as needed */
+  /* Adjust spacing as needed */
+  cursor: pointer;
+  border: 2px solid gray;
+  /* Set initial border */
+}
+
+.color-label:hover {
+  border-color: #FFD100;
+  /* Set border color on hover */
+}
+
+input[type=radio]:checked + label {
+  border-color: #FFD100;
+  /* Set border color when checked */
+}
+
+#subtitles {
+  display: flex;
+  flex-direction: row;
+}
+
+.line {
+  margin: auto;
+  width: 97%;
+  height: 1px;
+  background-color: #FFD100;
+}
+
+#quantity {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.delivery p {
+  font-size: 16px;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  color: black;
+}
+
+#addCartButton button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  background-color: #FFD100;
+  box-shadow: 0 0 5px black;
+  border-radius: 8px;
+}
+
+.detailSlides .dSlides {
+  transition: 0.5s ease-in-out;
+}
+
+.detailSlides .dSlides:hover {
+  scale: 1.45;
+  transition: 0.5s ease-in-out;
+  z-index: 99;
+}
+
+#showImg img {
+  width: 100%;
+  margin-right: 30px;
+  border-radius: 16px;
+}
+
+#showImg .dSlides {
+  height: 350px;
+  width: 100%;
+}
+
+/* Review styling */
+#reviewContainer {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  align-self: center;
+  margin: 20px;
+  background: white;
+  box-shadow: 0px 0px 20px black;
+  padding: 20px;
+  border-radius: 24px;
+}
+
+.reviews {
+  box-shadow: 0 0 5px black;
+  padding: 10px;
+  margin: 20px 0px;
+  border-radius: 20px;
+}
+
+.reviewBox {
+  padding: 25px 50px;
+  border-radius: 25px;
+  height: 250px;
+  overflow-y: scroll;
+  margin-bottom: 25px;
+  font-size: 14px;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+}
+
+.reviewBox h3 {
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+#reviewContainer a {
+  color: #FFD100;
+  text-decoration: underline;
+}
+
+#reviewContainer a:hover {
+  color: #bc700c;
+}
+
+.discount {
+  text-decoration: line-through;
+  font-size: 22px;
+  padding-top: 15px;
+}
+
+#subtitles .emphasis {
+  color: #FFD100;
+  font-size: 36px;
+}
+
+#noMatch h1 {
+  margin-top: 50px;
+  margin-bottom: 150px;
+  font-family: "Bevan", Arial, Helvetica, sans-serif;
+  font-size: 46px;
+  text-align: center;
+}
+
+#reviewInput input {
+  border: 1px solid #FFD100;
+  width: 90%;
+  height: 50px;
+  padding: 5px;
+  margin: 10px 0px;
+  font-size: 14px;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+}
+
+#reviewInput input:focus {
+  outline: 1px solid #bc700c;
+}
+
+.rating {
+  border: none;
+}
+
+.createSubmit3 button {
+  background-color: #ffd100;
+  border: none;
+  box-shadow: 0 0 10px black;
+  font-family: "Bevan", Arial, Helvetica, sans-serif;
+  font-size: 32px;
+  width: 90%;
+  border-radius: 8px;
+}
+
+.createSubmit3 {
+  margin: 20px 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.createSubmit3 button:hover {
+  background-color: #ffb300;
+  color: black;
+  transition: 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+/* 
+
+
+EXTERNAL RATING CSSS
+
+
+*/
+.rating {
+  display: inline-block;
+  position: relative;
+  height: 50px;
+  line-height: 50px;
+  font-size: 50px;
+  margin: 0;
+  padding: 0;
+}
+
+.rating label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  cursor: pointer;
+}
+
+.rating label:last-child {
+  position: static;
+}
+
+.rating label:nth-child(1) {
+  z-index: 5;
+}
+
+.rating label:nth-child(2) {
+  z-index: 4;
+}
+
+.rating label:nth-child(3) {
+  z-index: 3;
+}
+
+.rating label:nth-child(4) {
+  z-index: 2;
+}
+
+.rating label:nth-child(5) {
+  z-index: 1;
+}
+
+.rating label input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.rating label .icon {
+  float: left;
+  color: transparent;
+}
+
+.rating label:last-child .icon {
+  color: #000;
+}
+
+.rating:not(:hover) label input:checked ~ .icon,
+.rating:hover label:hover input ~ .icon {
+  color: #FFD100;
+}
+
+.rating label input:focus:not(:checked) ~ .icon:last-child {
+  color: #000;
+  text-shadow: 0 0 5px #FFD100;
+}
+
+/*
+
+
+
+
+AUTH FORM STYLING
+
+
+
+
+*/
+#authForm,
+#regForm {
+  width: 500px;
+  min-height: 40%;
+  background: white;
+  border-radius: 5px;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  font-family: "Rubik", Arial, Helvetica, sans-serif;
+  margin: auto;
+  margin-bottom: 25px;
+  box-shadow: 0 0 10px rgb(43, 43, 43);
+}
+
+#authForm div,
+#regForm div {
+  margin: 20px;
+}
+
+.authInput {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-self: center;
+}
+
+.authInput input {
+  padding: 10px 0;
+  align-self: center;
+  margin: 10px auto;
+  width: 90%;
+  font-size: 18px;
+  border-radius: 15px;
+  border: 1px solid gray;
+}
+
+.authInput input:focus {
+  outline: 1px solid #FFD100;
+  border: 1px solid #bc700c;
+  padding: 10px 0;
+}
+
+.forPass a {
+  text-decoration: none;
+  box-shadow: inset 0 0 0 0 #FFD100;
+  color: black;
+  margin: 0 -0.25rem;
+  padding: 0 0.25rem;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.forPass a:hover {
+  box-shadow: inset 175px 0 0 0 #FFD100;
+  color: white;
+}
+
+#authForm form,
+#regForm form {
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+#authForm button,
+#regForm button {
+  width: 100%;
+  font-family: "Bevan", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 32px;
+  border: 2px solid #FFD100;
+  background: none;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.25s ease-in-out;
+}
+
+#authForm button:hover,
+#regForm button:hover {
+  color: white;
+  background: #FFD100;
+}
+
+#authForm img,
+#regForm img {
+  align-self: center;
+  width: 30%;
+  height: auto;
+}
+
+/*
+
+
+
+
+
+ADMIN PAGE STYLING
+
+
+
+*/
+#adminContainer {
+  padding: 75px 0;
+  background: linear-gradient(rgb(218, 218, 218), #FFD100);
+}
+
+#adminContent table,
+#orderContent table {
+  align-self: center;
+  margin: 25px auto;
+  background: rgb(40, 40, 40);
+  border-spacing: 0;
+  border-collapse: separate;
+  border-radius: 10px;
+  border: 3px solid #ffb300;
+  border-radius: 15px;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  color: #FFD100;
+}
+
+#adminContent img {
+  width: 100%;
+  height: 150px;
+}
+
+#adminContent td,
+#orderContent td {
+  border-right: 1px solid #ffb300;
+  border-bottom: 1px solid #ffb300;
+}
+
+#adminContent,
+#orderContent {
+  align-self: center;
+}
+
+#adminOps {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#adminOps .dropbtn2 {
+  margin-top: 55px;
+  font-size: 42px;
+}
+
+#adminOps .dropdown-content2 {
+  margin-left: -220px;
+}
+
+#orderContent td {
+  padding: 20px;
+}
+
+#orderOps {
+  width: 100%;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#orderOps a {
+  font-size: 42px;
+  margin-right: 20px;
+}
+
+#orderOps a:hover {
+  color: #ffb300;
+}
+
+#sentShow {
+  align-self: center;
+  margin-top: 50px;
+}
+
+#sentShow button {
+  font-family: "Bevan", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  background: rgb(40, 40, 40);
+  color: #FFD100;
+  border: 3px solid #ffb300;
+}
+
+#sentShow button:hover {
+  border: 3px solid #FFD100;
+  color: #FFD100;
+  box-shadow: 0 0 10px black;
+  transition: 0.25s ease-in-out;
+}
+
+/*
+
+
+
+
+CREATE & EDIT FORM STYLING
+
+
+
+
+*/
+.optionsInput {
+  padding: 0 2.5%;
+  margin: 0 auto;
+}
+
+.menuItem2 {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 20px;
+}
+
+.menuItem2 form {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+}
+
+.menuItem2 input {
+  width: 80%;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  height: 50px;
+  border: 3px solid #FFD100;
+}
+
+.menuItem2 button {
+  width: 30%;
+  height: 50px;
+  height: auto;
+  border: 3px solid #FFD100;
+  border-left: none;
+  background: none;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  color: #FFD100;
+}
+
+.menuItem2 button:hover {
+  color: white;
+  background: #ffb300;
+  transition: 0.1s ease-in-out;
+}
+
+.menuItem2 input:focus {
+  outline: 1px solid #bc700c;
+}
+
+.createSubmit2 {
+  display: flex;
+  justify-content: center;
+}
+
+.createSubmit2 button {
+  margin: 15px 0px;
+  width: 95%;
+  background-color: #dadada;
+  border: none;
+  padding: 8px;
+  box-shadow: 0 0 10px black;
+  font-family: "Bevan", Arial, Helvetica, sans-serif;
+  font-size: 26px;
+}
+
+.createSubmit2 button:hover {
+  background-color: #FFD100;
+  color: black;
+  transition: 0.25s ease-in-out;
+}
+
+#formContainer {
+  align-self: center;
+  margin-top: 175px;
+  color: rgb(218, 218, 218);
+  width: 50%;
+  background: rgb(40, 40, 40);
+  box-shadow: 0 0 20px black;
+}
+
+.createInput,
+.createInput2 {
+  padding: 5px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.optionsInput label.form-label {
+  color: #FFD100;
+}
+.optionsInput label.form-label:hover {
+  text-decoration: underline;
+}
+
+.form-label {
+  align-self: flex-start;
+  font-size: 20px;
+  font-family: "Bevan", Arial, Helvetica, sans-serif;
+}
+
+.createInput input {
+  border: none;
+  width: 100%;
+  padding: 20px;
+  font-size: 18px;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+}
+
+.createInput input:hover {
+  cursor: pointer;
+  background-color: rgba(255, 208, 0, 0.7333333333);
+}
+
+.createInput input:focus {
+  outline: 1px solid #FFD100;
+  background-color: white;
+}
+
+.createInput2 input {
+  border: 1px solid #FFD100;
+  width: 100%;
+  padding: 20px;
+  font-size: 18px;
+  margin-bottom: -20px;
+}
+
+.createInput2 label {
+  color: #FFD100;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.createInput2 label:hover {
+  color: rgba(255, 208, 0, 0.7333333333);
+  text-decoration-color: rgba(255, 208, 0, 0.7333333333);
+  transition: 0.15s ease-in-out;
+}
+
+.createInput2 input:hover {
+  cursor: pointer;
+  background-color: rgba(255, 208, 0, 0.7333333333);
+}
+
+.createInput2 input:focus {
+  outline: 1px solid #FFD100;
+  background-color: white;
+}
+
+#tagCont button {
+  border: none;
+  padding: 7px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px;
+}
+
+#tagCont input {
+  margin-bottom: -50px;
+}
+
+#addTag button {
+  background: none;
+  border: none;
+  position: relative;
+  left: 430px;
+  top: -60px;
+  font-size: 34px;
+  color: #FFD100;
+}
+
+#addTag button:hover {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  transition: 0.15s ease-in-out;
+}
+
+#addTag input {
+  width: 100%;
+  padding: 20px;
+  font-size: 18px;
+}
+
+#addTag input:hover {
+  border: 1px solid #FFD100;
+  cursor: pointer;
+  background-color: rgba(255, 208, 0, 0.7333333333);
+}
+
+#addTag input:focus {
+  outline: none;
+  border: 1px solid #FFD100;
+  background-color: white;
+}
+
+#addTag i {
+  font-size: 12px;
+}
+
+.createInput select {
+  border: none;
+  background: white;
+  font-family: "Bevan", Arial, Helvetica, sans-serif;
+  padding: 20px;
+  font-size: 18px;
+}
+
+.createInput select:hover {
+  background: rgba(255, 208, 0, 0.7333333333);
+}
+
+.createInput select:focus {
+  border: 1px solid rgba(255, 208, 0, 0.7333333333);
+  background: white;
+}
+
+select option {
+  font-family: "Bevan", Arial, Helvetica, sans-serif;
+  padding: 20px;
+  font-size: 18px;
+}
+
+#formContainer {
+  margin: 0 auto;
+}
+
+#formContainer h1 {
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+/*
+
+
+
+
+CART MODAL STYLING
+
+
+
+*/
+#cartOptions {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-self: center;
+  margin: 10px 0px 0px 0px;
+  padding: 10px;
+}
+
+.quantityInput {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  height: 100px;
+}
+
+.quantityInput button {
+  background: none;
+  border: none;
+  color: #FFD100;
+}
+
+.quantityInput button:hover {
+  border-radius: 100%;
+  background: #FFD100;
+  color: white;
+}
+
+#deleteCart button,
+#purchaseCart button {
+  width: 245px;
+  padding: 10px 20px;
+  border: none;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+}
+
+#deleteCart button {
+  border-top-left-radius: 35px;
+  border-bottom-left-radius: 35px;
+  background-color: black;
+  color: #FFD100;
+}
+
+#deleteCart button:hover {
+  background-color: rgba(0, 0, 0, 0.815);
+  color: rgba(255, 230, 0, 0.8509803922);
+}
+
+#purchaseCart button {
+  border-top-right-radius: 35px;
+  border-bottom-right-radius: 35px;
+  background-color: #FFD100;
+  color: black;
+}
+
+#purchaseCart button:hover {
+  background-color: rgba(255, 230, 0, 0.8509803922);
+  color: rgba(0, 0, 0, 0.815);
+}
+
+#clearCart button {
+  font-size: 18px;
+  padding: 0 10px 0 10px;
+  color: #FFD100;
+  background-color: white;
+  border: none;
+}
+
+#clearCart button:hover {
+  color: rgba(255, 230, 0, 0.8509803922);
+}
+
+.cartItem {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.cartInfo {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 100%;
+  margin-left: auto;
+  padding: 0 10px;
+}
+
+#cartImg img {
+  width: 150px;
+  height: 100px;
+  border-radius: 5%;
+  margin: 20px;
+}
+
+.cartDetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  margin: 5px;
+  width: 100%;
+}
+
+.quantityInput input {
+  border: 1px solid #FFD100;
+  border-radius: 5px;
+  display: inline;
+  width: 20%;
+}
+
+#totals {
+  padding: 0 10px;
+}
+
+#totals #line {
+  overflow-x: visible;
+  width: 110%;
+}
+
+#cartContainer {
+  width: 45%;
+  margin: 175px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  border: 5px solid #FFD100;
+  border-radius: 35px;
+  background-color: white;
+}
+
+#cartTitle {
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  align-self: center;
+}
+
+#cartTitle em {
+  color: #FFD100;
+  font-weight: bold;
+}
+
+.addy {
+  width: 45%;
+  display: flex;
+  justify-content: center;
+  font-style: italic;
+  font-size: 14px;
+  margin: auto;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+#empty p {
+  text-align: center;
+}
+
+/*
+
+
+
+
+
+ORDER TABLE STYLING
+
+
+
+
+
+*/
+#orderContent td {
+  padding: 20px;
+}
+
+#orderOps {
+  width: 100%;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#orderOps a {
+  font-size: 42px;
+  margin-right: 20px;
+}
+
+#orderOps a:hover {
+  color: #7cadc8;
+}
+
+#sentShow {
+  margin: 50px auto 0;
+  text-align: center;
+}
+
+#sentShow button {
+  font-family: "Bevan", Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  background: rgb(40, 40, 40);
+  color: #FFD100;
+  border: 3px solid rgb(218, 218, 218);
+  align-self: center;
+}
+
+#sentShow button:hover {
+  border: 3px solid #FFD100;
+  color: #FFD100;
+  box-shadow: 0 0 10px black;
+  transition: 0.25s ease-in-out;
+}
+
+/*
+
+
+
+ORDER (RECEIPT) PAGE STYLING
+
+
+
+
+*/
+.orderTick {
+  position: absolute;
+  top: 39.5%;
+  left: 68.5%;
+  font-size: xx-large;
+}
+
+#ordContainer {
+  padding-top: 50px;
+  padding-bottom: 150px;
+  background: linear-gradient(rgb(218, 218, 218), #FFD100);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.orderBox {
+  width: 45%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+  background-color: white;
+  align-self: center;
+  box-shadow: 0 0 10px black;
+}
+
+.orderBox img {
+  width: 50%;
+  height: auto;
+}
+
+.rInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px;
+  margin-top: 5px;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.line {
+  margin: auto;
+  width: 97%;
+  height: 1px;
+  background-color: #FFD100;
+}
+
+#background {
+  background-color: rgb(209, 207, 207);
+  height: 2000px;
+  width: 100%;
+  position: fixed;
+  margin-top: -250px;
+}
+
+#ordContainer img {
+  align-self: center;
+  margin-bottom: -50px;
+  margin-top: -20px;
+}
+
+.quant {
+  background-color: #FFD100;
+  align-self: center;
+  border-radius: 5px;
+  padding: 0px 0px 0px 5px;
+  margin-right: 10px;
+  margin-left: 6px;
+}
+
+.time {
+  font-size: small;
+  align-self: center;
+}
+
+#pageBar {
+  align-self: center;
+}
+
+#ordContainer a {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  width: 100%;
+}
+
+#ordContainer a:hover {
+  text-decoration: none;
+}
+
+/*
+
+
+
+
+
+FOOTER STYLING
+
+
+
+
+*/
+#footer {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background: #FFD100;
+}
+
+.fSec {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+}
+
+.fSec ul {
+  text-align: left;
+}
+
+.fSec .email {
+  text-align: left;
+}
+
+.fSec h3 {
+  font-family: "Bevan", Arial, Helvetica, sans-serif;
+}
+
+#footer .links a {
+  font-size: 20px;
+  text-decoration: none;
+  box-shadow: inset 0 0 0 0 rgb(50, 50, 50);
+  color: rgb(50, 50, 50);
+  margin: 0 -0.25rem;
+  padding: 0 0.25rem;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#footer ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0 5%;
+}
+
+#footer li {
+  margin: 2.5px 0;
+}
+
+#footer .links a:hover {
+  box-shadow: inset 150px 0 0 0 rgb(50, 50, 50);
+  color: #FFD100;
+}
+
+#succCont {
+  background: linear-gradient(rgb(218, 218, 218), rgb(40, 40, 40));
+  padding: 200px 20% 125px;
+  color: #FFD100;
+  font-family: "Oswald", Arial, Helvetica, sans-serif;
+  text-shadow: 2.5px 2.5px 2.5px black;
+  scale: 1.1;
+}
+
+/* 
+
+
+
+
+
+
+
+PULL OUT MENU CODE 
+
+
+
+
+
+
+
+
+*/
+#logo2 {
+  width: 50%;
+  height: auto;
+  scale: 0.9;
+  background: rgb(255, 255, 255);
+  border-radius: 25px;
+  margin: 0 0 0 -20px;
+  border: 3px solid #F49110;
+}
+
+.page_title,
+.what_to_do {
+  font-weight: 300;
+  line-height: 120%;
+  text-align: center;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
+  text-transform: uppercase;
+}
+
+/* PEN STYLES ========== */
+a,
+.side_menu {
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.menu_title {
+  font-family: "League Gothic", Arial, Helvetica, sans-serif;
+  color: #F49110;
+}
+
+/* MENU CONTAINER ----- */
+.side_menu {
+  padding-top: 125px;
+  background: rgba(40, 40, 40, 0.9);
+  height: 100vh;
+  left: -250px;
+  position: fixed;
+  top: 0;
+  width: 250px;
+  z-index: 1;
+  font-family: "Rubrik", Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+.list_title {
+  font-family: "League Gothic", Arial, Helvetica, sans-serif;
+  color: #F49110;
+  font-size: 24px;
+  margin-bottom: 0px;
+}
+
+.side_menu .container {
+  padding: 0 1em;
+}
+
+/* STAGGER LIST ----- */
+.list_load {
+  display: none;
+  list-style: none;
+  padding: 0;
+}
+
+.list_item {
+  margin-left: -20px;
+  opacity: 0;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+.list_item a {
+  color: #fff;
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
+.list_item a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/*
+
+
+
+MEDIA QUERIES
+
+
+
+
+*/
+@media only screen and (max-width: 1200px) {
+  .ctaTitle h1 {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  .d-2 {
+    scale: 0.85;
+  }
+  .sSec {
+    margin-left: 10%;
+  }
+  .ctaTitle h3 {
+    font-size: 16px;
+  }
+}
+.sTitle,
+#arrow {
+  display: none;
+}
+
+@media only screen and (max-width: 975px) {
+  .sSec {
+    display: none;
+  }
+  .sTitle {
+    top: 25px;
+    left: 100px;
+    position: fixed;
+    display: block;
+  }
+  #arrow {
+    display: block;
+    position: fixed;
+    color: #ffd100;
+    text-shadow: 2.5px 2.5px 2.5px black;
+    top: 5px;
+    left: 80px;
+  }
+  .sTitle a {
+    color: #ffd100;
+    font-family: "Bevan", "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    text-shadow: 2.5px 2.5px 2.5px black;
+  }
+  .sTitle a:hover {
+    transition: 0.25s ease-in-out;
+    color: #b09104;
+    border-bottom: solid #b09104 4px;
+  }
+  .sTitle a h3 {
+    padding-bottom: 2px;
+  }
+  .shrunken .sTitle {
+    top: 10px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  .prodSec {
+    flex-direction: column;
+  }
+  .links li {
+    text-align: center;
+  }
+  .psBox {
+    width: 70%;
+    margin: 20px auto;
+    height: fit-content;
+    font-size: 18px;
+  }
+  .psBox img {
+    scale: 0.75;
+    margin: -30px -20px 0;
+    padding: 0;
+  }
+  .text {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #itemContainer {
+    flex-direction: column;
+  }
+  #showDetails {
+    margin-left: 0;
+  }
+}
+@media only screen and (max-width: 850px) {
+  .row {
+    flex-direction: column;
+  }
+  .prodBox {
+    min-width: 350px;
+    width: 55%;
+    margin: 20px auto;
+  }
+  .prodBox img {
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+.linkTitle {
+  text-align: left;
+}
+
+@media only screen and (max-width: 650px) {
+  .rating {
+    font-size: 32px;
+  }
+  #reviewContainer {
+    width: 95%;
+  }
+  #itemContainer {
+    width: 95%;
+  }
+  #desc p {
+    font-size: 12px;
+  }
+  #authForm,
+  #regForm {
+    width: 95% !important;
+  }
+  .ctaTitle h1 {
+    font-size: 18px;
+    margin: 0;
+  }
+}
+@media only screen and (max-width: 575px) {
+  .ctaTitle h1 {
+    font-size: 14px;
+  }
+  .ctaTitle h3 {
+    font-size: 10px;
+  }
+}
+@media only screen and (max-width: 550px) {
+  #footer {
+    flex-direction: column;
+    padding-right: auto;
+  }
+  #footer h3 {
+    text-align: center;
+  }
+  .linkTitle {
+    text-align: center;
+  }
+  .sTitle h1 {
+    font-size: 22px;
+  }
+  .pBtn {
+    padding: 5px 10px;
+  }
+  .psBox h3 {
+    font-size: 20px;
+  }
+  .psBox p {
+    font-size: 14px;
+  }
+}
+
+/*# sourceMappingURL=app.css.map */
