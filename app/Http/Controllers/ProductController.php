@@ -36,11 +36,11 @@ class ProductController extends Controller
         $this->validate($request,[
             'name'=>'required|max:100',
             'price'=>'required|numeric|gt:0',
-            'discount'=>'numeric|gt:0',
+            'discount'=>'nullable|numeric|gt:0',
             'type'=>'required',
             'imageFile' => 'required',
             'imageFile.*' => 'image|mimes:jpeg,png,jpg,gif,svg,avif|max:2048',
-            'sku'=> 'required|max:30'
+            'sku'=> 'nullable|max:30'
         ]);
        
         $products = Product::all(); 
@@ -162,9 +162,9 @@ class ProductController extends Controller
          $this->validate($request,[
             'name'=>'required|max:255',
             'price'=>'required|numeric|gt:0',
-            'discount'=>'numeric',
+            'discount'=>'nullable|numeric',
             'type'=>'required',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg,avif|max:2048'
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,avif|max:2048'
         ]);
         $product = Product::find($id); 
         $count = 0; 
