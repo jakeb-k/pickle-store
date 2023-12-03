@@ -18,4 +18,7 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
+
+    # Public Storage Access
+    RewriteRule ^storage/app/public/(.*)$ public/storage/$1 [L]
 </IfModule>

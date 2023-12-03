@@ -96,9 +96,9 @@ elevate your pickleball experience today!
         <div class="prodBox">
             @if($product->image)
             <?php $images = explode(",", $product->image); ?>
-            <img src="{{url('storage/images/'.$images[0])}}" />
+            <img src="{{ Storage::disk('public')->url('images/'.$images[0]) }}" alt="pickleball product photo"/> 
             @else
-            <img src="{{url('images/pickleLogo.png')}}" />
+            <img src="{{url('images/pickleLogo.png')}}" alt="no matching photo found"/>
             @endif
             <a href="{{url('/product/'.$product->id)}}">{{$product->name}} </a>
             <div class="pInfo">
