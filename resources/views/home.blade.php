@@ -126,13 +126,6 @@
         if (largeDiv) {
             observer.observe(largeDiv);
         }
-
-
-        //slide in left
-        $('.ctaTitle').css('margin-left', '-100%');
-        $('.ctaTitle').animate({
-            'margin-left': '22.5%'
-        }, 1000);
       
 
         // Slide in vertically
