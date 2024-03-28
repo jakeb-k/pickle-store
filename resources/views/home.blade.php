@@ -90,5 +90,31 @@
 
         </div>
     </div>
+    <script>
+     $(document).ready(function() {
+  function applyFadeInEffect(entries) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const smallDivs = $(entry.target).find('.psBox');
+        smallDivs.css('opacity', 0); // Set initial opacity to 0
+        smallDivs.each(function(index, div) {
+          setTimeout(() => {
+            $(div).animate({opacity: 1}, 'slow'); // Animate opacity change to 1
+          }, index * 500); // Delay the animation for each .psBox
+        });
 
+        observer.unobserve(entry.target); // Stop observing the .prodSec after the effect
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(applyFadeInEffect, { threshold: 0.7 });
+
+  const largeDiv = document.querySelector('.prodSec');
+  if (largeDiv) {
+    observer.observe(largeDiv);
+  } 
+});
+
+    </script>
 @endsection

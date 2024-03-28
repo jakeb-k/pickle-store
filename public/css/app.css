@@ -521,6 +521,7 @@ CARD SECTION STYLING
 }
 
 .psBox  {
+  opacity:0; 
   position:relative; 
   margin: 0 2.5%;
   min-width: 300px;
