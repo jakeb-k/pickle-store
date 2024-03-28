@@ -1,11 +1,24 @@
-@import url("https://fonts.cdnfonts.com/css/bevan");
-@import url("https://fonts.cdnfonts.com/css/oswald-4");
+@font-face {
+  font-family: 'Bevan';
+  src: url('../fonts/Bevan-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Oswald';
+  src: url('../fonts/Oswald-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 .alert {
   font-size: 14px;
   color: #e20f0f;
   font-family: "Oswald";
 }
-
+* {
+  font-display: swap;
+}
 body {
   overflow-x: hidden;
 }
@@ -1828,6 +1841,7 @@ FOOTER STYLING
 
 */
 #footer {
+  min-height:auto; 
   padding-top: 20px;
   display: flex;
   flex-direction: row;
