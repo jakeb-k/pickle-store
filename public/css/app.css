@@ -127,22 +127,13 @@ i:hover {
   color: white;
   transition: 0.2s ease-in-out;
 }
-
-#nav.shrunken * {
-  scale: 0.95;
-}
-
-.shrunken.uSec .pBtn {
-  margin-top: 90px;
-}
-
 #nav.shrunken {
-  padding-top: 20px;
-  height: 57.5px;
+  height: fit-content;
   transition: 0.3s ease-in-out;
   background: rgba(25, 25, 25, 0.85);
   box-shadow: 0 0 30px #FFD100;
   align-items: center;
+  padding:0; 
 }
 
 #nav {
@@ -164,17 +155,13 @@ i:hover {
   text-decoration: underline;
 }
 .shrunken h3.d-2 {
-  font-size:32px; 
+  font-size:28px; 
   padding-bottom:5px; 
 }
 .sSec, .uSec {
   display: flex;
   flex-direction: row;
   width: 45%;
-}
-
-.shrunken .uSec {
-  padding-top: 25px;
 }
 
 .uSec {
@@ -200,10 +187,9 @@ i:hover {
   left: 10px;
 }
 
-.shrunken img {
-  top: -30px;
-  scale: 0.7;
-  left: 20px;
+.shrunken #logo {
+ height:80px; 
+ width:80px; 
 }
 
 .sLink, .uLink {
@@ -216,7 +202,11 @@ i:hover {
 .uLink {
   margin: 0 1.5%;
 }
-
+#logo {
+  margin:auto; 
+  height:100px; 
+  width:100px; 
+}
 #logout {
   margin-bottom: 0;
 }
@@ -242,9 +232,10 @@ button.pBtn {
   color: white;
   border-radius: 15px;
   font-weight: bold;
+  font-size:18px; 
   letter-spacing: 1px;
   border: none;
-  padding: 10px 20px;
+  padding: 15px 25px;
   --c: #FFD100; /* the color*/
   box-shadow: 0 0 0 0.1em inset var(--c);
   --_g: linear-gradient(var(--c) 0 0) no-repeat;
@@ -267,7 +258,7 @@ button.pBtn:active {
   color: #fff;
 }
 
-/* Dropdown Button */
+/* DROP DOWN BTN FOR FILTER ON INDEX PAGE */
 .dropbtn2 {
   background: none;
   padding: 10px;
