@@ -17,7 +17,7 @@ elevate your pickleball experience today!
         <div class="dropdown2">
             <button class="dropbtn2"><i class="fa-solid fa-filter" style="color:#ffd100;"> </i></button>
             <div class="dropdown-content2">
-                <h3>Filter Options </h3>
+                <h3>Options</h3>
                 <form method="POST" action='{{url("items/$type/filter")}}'>
                     {{csrf_field()}}
                     <input type="hidden" value="pop" name="filter" />

@@ -45,7 +45,7 @@
 
                 <div class="cont">
                     <a href="{{url('items/accessories')}}">
-                        <h3 class="d-2">Accessories</h3>
+                        <h3 class="d-2">Gear</h3>
                     </a> 
                 </div>
 

@@ -2,7 +2,8 @@
     @section('content')
     <div id="splashCont">
         <div class="ctaTitle">
-            <h1>Welcome to AussiePicklePro - The Pro Aussie Pickleball Outlet! </h1>
+            <h1>Welcome to AussiePicklePro - </h1>
+            <h2>Straya Meets Pickleball!</h2>
             <h3>Don't Miss Out - Grab Your Gear NOW ↓</h3>
             <p>Free Shipping STOREWIDE! </p>
         </div>
@@ -13,7 +14,7 @@
                     <a href="{{url('items/accessories')}}">
                         <img src="{{url('images/a1.webp')}}" alt="Pickleball balls" />
                         <div class="overlayL">
-                            <div class="text">Accessories</div>
+                            <div class="text">Gear</div>
                         </div>
                     </a>
                 </div>
@@ -21,7 +22,7 @@
                     <a href="{{url('items/clothing')}}">
                         <img src="{{url('images/c2.webp')}}" alt="Pickleball shirt" />
                         <div class="overlayL">
-                            <div class="text">Clothing</div>
+                            <div class="text">Apparel</div>
                         </div>
                     </a>
                 </div>
@@ -52,7 +53,7 @@
     </div>
     <h1 class="prodTitle">Kits <a href="{{url('items/kits')}}">View All Kits</a></h1>
     <div class="prodSec">
-        <div class="psBox"  style="display: none;">
+        <div class="psBox" >
             <img src="{{url('images/pickleLogo.png')}}" alt="starter kit 1" />
             <h3>Starter Kit</h3>
             <p>Introducing our exclusive Beginner's Pickleball Starter Kit, designed to
@@ -64,7 +65,7 @@
             <a class="backBtn" href="{{url('product/27')}}" ><i class="fa-regular fa-circle-right fa-2xl" style="font-size: 64px; margin-top:-150px; "></i></a>
         </div>
 
-        <div class="psBox" style="display: none;">
+        <div class="psBox">
             <img src="{{url('images/pickleLogo.png')}}" alt="intermediate kit 1" />
             <h3>Intermediate Kit</h3>
             <p>Unleash your potential on the pickleball court with our Intermediate
@@ -76,7 +77,7 @@
             <a class="backBtn" href="{{url('product/28')}}"><i class="fa-regular fa-circle-right fa-2xl" style="font-size: 64px;"></i></a>
         </div>
 
-        <div class="psBox" style="display: none;">
+        <div class="psBox">
             <img src="{{url('images/pickleLogo.png')}}" alt="expert kit 1" />
             <h3>Expert Kit</h3>
             <p>Introducing the Expert Pickleball Player's Kit - a collection tailored for
@@ -89,39 +90,5 @@
 
         </div>
     </div>
-    <script>
-        $(document).ready(function() {
-        function setPsBoxWidth() {
-            const prodSecWidth = $('.prodSec').width();
-            const psBoxWidth = prodSecWidth / 3; // Calculate one-third of the container width
 
-            $('.psBox').width(psBoxWidth); // Set the width of .psBox elements
-        }
-
-        // Initially set the width of .psBox elements
-        setPsBoxWidth();
-
-            function applyPoofEffect(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const smallDivs = $(entry.target).find('.psBox');
-                    smallDivs.each(function(index, div) {
-                        setTimeout(() => {
-                            $(div).fadeIn('slow'); // Fades in each .psBox
-                        }, index * 500); // Adjust the timing between each .psBox appearance
-                    });
-
-                    observer.unobserve(entry.target); // Stops observing the .prodSec after the effect
-                }
-            });
-        }
-
-            const observer = new IntersectionObserver(applyPoofEffect, { threshold:1 });
-
-            const largeDiv = document.querySelector('.prodSec');
-            if (largeDiv) {
-                observer.observe(largeDiv);
-            } 
-        });
-    </script>
 @endsection
