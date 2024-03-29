@@ -2,7 +2,7 @@
     @section('content')
     <div id="splashCont">
         <div class="ctaTitle">
-            <h1>Welcome to AussiePicklePro - </h1>
+            <h1>Welcome to AussiePicklePro </h1>
             <h2>Straya Meets Pickleball!</h2>
             
             <p>Free Shipping STOREWIDE! </p>
@@ -108,7 +108,7 @@
     });
   }
 
-  const observer = new IntersectionObserver(applyFadeInEffect, { threshold: 0.5 });
+  const observer = new IntersectionObserver(applyFadeInEffect, { threshold: 0.3 });
 
   const largeDiv = document.querySelector('.prodSec');
   if (largeDiv) {

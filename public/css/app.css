@@ -1938,16 +1938,6 @@ PULL OUT MENU CODE
 
 
 */
-.page_title,
-.what_to_do {
-  font-weight: 300;
-  line-height: 120%;
-  text-align: center;
-  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.8);
-  text-transform: uppercase;
-}
-
-/* PEN STYLES ========== */
 a,
 .side_menu {
   -webkit-transition: all 300ms ease-in-out;
@@ -1961,16 +1951,17 @@ a,
 
 /* MENU CONTAINER ----- */
 .side_menu {
-  padding-top: 125px;
-  background: rgba(40, 40, 40, 0.9);
+  padding-top: 100px;
+  background: rgb(54, 54, 54);
   height: 100vh;
   left: -250px;
   position: fixed;
   top: 0;
-  width: 250px;
+  width: 220px;
   z-index: 1;
   font-family: "Rubrik", Arial, Helvetica, sans-serif;
   font-size: 12px;
+  box-shadow:0 5px 30px #FFD100; 
 }
 
 /*
@@ -2052,7 +2043,7 @@ MEDIA QUERIES
   .psBox {
     width: 70%;
     margin: 20px auto;
-    height: fit-content;
+  
     font-size: 18px;
   }
   .psBox img {
@@ -2127,7 +2118,12 @@ MEDIA QUERIES
   }
   .net {
     margin-top:-6px; 
-
+  }
+  .prodSec {
+    padding-top:70px; 
+  }
+  .psBox {
+    height:400px; 
   }
 }
 @media only screen and (max-width: 575px) {
@@ -2157,8 +2153,12 @@ MEDIA QUERIES
     font-size: 18px;
   }
   button.pBtn {
-    padding: 15px 12.5px;
+    padding: 10px;
     font-size:14px; 
+  }
+  .shrunken #logo {
+    width:55px;
+    height:55px; 
   }
   .psBox h3 {
     font-size: 20px;
