@@ -99,10 +99,11 @@ elevate your pickleball experience today!
 
 
         <div class="prodBox">
+        <a href="{{url('/product/'.$product->id)}}">
             @if($product->image)
             <?php $images = explode(",", $product->image); ?>
-            <!-- <img src="{{ Storage::disk('public')->url('images/'.$images[0]) }}" alt="pickleball {{$type}} photo"/>  -->
-            <img  src="{{url('storage/images/'.$images[0])}}" alt="pickleball product photo"/>
+            <img src="{{ Storage::disk('public')->url('images/'.$images[0]) }}" alt="pickleball {{$type}} photo"/> 
+            <!-- <img  src="{{url('storage/images/'.$images[0])}}" alt="pickleball product photo"/> -->
             @else
             <img src="{{url('images/pickleLogo.png')}}" alt="no matching photo found"/>
             @endif
@@ -120,7 +121,7 @@ elevate your pickleball experience today!
                 </div>
                 <p>{{number_format($product->rating, 2)}} ★</p>
             </div>
-
+        </a>
         </div>
 
         @endforeach

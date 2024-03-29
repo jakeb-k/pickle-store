@@ -16,24 +16,31 @@
             @if($product->image)
             <?php $images = explode(",", $product->image); ?>
             <div class="detailSlides" style="max-width:1200px">
+                <!-- production link
                 <img class="dSlides" src="{{ Storage::disk('public')->url('images/'.$images[0]) }}" style="width:100%;"/>
                 <img class="dSlides" src="{{ Storage::disk('public')->url('images/'.$images[1]) }}" style="width:100%;display:none;"/>
                 <img class="dSlides" src="{{ Storage::disk('public')->url('images/'.$images[2]) }}" style="width:100%;display:none;"/>
+                 -->
+                 <!-- local testing link -->
+                <img class="dSlides" src="{{url('storage/images/'.$images[0])}}" style="width:100%;"/>
+                <img class="dSlides" src="{{url('storage/images/'.$images[1])}}" style="width:100%;display:none;"/>
+                <img class="dSlides" src="{{url('storage/images/'.$images[2])}}" style="width:100%;display:none;"/>
+
                 <div id="slideOps" class="w3-row-padding w3-section">
                     <div class="w3-col s4">
-                        <img class="demo w3-opacity w3-hover-opacity-off"  src="{{ Storage::disk('public')->url('images/'.$images[0]) }}" style="width:100%;cursor:pointer" onclick="currentDiv(1)">
+                        <img class="demo w3-opacity w3-hover-opacity-off"  src="{{url('storage/images/'.$images[0])}}" style="width:100%;cursor:pointer" onclick="currentDiv(1)">
                     </div>
                     <div class="w3-col s4">
-                        <img class="demo w3-opacity w3-hover-opacity-off"  src="{{ Storage::disk('public')->url('images/'.$images[0]) }}" style="width:100%;cursor:pointer" onclick="currentDiv(2)">
+                        <img class="demo w3-opacity w3-hover-opacity-off" src="{{url('storage/images/'.$images[1])}}" style="width:100%;cursor:pointer" onclick="currentDiv(2)">
                     </div>
                     <div class="w3-col s4">
-                        <img class="demo w3-opacity w3-hover-opacity-off"  src="{{ Storage::disk('public')->url('images/'.$images[0]) }}" style="width:100%;cursor:pointer" onclick="currentDiv(3)">
+                        <img class="demo w3-opacity w3-hover-opacity-off"  src="{{url('storage/images/'.$images[2])}}" style="width:100%;cursor:pointer" onclick="currentDiv(3)">
                     </div>
                 </div>
             </div>
 
             @else
-            <img src="{{url('images/noImg.jpg')}}" />
+            <img src="{{url('images/noImg.webp')}}" />
             @endif
         </div>
 
@@ -61,63 +68,52 @@
             <form action='{{url("add-to-cart/$product->id")}}' method="POST">
                 {{csrf_field()}}
                 @if($clothing)
-                <div class="line"></div>
-                <label for="option">Choose a size:</label>
-
-
-                <select name="size" id="size" style="width:100%;">
-                    @foreach($sizes as $s)
-                    <option value="{{$s}}">{{$s}}</option>
-                    @endforeach
-                </select>
-
+                    <div class="line"></div>
+                    <label for="option">Choose a size:</label>
+                    <select name="size" id="size" style="width:100%;">
+                        @foreach($sizes as $s)
+                        <option value="{{$s}}">{{$s}}</option>
+                        @endforeach
+                    </select>
                     <?php 
                     if($colors) {
                        $colors = collect($colors);
                     }; ?> 
-                <div class="oSec">
-                    @foreach($colors->chunk(6) as $chunk)
-                        <div class="row">
-                        @foreach($chunk as $c)
-                        <div class="colorInput">
-                            <input type="radio" id="{{$c}}" name="color" value="{{$c}}" style="display: none;" />
-                            <label for="{{$c}}" class="color-label" style="background-color: {{$c}}; border-radius: 50%;"></label>
-                            <p style="margin-top:25px; ">{{ucfirst($c)}}</p>
-                        </div>
+                    <div class="oSec">
+                        @foreach($colors as $c)
+                            <div class="colorInput">
+                                <input type="radio" id="{{$c}}" name="color" value="{{$c}}" style="display: none;" />
+                                <label for="{{$c}}" class="color-label" style="background-color: {{$c}}; border-radius: 50%;"></label>
+                                <p style="margin-top:25px; ">{{ucfirst($c)}}</p>
+                            </div>
                         @endforeach
-                        </div>
-                    @endforeach
-                </div>
+                    </div>
 
                 @else
-                <div class="line"></div>
-                @if($colors != [])
-                <?php $colors = collect($colors) ?> 
-                <div class="oSec">
-                    @foreach($colors->chunk(8) as $chunk)
-                        <div class="row">
-                        @foreach($chunk as $c)
-                        <div class="colorInput">
-                            <input type="radio" id="{{$c}}" name="color" value="{{$c}}" style="display: none;" />
-                            <label for="{{$c}}" class="color-label" style="background-color: {{$c}}; border-radius: 50%;"></label>
-                            <p style="margin-top:25px; ">{{ucfirst($c)}}</p>
+                    <div class="line"></div>
+                    @if($colors != [])
+                        <?php $colors = collect($colors) ?> 
+                        <div class="oSec">
+                            @foreach($colors as $c)
+                                <div class="colorInput">
+                                    <input type="radio" id="{{$c}}" name="color" value="{{$c}}" style="display: none;" />
+                                    <label for="{{$c}}" class="color-label" style="background-color: {{$c}}; border-radius: 50%;"></label>
+                                    <p style="margin-top:25px; ">{{ucfirst($c)}}</p>
+                                </div>
+                            @endforeach
                         </div>
+                    @endif
+                    <div class="optSec">
+                        @foreach($options as $o)
+                            <label for="option">{{ucfirst($o->type)}} Options:</label>
+                            <input type="hidden" value="{{$o->type}}" />
+                            <select name="option" id="option" style="width:100%;">
+                                @foreach(explode(".",$o->values) as $s)
+                                <option value="{{$s}}">{{$s}}</option>
+                                @endforeach
+                            </select>
                         @endforeach
-                        </div>
-                    @endforeach
-                </div>
-                @endif
-                <div class="optSec">
-                    @foreach($options as $o)
-                    <label for="option">{{ucfirst($o->type)}} Options:</label>
-                    <input type="hidden" value="{{$o->type}}" />
-                    <select name="option" id="option" style="width:100%;">
-                        @foreach(explode(".",$o->values) as $s)
-                        <option value="{{$s}}">{{$s}}</option>
-                        @endforeach
-                    </select>
-                    @endforeach
-                </div>
+                    </div>
                 @endif
                 @if($colors ?? "")
                 <p class="alert" style="color:black;">*No selection means one will be randomly selected!</p>
@@ -291,8 +287,11 @@
         }
         for (i = 0; i < dots.length; i++) {
             dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+            dots[i].style.border = "none";
         }
         x[slideIndex - 1].style.display = "block";
         dots[slideIndex - 1].className += " w3-opacity-off";
+        dots[slideIndex - 1].style.border = "1px solid #FFD100" ;
+        
     }
 </script>

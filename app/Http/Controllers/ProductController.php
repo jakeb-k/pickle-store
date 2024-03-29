@@ -121,7 +121,14 @@ class ProductController extends Controller
             $sizes = explode(".",$s->values); 
 
             $cOptions = Options::whereRaw('product_id = ?', array($id))->get();
-            $colors = explode(".",$cOptions[0]->values); 
+            
+            $x = isset($cOptions[0]->values) && $cOptions[0]->type != 'size';
+            
+            if($x){
+                $colors = explode(".",$cOptions[0]->values); 
+            } else {
+                $colors = []; 
+            }
             $clothing = true; 
             return view('products.show')->with('product', $product)->with('reviews',$reviews)->with('colors',$colors)->with('sizes',$sizes)->with('clothing',true); 
 

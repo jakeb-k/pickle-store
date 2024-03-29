@@ -579,6 +579,7 @@ PRODUCTS PAGE STYLING
 */
 button.opsBtn {
   position: absolute;
+  z-index:3; 
   margin: 10px 0 0 22.5%;
   padding: 5px;
   border: none;
@@ -650,13 +651,13 @@ button.opsBtn i:hover {
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  transition:0.1s ease-in-out; 
+
 }
 .prodBox:hover {
   scale:1.1; 
   transition:0.1s ease-in-out; 
-
   box-shadow: 0 0 40px #FFD100;
-
 }
 
 .prodBox a {
@@ -743,7 +744,7 @@ PRODUCT DETAIL PAGE STYLING
   justify-content: center;
   font-family: "Bevan", Arial, Helvetica, sans-serif;
   font-size: 24px;
-  background: linear-gradient(rgb(235, 235, 235), rgb(50, 50, 50));
+  background: rgb(167, 167, 167);
   padding-top: 125px;
 }
 
@@ -794,16 +795,10 @@ PRODUCT DETAIL PAGE STYLING
 
 .oSec {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-evenly;
   font-size: 16px;
   font-family: "Oswald", Arial, Helvetica, sans-serif;
-}
-
-.oSec .row {
-  width: 100%;
-  justify-content: flex-start;
-  margin-bottom: -50px;
 }
 
 .colorInput {

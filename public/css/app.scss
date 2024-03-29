@@ -552,6 +552,7 @@ PRODUCTS PAGE STYLING
 */ 
 button.opsBtn {
     position:absolute; 
+    z-index:3; 
     margin:10px 0 0 22.5%; 
     padding:5px; 
     border:none; 
