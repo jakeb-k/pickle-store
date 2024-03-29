@@ -4,7 +4,7 @@
 @endsection
 @section('meta')
 Discover top-tier pickleball {{$type}} at AussiePicklePro. 
-Shop where the pros shop so you can play like they do. Explore our diverse {{$type}} collection and 
+The best pickleball store in Australia! Explore our diverse {{$type}} collection and 
 elevate your pickleball experience today!
 @endsection
 @section('content')
@@ -101,7 +101,8 @@ elevate your pickleball experience today!
         <div class="prodBox">
             @if($product->image)
             <?php $images = explode(",", $product->image); ?>
-            <img src="{{ Storage::disk('public')->url('images/'.$images[0]) }}" alt="pickleball product photo"/> 
+            <!-- <img src="{{ Storage::disk('public')->url('images/'.$images[0]) }}" alt="pickleball {{$type}} photo"/>  -->
+            <img  src="{{url('storage/images/'.$images[0])}}" alt="pickleball product photo"/>
             @else
             <img src="{{url('images/pickleLogo.png')}}" alt="no matching photo found"/>
             @endif

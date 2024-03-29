@@ -62,7 +62,7 @@
                     <img src="{{url('storage/images/'.$images[2])}}" /> 
                     
                 @else
-                     <img src="{{url('images/noImg.jpg')}}" /> 
+                     <img src="{{url('images/noImg.webp')}}" /> 
                 @endif</td>
             <td style="width:300px; ">{{$product->name}}</td>
             <td>{{$product->sku}}</td>
