@@ -209,6 +209,7 @@ class ProductController extends Controller
         $product->description = $request->description ?? ""; 
         $product->type = $type; 
         $product->image = $img; 
+        $product->delivery = $request->delivery; 
         $product->discount = $request->discount ?? 0; 
         $product->save();
         return redirect('/admin')->with('success', 'Added Successfully!'); 

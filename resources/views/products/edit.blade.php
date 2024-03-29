@@ -38,7 +38,7 @@
                 </div>
                  <div class="createInput">
                     <label class="form-label"> Delivery Range:<span class="formReq">*</span>: </label>
-                    <input type="text" name="delivery" placeholder="How many days is delivery?">
+                    <input type="text" name="delivery" placeholder="How many days is delivery?" value="{{$product->delivery}}">
                     @error('delivery')
                         <div class="alert">{{ $message }}</div>
                     @enderror
