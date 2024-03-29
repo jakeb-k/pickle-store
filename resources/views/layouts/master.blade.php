@@ -36,7 +36,7 @@
     <div class="side_menu">
     
         <div class="container">
-            <ul class="list_load">
+           
                 <div class="cont">
                     <a href="{{url('/')}}">
                         <h3 class="d-2">Home</h3>
@@ -69,8 +69,6 @@
                         <h3 class="d-2">Clothing</h3>
                     </a> 
                 </div>
-                 
-            </ul>
         </div>
     </div>
         
@@ -107,19 +105,14 @@
                     </a> 
                 </div>
             </div>
-            @guest
+           
             <div class="sTitle">
                 <a href="{{url('/')}}">
                     <h1> Aussie<br>PicklePro</h1> 
                 </a>
-                <div id="arrow" class="js-menu_toggle closed" style="display:none;">
-                </div>
+          
             </div>
-            @else 
-            <div id="arrow" class="js-menu_toggle closed">
-                <h1>←</h1>                 
-            </div>
-            @endguest
+        
                 <!-- USER LINK SECTION - ARE BUTTONS NOT <a> --> 
             <div class="uSec">
                 @guest
@@ -468,29 +461,13 @@ document.getElementById('logo').addEventListener('click', function() {
   if (!opened) {
     rotate = -90; 
     document.getElementById('logo').style.transform = `rotate(${rotate}deg)`;
-    document.getElementById('arrow').style.transform = `rotate(${-rotate}deg)`;
+   
     opened = true;
     return;
   } else {
     rotate = 0;
     document.getElementById('logo').style.transform = `rotate(${rotate}deg)`;
-    document.getElementById('arrow').style.transform = `rotate(${rotate}deg)`;
-    opened = false; 
-    return; 
-  }
-});
-document.getElementById('arrow').addEventListener('click', function() {
-    // Change rotation direction after the first click
-  if (!opened) {
-    rotate = -90; 
-    document.getElementById('logo').style.transform = `rotate(${rotate}deg)`;
-    document.getElementById('arrow').style.transform = `rotate(${-rotate}deg)`;
-    opened = true;
-    return;
-  } else {
-    rotate = 0;
-    document.getElementById('logo').style.transform = `rotate(${rotate}deg)`;
-    document.getElementById('arrow').style.transform = `rotate(${rotate}deg)`;
+
     opened = false; 
     return; 
   }
@@ -498,36 +475,19 @@ document.getElementById('arrow').addEventListener('click', function() {
 
 
 $(document).on('click','.js-menu_toggle.closed',function(e){
-	e.preventDefault(); $('.list_load, .list_item').stop();
+	e.preventDefault(); 
 	$(this).removeClass('closed').addClass('opened');
 
 	$('.side_menu').css({ 'left':'0px' });
 
-	var count = $('.list_item').length;
-	$('.list_load').slideDown( (count*.6)*100 );
-	$('.list_item').each(function(i){
-		var thisLI = $(this);
-		timeOut = 100*i;
-		setTimeout(function(){
-			thisLI.css({
-				'opacity':'1',
-				'margin-left':'0'
-			});
-		},100*i);
-	});
 });
 
 $(document).on('click','.js-menu_toggle.opened',function(e){
-	e.preventDefault(); $('.list_load, .list_item').stop();
+	e.preventDefault(); 
 	$(this).removeClass('opened').addClass('closed');
 
 	$('.side_menu').css({ 'left':'-250px' });
 
-	var count = $('.list_item').length;
-	$('.list_item').css({
-		'opacity':'0',
-		'margin-left':'-20px'
-	});
-	$('.list_load').slideUp(300);
+
 });
 </script>

@@ -4,7 +4,7 @@
         <div class="ctaTitle">
             <h1>Welcome to AussiePicklePro - </h1>
             <h2>Straya Meets Pickleball!</h2>
-            <h3>Don't Miss Out - Grab Your Gear NOW ↓</h3>
+            
             <p>Free Shipping STOREWIDE! </p>
         </div>
 
