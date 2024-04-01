@@ -182,14 +182,13 @@
     </div>
 
     <div id="reviewContainer">
-        <h1 class="emphasis">Reviews </h1>
+        <h1>Reviews </h1>
         <div class="reviewBox">
 
             @if($reviews != [])
             @foreach($reviews as $r)
             <div class="reviews">
-                <h3>{{$r[0]}} · {{$r[1]}} ★  <div style="font-size:12px;">({{$r[3]->format('d/m/y')}})</div> </h3>
-            
+                <h3>{{$r[0]}} · {{$r[1]}} ★  <div style="font-size:12px;font-style:italic;">({{$r[3]->format('d/m/y')}})</div> </h3>
                 <p>{{$r[2]}}</p>
             </div>
             @endforeach
@@ -199,7 +198,7 @@
         </div>
         @auth
         <div id="reviewInput">
-            <p>Leave a Review</p>
+            <h3>Leave a Review</h3>
             <form method="POST" action='{{url("addReview/$product->id")}}'>
                 {{csrf_field()}}
 
@@ -239,7 +238,7 @@
                     </fieldset>
                 </div>
                 <div>
-                    <input type="text" name="content" placeholder="Enter your thoughts on the product" />
+                    <input type="text" name="content" placeholder="Share your experience!" />
                     @error('content')
                     <div class="alert">{{ $message }}</div>
                     @enderror
