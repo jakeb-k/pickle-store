@@ -46,16 +46,19 @@
                         <h3 class="d-2">Home</h3>
                     </a> 
                 </div>
-
-                <div class="cont">
-                    <a href="{{url('items/accessories')}}">
-                        <h3 class="d-2">Gear</h3>
-                    </a> 
-                </div>
-
                 <div class="cont">
                     <a href="{{url('items/paddles')}}">
                         <h3 class="d-2">Paddles</h3>
+                    </a> 
+                </div>
+                <div class="cont">
+                    <a href="{{url('items/clothing')}}">
+                        <h3 class="d-2">Clothing</h3>
+                    </a> 
+                </div>
+                <div class="cont">
+                    <a href="{{url('items/accessories')}}">
+                        <h3 class="d-2">Gear</h3>
                     </a> 
                 </div>
                 <div class="cont">
@@ -68,11 +71,7 @@
                         <h3 class="d-2">Kits</h3>
                     </a> 
                 </div>
-                <div class="cont">
-                    <a href="{{url('items/clothing')}}">
-                        <h3 class="d-2">Clothing</h3>
-                    </a> 
-                </div>
+                
         </div>
     </div>
         
@@ -84,28 +83,30 @@
                 </a>
             </div>
             <div class="sSec">
-                
-
-                <div class="cont">
-                    <a href="{{url('items/accessories')}}">
-                        <h3 class="d-2">Accessories</h3>
-                    </a> 
-                </div>
                 <div class="cont">
                     <a href="{{url('items/paddles')}}">
                         <h3 class="d-2">Paddles</h3>
                     </a> 
-                </div><div class="cont">
-                    <a href="{{url('items/court')}}">
-                        <h3 class="d-2">Court</h3>
+                </div>
+                <div class="cont">
+                    <a href="{{url('items/clothing')}}">
+                        <h3 class="d-2">Clothing</h3>
                     </a> 
-                </div><div class="cont">
+                </div>
+                <div class="cont">
                     <a href="{{url('items/kits')}}">
                         <h3 class="d-2">Kits</h3>
                     </a> 
-                </div><div class="cont">
-                    <a href="{{url('items/clothing')}}">
-                        <h3 class="d-2">Clothing</h3>
+                </div>
+
+                <div class="cont">
+                    <a href="{{url('items/court')}}">
+                        <h3 class="d-2">Court</h3>
+                    </a> 
+                </div>
+                <div class="cont">
+                    <a href="{{url('items/accessories')}}">
+                        <h3 class="d-2">Gear</h3>
                     </a> 
                 </div>
             </div>
