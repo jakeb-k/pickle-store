@@ -40,38 +40,44 @@
     <div class="side_menu">
     
         <div class="container">
-           
-                <div class="cont">
-                    <a href="{{url('/')}}">
-                        <h3 class="d-2">Home</h3>
-                    </a> 
-                </div>
-                <div class="cont">
-                    <a href="{{url('items/paddles')}}">
-                        <h3 class="d-2">Paddles</h3>
-                    </a> 
-                </div>
-                <div class="cont">
-                    <a href="{{url('items/clothing')}}">
-                        <h3 class="d-2">Clothing</h3>
-                    </a> 
-                </div>
-                <div class="cont">
-                    <a href="{{url('items/accessories')}}">
-                        <h3 class="d-2">Gear</h3>
-                    </a> 
-                </div>
-                <div class="cont">
-                    <a href="{{url('items/court')}}">
-                        <h3 class="d-2">Court</h3>
-                    </a> 
-                </div>
-                <div class="cont">
-                    <a href="{{url('items/kits')}}">
-                        <h3 class="d-2">Kits</h3>
-                    </a> 
-                </div>
-                
+            <div class="search-bar" style="margin-top:25px;">
+                <form method="GET" action="{{url('search')}}">
+                    <input id="search-input" type="text" name="search" placeholder="Search Products!" > 
+                    <button class="pBtn" style="padding:2.5px 5px; " type="submit">
+                        <i class="fa-solid fa-magnifying-glass" style="font-size:18px; color:rgb(52,52,52);"></i>
+                    </button> 
+                </form>
+            </div>
+            <div class="cont">
+                <a href="{{url('/')}}">
+                    <h3 class="d-2">Home</h3>
+                </a> 
+            </div>
+            <div class="cont">
+                <a href="{{url('items/paddles')}}">
+                    <h3 class="d-2">Paddles</h3>
+                </a> 
+            </div>
+            <div class="cont">
+                <a href="{{url('items/clothing')}}">
+                    <h3 class="d-2">Clothing</h3>
+                </a> 
+            </div>
+            <div class="cont">
+                <a href="{{url('items/accessories')}}">
+                    <h3 class="d-2">Gear</h3>
+                </a> 
+            </div>
+            <div class="cont">
+                <a href="{{url('items/court')}}">
+                    <h3 class="d-2">Court</h3>
+                </a> 
+            </div>
+            <div class="cont">
+                <a href="{{url('items/kits')}}">
+                    <h3 class="d-2">Kits</h3>
+                </a> 
+            </div>
         </div>
     </div>
         

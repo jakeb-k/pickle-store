@@ -323,7 +323,29 @@ button.pBtn:active {
 .dropdown-content2 button {
   width:100%; 
 }
+.search-bar {
+  position: relative;
+  width: 200px; 
+}
 
+#search-input {
+  width: 100%;
+  padding:9px; 
+  box-sizing: border-box;
+  border-top-right-radius: 15px; 
+  border-bottom-right-radius: 15px;
+  border:2px solid #FFD100;
+
+}
+
+#search-input + .pBtn{
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 40px;
+  width: 40px;
+ 
+}
 /*
 
 
