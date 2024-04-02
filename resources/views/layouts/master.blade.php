@@ -42,11 +42,14 @@
         <div class="container">
             <div class="search-bar" style="margin-top:25px;">
                 <form method="GET" action="{{url('search')}}">
-                    <input id="search-input" type="text" name="search" placeholder="Search Products!" > 
+                    <input id="search-input" type="text" name="query" placeholder="Search Products!" > 
                     <button class="pBtn" style="padding:2.5px 5px; " type="submit">
                         <i class="fa-solid fa-magnifying-glass" style="font-size:18px; color:rgb(52,52,52);"></i>
                     </button> 
                 </form>
+                @error('search')
+                    <div class="alert">{{ $message }}</div>
+                @enderror
             </div>
             <div class="cont">
                 <a href="{{url('/')}}">
@@ -178,6 +181,16 @@
                 </div>
             </div>
         </div>
+        @if (session('no_search'))
+        <div class="fail-alert">
+            <p class="alert">{{session('no_search')}}</p>
+        </div>
+        <script> 
+        setTimeout(function() {
+            document.getElementById('fail-alert').style = 'display:none';
+            }, 3000); // 3000 milliseconds = 3 seconds
+        </script>
+        @endif
         @yield('content') 
          <div id="footer">
         <div class="fSec">

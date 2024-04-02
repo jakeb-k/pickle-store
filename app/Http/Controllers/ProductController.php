@@ -440,16 +440,25 @@ class ProductController extends Controller
     }
 
     public function search() {
-        $s = request('search'); 
+        $validatedData = request()->validate([
+            'query' => 'required|max:50',
+        ]);
+        $search = $validatedData['query']; 
         
-        $search = preg_replace('/-/', " ", $s);
+        $search = preg_replace('/-/', " ", $search);
+   
         $a = explode(" ", $search); 
         $b = $a[0];
-        $products = Mat::where('tags', 'like', '%' . $b . '%')->get(); 
        
+        $products = Product::where('tags', 'like', '%' . $b . '%')->get(); 
+       
+        if($products->isEmpty()) {
+            return redirect()->back()->with('no_search', 'There are no matching products');
+        } else {
+            return view('products.index')->with('products', $products)->with('type', $search)->with('paginated', false); 
+        }
         
         
-        return view('products.type')->with('products', $products)->with('type', $search)->with('paginated', false); 
     }
 
 }
