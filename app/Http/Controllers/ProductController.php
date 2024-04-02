@@ -211,7 +211,7 @@ class ProductController extends Controller
         } else {
             $fileName = $product->image; 
         }
-        
+
         if($request->type == 'Accessories'){
             $type = $product->type; 
         } else {
@@ -352,6 +352,7 @@ class ProductController extends Controller
     
         return redirect()->back()->with('success', 'Product added to cart successfully!');
     }
+
     public function remove(Request $request)
     { 
         if($request->id) {
@@ -363,6 +364,7 @@ class ProductController extends Controller
         }
         return back()->with('success', 'Product added to cart successfully!');
     }
+
     public function clearCart(){
         session()->forget('cart');
         return redirect()->back()->with('products', Product::paginate(6));
@@ -394,6 +396,7 @@ class ProductController extends Controller
         
         return redirect()->back(); 
     }
+
     public function filter(Request $request, $type){
         $fil = $request->filter; 
         
@@ -415,6 +418,7 @@ class ProductController extends Controller
         
         return view('products.index')->with('products', $products)->with('filterTag', $filterTag)->with('paginated', false)->with('type', $type); 
     }
+
     //Show the admin dashboard
     public function admin(){
         $cats = ['Accessories','Paddle','Court','Kit','Clothing'];
@@ -423,16 +427,29 @@ class ProductController extends Controller
 
         return view('products.admin')->with('products',$products)->with('cats', $cats);
     }
+
     //sort admin results for quicker access
     public function adminSort(Request $request){
-            $fil = $request->filter; 
-            $cats = ['Accessories','Paddle','Court','Kit','Clothing'];
-               
-            $products =  Product::where('type', 'like', '%' . $fil . '%')->get(); 
-    
+        $fil = $request->filter; 
+        $cats = ['Accessories','Paddle','Court','Kit','Clothing'];
             
-            return view('products.admin')->with('products', $products)->with('cats', $cats); 
-        }
+        $products =  Product::where('type', 'like', '%' . $fil . '%')->get(); 
 
+        
+        return view('products.admin')->with('products', $products)->with('cats', $cats); 
+    }
+
+    public function search() {
+        $s = request('search'); 
+        
+        $search = preg_replace('/-/', " ", $s);
+        $a = explode(" ", $search); 
+        $b = $a[0];
+        $products = Mat::where('tags', 'like', '%' . $b . '%')->get(); 
+       
+        
+        
+        return view('products.type')->with('products', $products)->with('type', $search)->with('paginated', false); 
+    }
 
 }

@@ -25,6 +25,8 @@ Route::get('items/{type}', [ProductController::class, 'type']);
 
 Route::any('items/{type}/filter', [ProductController::class, 'filter']);
 
+Route::get('/search', [ProductController::class, 'search']);
+
 Route::get('/test',function(){
     return view('products.test'); 
 }); 
