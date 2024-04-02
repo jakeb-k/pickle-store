@@ -170,7 +170,7 @@ class ProductSearchTest extends TestCase
     public function performance_test()
     {
         // Seed the database with a large number of products to test performance.
-        Product::factory()->count(200)->create(['tags' => 'paddle']);
+        Product::factory()->count(5000)->create(['tags' => 'paddle']);
         $start = microtime(true);
         $response = $this->get('/search?query=paddle');
         $end = microtime(true);
