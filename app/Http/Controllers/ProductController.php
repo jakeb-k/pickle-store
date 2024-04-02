@@ -9,6 +9,8 @@ use App\Models\Product;
 use App\Models\Review;
 use App\Models\User;
 use App\Models\Options;
+use Illuminate\Support\Facades\DB;
+
 
 class ProductController extends Controller
 {
@@ -38,7 +40,7 @@ class ProductController extends Controller
         $this->validate($request,[
             'name'=>'required|max:100',
             'price'=>'required|numeric|gt:0',
-            'discount'=>'nullable|numeric|gt:0',
+            'discount'=>'nullable|numeric|gte:0',
             'delivery'=>'required|numeric|gt:5',
             'type'=>'required',
             'imageFile' => 'required',
@@ -49,14 +51,16 @@ class ProductController extends Controller
         $products = Product::all(); 
         $productNames = [];
         
-        $count = 0; 
+        $count = 1; 
+       
+        $newID = DB::table('products')->count() + 1; 
+    
         foreach ($request->file('imageFile') as $file) {   
-            $count++; 
-            $fileName = time() .$count. '.' . $file->extension();
+            $fileName = $newID.'_'.$count.'.'.$file->extension();
             $path = $file->storeAs('public/images', $fileName); 
             $images[] = $fileName; 
+            $count++;
         }
-           
             $product = new Product();
             $product->name = $request->name; 
             $product->price = $request->price;
@@ -65,12 +69,13 @@ class ProductController extends Controller
             $product->delivery = $request->delivery; 
             $product->url = $request->url; 
             $product->type = $request->type; 
+            
             $product->image = implode(",",$images); 
             $product->tags = str_replace(" ", ",",$request->name);
             $product->rating = 0; 
             $product->discount = $request->discount ?? 0; 
             $product->available = true; 
-           
+            $product->id = $newID; 
             $product->save();
 
         return redirect('/admin')->with('success', 'Added Successfully!'); 
