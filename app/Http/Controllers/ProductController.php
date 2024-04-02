@@ -191,13 +191,13 @@ class ProductController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg,avif,webp|max:2048'
         ]);
         $product = Product::find($id); 
-        $count = 0; 
+        $count = 1; 
         if($request->file('imageFile')) {
             foreach ($request->file('imageFile') as $file) {   
-                $count++; 
-                $fileName = time() .$count. '.' . $file->extension();
+                $fileName = $id.'_'.$count.'.'.$file->extension();
                 $path = $file->storeAs('public/images', $fileName); 
                 $images[] = $fileName; 
+                $count++; 
             }
             $img =  implode(",", $images);
         } else {
@@ -211,6 +211,7 @@ class ProductController extends Controller
         } else {
             $fileName = $product->image; 
         }
+        
         if($request->type == 'Accessories'){
             $type = $product->type; 
         } else {
