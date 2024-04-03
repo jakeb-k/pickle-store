@@ -19,7 +19,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('home'); 
+        $metaDesc = "Discover Australia's most dynamic pickleball paddle, court and clothing retailer. Find the best, pro-level gear and elevate your game at Aussie PicklePro."; 
+        return view('home')->with('message', "")->with('metaDesc', $metaDesc); 
     }
 
     /**
@@ -87,8 +88,29 @@ class ProductController extends Controller
     public function type($type)
     {
         $products = Product::where('type', 'like', '%'.$type.'%')->paginate(6); 
-       
-        return view('products.index')->with('products',$products)->with('type',$type);
+
+        //Meta description generator
+        switch ($type) {
+            case 'paddles':
+                $metaDesc = "Shop the best, pro-level pickleball paddles in Australia at Aussie PicklePro. Elevate your game with our range of high-performance pickleball paddles!"; 
+                break;
+            case 'court':
+                $metaDesc = "Shop the best, pro-level pickleball courts in Australia at Aussie PicklePro. Practice anytime and anywhere with our pickleball courts!"; 
+                break;
+            case 'accessories':
+                $metaDesc = "Shop the best, pro-level pickleball gear in Australia at Aussie PicklePro. Elevate your game with our range of high-performance pickleball gear!"; 
+                break;
+            case 'clothing':
+                $metaDesc = "Shop the best pickleball clothing in Australia at Aussie PicklePro. Express yourself on the court with our large range of hats, t-shirts and hoodies!"; 
+                break;
+            case 'kits':
+                $metaDesc = "Shop the best value pickleball kits in Australia at Aussie PicklePro. Our kits are perfect for starters or those looking to elevate their game!"; 
+                break;
+            default:
+                $metaDesc = "Shop the best, pro-level pickleball gear in Australia at Aussie PicklePro. Elevate your game with our range of high-performance pickleball gear!"; 
+                break;
+        }
+        return view('products.index')->with('products',$products)->with('type',$type)->with('metaDesc', $metaDesc);
     }
     //bring up detail view for specific product
     public function show(string $id) {
@@ -451,11 +473,13 @@ class ProductController extends Controller
         $b = $a[0];
        
         $products = Product::where('tags', 'like', '%' . $b . '%')->get(); 
-       
+
+        $metaDesc = "Shop the best, pro-level pickleball gear in Australia at Aussie PicklePro. Elevate your game with our range of high-performance pickleball gear!"; 
+
         if($products->isEmpty()) {
             return redirect()->back()->with('no_search', 'There are no matching products');
         } else {
-            return view('products.index')->with('products', $products)->with('type', $search)->with('paginated', false); 
+            return view('products.index')->with('products', $products)->with('type', $search)->with('paginated', false)->with('metaDesc', $metaDesc); 
         }
         
         

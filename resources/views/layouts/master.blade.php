@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title> AussiePicklePro @yield('titleDetail')</title>
-        <meta name="description" content="@yield('meta', 'AussiePicklePro: Your Premier Pickleball E-commerce Destination. Find top-tier gear & accessories for enthusiasts. Seamlessly navigate our platform for personalized shopping. Elevate your game with exclusive products & secure transactions. Shop now! #PickleballPassion #AussiePicklePro')">
+        <title> AussiePicklePro</title>
+        <meta name="description" content='{{$metaDesc ?? "Shop the best, pro-level pickleball gear in Australia at Aussie PicklePro. Elevate your game with our range of high-performance pickleball gear!"}}'>
 
         <link rel="canonical" href="https://aussiepicklepro.com.au" />
 
@@ -47,7 +47,7 @@
                         <i class="fa-solid fa-magnifying-glass" style="font-size:18px; color:rgb(52,52,52);"></i>
                     </button> 
                 </form>
-                @error('search')
+                @error('query')
                     <div class="alert">{{ $message }}</div>
                 @enderror
             </div>

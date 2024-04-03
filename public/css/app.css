@@ -1149,6 +1149,7 @@ AUTH FORM STYLING
   border-radius: 5px;
   align-self: center;
   display: flex;
+  flex-direction:column; 
   align-items: center;
   font-family: "Rubik", Arial, Helvetica, sans-serif;
   margin: auto;
