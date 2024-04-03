@@ -100,8 +100,8 @@ elevate your pickleball experience today!
 
         <div class="prodBox">
             <a href="{{url('/product/'.$product->id)}}">
-                <img src="{{url('storage/images/'.$product->id.'_1.webp')}}" alt="pickleball {{$type}} photo"/> 
-            <!-- <img src="{{ Storage::disk('public')->url('images/'.$product->id.'_1.webp') }}" alt="pickleball {{$type}} photo"/>  -->
+                <!-- <img src="{{url('storage/images/'.$product->id.'_1.webp')}}" alt="pickleball {{$type}} photo"/>  -->
+            <img src="{{ Storage::disk('public')->url('images/'.$product->id.'_1.webp') }}" alt="pickleball {{$type}} photo"/> 
                 <a href="{{url('/product/'.$product->id)}}">{{$product->name}} </a>
                 <div class="pInfo">
                     <div class="prices">
