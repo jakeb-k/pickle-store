@@ -173,7 +173,8 @@ class ProductController extends Controller
             } 
             //dd($options); 
             $clothing = false; 
-            return view('products.show')->with('product', $product)->with('reviews',$reviews)->with('options',$options)->with('clothing',false)->with('colors',$colors); 
+            $metaDesc = $product->description; 
+            return view('products.show')->with('product', $product)->with('reviews',$reviews)->with('options',$options)->with('clothing',false)->with('colors',$colors)->with('metaDesc', $metaDesc); 
 
         }
         
