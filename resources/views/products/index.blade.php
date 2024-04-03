@@ -1,12 +1,5 @@
 @extends('layouts.master')
-@section('titleDetail')
-- {{ucfirst($type)}}
-@endsection
-@section('meta')
-Discover top-tier pickleball {{$type}} at AussiePicklePro. 
-The best pickleball store in Australia! Explore our diverse {{$type}} collection and 
-elevate your pickleball experience today!
-@endsection
+
 @section('content')
 
 <div id="prodCont">

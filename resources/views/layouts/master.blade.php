@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title> AussiePicklePro</title>
+        <title>Aussie PicklePro</title>
         <meta name="description" content='{{$metaDesc ?? "Shop the best, pro-level pickleball gear in Australia at Aussie PicklePro. Elevate your game with our range of high-performance pickleball gear!"}}'>
 
         <link rel="canonical" href="https://aussiepicklepro.com.au" />
@@ -23,6 +23,16 @@
         <link rel="stylesheet" href="{{asset('css/app.css')}}" type="text/css">
 
         <script src="https://kit.fontawesome.com/0abaa836ef.js" crossorigin="anonymous"></script>
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-ENWNM18KXS"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-ENWNM18KXS');
+        </script>
     </head>
     <script>
          $(document).ready(function() {

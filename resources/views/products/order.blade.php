@@ -1,7 +1,5 @@
 @extends('layouts.master')
-@section('title')
-Mat-Mart Orders
-@endsection
+
 @section('content')
 <div id="ordContainer">
     <div id="orderOps">

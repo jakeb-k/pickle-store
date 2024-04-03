@@ -1,7 +1,5 @@
 @extends('layouts.master')
-@section('titleDetail')
- - Orders
-@endsection
+
 @section('content')
 <div id="adminContainer">
     <div id="sentShow">

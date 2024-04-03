@@ -1,7 +1,5 @@
 @extends('layouts.master')
-@section('titleDetail')
- - Success
-@endsection
+
 @section('content')
     <div id="succCont">
         <a href="{{url('/')}}">Home</a>

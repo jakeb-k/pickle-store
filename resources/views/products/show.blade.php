@@ -1,7 +1,5 @@
 @extends('layouts.master')
-@section('title')
-{{ucwords($product->name)}}
-@endsection
+
 @section('meta')
 {{$product->description}}
 @endsection

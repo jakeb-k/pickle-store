@@ -1,7 +1,5 @@
 @extends('layouts.master')
-@section('titleDetail')
-   - Add Product
-@endsection
+
 @section('content')
 
     <div id="adminContainer">

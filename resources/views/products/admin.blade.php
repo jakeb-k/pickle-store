@@ -1,7 +1,5 @@
 @extends('layouts.master')
-@section('titleDetail')
- - Admin 
-@endsection 
+
 @section('content')
 <div id="adminContainer">
     <div id="adminOps">

@@ -1,7 +1,5 @@
 @extends('layouts.master')
-@section('title')
-    Edit {{$product->name}}
-@endsection
+
 @section('content')
     <div id="adminContainer" style="margin-top:50px;">
         @if(Auth::user()->role != 0)
