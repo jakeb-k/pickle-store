@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('street');
             $table->string('city');
             $table->enum('state',['QLD','NSW','VIC','ACT','SA','WA','NT','TAS']);
-            $table->integer('postcode');
+            $table->string('postcode');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->integer('role'); 
